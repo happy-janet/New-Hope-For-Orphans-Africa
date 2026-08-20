@@ -491,196 +491,587 @@
         }
 
 
-        /* =====================================================
-           DIRECTOR SECTION
-        ===================================================== */
+       /* =====================================================
+   BOARD OF DIRECTORS - NEW DESIGN
+===================================================== */
 
-        .director {
+.leadership-section {
+    position: relative;
 
-            background: var(--white);
-        }
+    background:
+        linear-gradient(
+            180deg,
+            var(--white) 0%,
+            var(--off-white) 100%
+        );
 
+    overflow: hidden;
+}
 
-        .director-grid {
 
-            display: grid;
+/* Decorative background circle */
 
-            grid-template-columns:
-                .85fr 1.15fr;
+.leadership-section::before {
+    content: "";
 
-            gap: 70px;
+    position: absolute;
 
-            align-items: center;
-        }
+    width: 450px;
+    height: 450px;
 
+    border-radius: 50%;
 
-        .director-photo {
+    background: var(--primary-light);
 
-            position: relative;
+    top: -220px;
+    right: -180px;
 
-            max-width: 450px;
+    opacity: .7;
 
-            margin: auto;
-        }
+    pointer-events: none;
+}
 
 
-        .director-photo::before {
+/* INTRO */
 
-            content: "";
+.leadership-intro {
+    position: relative;
 
-            position: absolute;
+    z-index: 2;
 
-            width: 85%;
+    max-width: 780px;
 
-            height: 85%;
+    margin: 0 auto 45px;
 
-            background: var(--primary-light);
+    text-align: center;
+}
 
-            border-radius: 50%;
 
-            top: -35px;
+.leadership-label {
+    display: flex;
 
-            left: -35px;
+    align-items: center;
 
-            z-index: 0;
-        }
+    justify-content: center;
 
+    gap: 12px;
 
-        .director-photo::after {
+    color: var(--primary);
 
-            content: "";
+    font-size: 12px;
 
-            position: absolute;
+    font-weight: 900;
 
-            width: 90px;
+    letter-spacing: 2px;
 
-            height: 90px;
+    margin-bottom: 15px;
+}
 
-            background: var(--accent);
 
-            border-radius: 50%;
+.leadership-label span {
+    width: 35px;
 
-            bottom: -20px;
+    height: 2px;
 
-            right: -20px;
+    background: var(--accent);
+}
 
-            z-index: 0;
-        }
 
+.leadership-intro h2 {
+    color: var(--gray-900);
 
-        .director-photo img {
+    font-size:
+        clamp(35px, 5vw, 55px);
 
-            position: relative;
+    line-height: 1.1;
 
-            z-index: 1;
+    margin-bottom: 18px;
+}
 
-            width: 100%;
 
-            height: 520px;
+.leadership-intro h2 span {
+    color: var(--primary);
+}
 
-            object-fit: cover;
 
-            object-position: center;
+.leadership-intro p {
+    color: var(--gray-500);
 
-            border-radius:
-                var(--radius-lg);
+    font-size: 17px;
 
-            box-shadow:
-                var(--shadow-xl);
-        }
+    max-width: 700px;
 
+    margin: auto;
+}
 
-        .director-info .tag {
 
-            color: var(--primary);
+/* =====================================================
+   LEADERSHIP QUOTE
+===================================================== */
 
-            font-weight: 800;
+.leadership-quote {
+    position: relative;
 
-            font-size: 13px;
+    max-width: 900px;
 
-            text-transform: uppercase;
+    margin: 0 auto 65px;
 
-            letter-spacing: 2px;
-        }
+    padding: 35px 45px;
 
+    background: var(--primary-dark);
 
-        .director-info h2 {
+    color: var(--white);
 
-            font-size:
-                clamp(34px,4vw,50px);
+    border-radius: var(--radius-lg);
 
-            color: var(--gray-900);
+    text-align: center;
 
-            line-height: 1.1;
+    overflow: hidden;
 
-            margin: 10px 0 5px;
-        }
+    box-shadow: var(--shadow-lg);
+}
 
 
-        .director-title {
+.quote-mark {
+    position: absolute;
 
-            color: var(--primary);
+    top: -25px;
 
-            font-weight: 700;
+    left: 25px;
 
-            margin-bottom: 25px;
-        }
+    color: var(--accent);
 
+    font-size: 110px;
 
-        .director-info p {
+    font-family: Georgia, serif;
 
-            color: var(--gray-500);
+    opacity: .35;
+}
 
-            margin-bottom: 18px;
-        }
 
+.leadership-quote p {
+    position: relative;
 
-        .director-quote {
+    z-index: 2;
 
-            position: relative;
+    max-width: 700px;
 
-            margin-top: 30px;
+    margin: auto;
 
-            padding: 25px 30px;
+    font-size: 21px;
 
-            background: var(--accent-light);
+    line-height: 1.6;
 
-            border-radius:
-                var(--radius-lg);
-        }
+    font-weight: 600;
 
+    font-style: italic;
+}
 
-        .director-quote::before {
 
-            content: "“";
+.quote-line {
+    width: 60px;
 
-            position: absolute;
+    height: 3px;
 
-            top: -20px;
+    background: var(--accent);
 
-            left: 20px;
+    margin: 22px auto 12px;
 
-            font-size: 80px;
+    border-radius: 5px;
+}
 
-            line-height: 1;
 
-            color: var(--accent);
-        }
+.leadership-quote span {
+    color: rgba(255,255,255,.7);
 
+    font-size: 13px;
+}
 
-        .director-quote p {
 
-            color: var(--gray-700);
+/* =====================================================
+   BOARD GRID
+===================================================== */
 
-            font-size: 18px;
+.board-grid-new {
+    position: relative;
 
-            font-weight: 600;
+    z-index: 2;
 
-            font-style: italic;
+    display: grid;
 
-            margin: 0;
-        }
+    grid-template-columns:
+        repeat(2, 1fr);
 
+    gap: 30px;
+}
+
+
+/* =====================================================
+   LEADER CARD
+===================================================== */
+
+.leader-card {
+    display: grid;
+
+    grid-template-columns:
+        190px 1fr;
+
+    min-height: 330px;
+
+    background: var(--white);
+
+    border-radius: var(--radius-lg);
+
+    overflow: hidden;
+
+    border:
+        1px solid rgba(107,15,35,.08);
+
+    box-shadow: var(--shadow);
+
+    transition: var(--transition);
+}
+
+
+.leader-card:hover {
+    transform: translateY(-8px);
+
+    box-shadow: var(--shadow-xl);
+
+    border-color: var(--accent);
+}
+
+
+/* =====================================================
+   LEADER PHOTO
+===================================================== */
+
+.leader-photo {
+    position: relative;
+
+    min-height: 330px;
+
+    overflow: hidden;
+
+    background: var(--primary-light);
+}
+
+
+.leader-photo img {
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    transition:
+        transform .6s ease;
+}
+
+
+.leader-card:hover .leader-photo img {
+    transform: scale(1.08);
+}
+
+
+/* NUMBER */
+
+.leader-number {
+    position: absolute;
+
+    bottom: 15px;
+
+    left: 15px;
+
+    width: 43px;
+
+    height: 43px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: var(--accent);
+
+    color: var(--primary-dark);
+
+    font-weight: 900;
+
+    font-size: 13px;
+
+    box-shadow: var(--shadow);
+}
+
+
+/* =====================================================
+   LEADER CONTENT
+===================================================== */
+
+.leader-info {
+    padding: 28px 25px;
+}
+
+
+.leader-top {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 10px;
+
+    margin-bottom: 12px;
+}
+
+
+.leader-role {
+    color: var(--primary);
+
+    font-size: 11px;
+
+    font-weight: 900;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1.3px;
+}
+
+
+.leader-word {
+    padding: 5px 9px;
+
+    border-radius: 20px;
+
+    background: var(--accent-light);
+
+    color: var(--primary-dark);
+
+    font-size: 9px;
+
+    font-weight: 900;
+
+    letter-spacing: .8px;
+}
+
+
+.leader-info h3 {
+    color: var(--gray-900);
+
+    font-size: 25px;
+
+    line-height: 1.2;
+
+    margin-bottom: 12px;
+}
+
+
+.leader-info p {
+    color: var(--gray-500);
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    margin-bottom: 18px;
+}
+
+
+/* DIVIDER */
+
+.leader-divider {
+    width: 100%;
+
+    height: 1px;
+
+    background: var(--gray-300);
+
+    margin-bottom: 15px;
+}
+
+
+/* PERSONAL MESSAGE */
+
+.leader-message span {
+    display: block;
+
+    color: var(--gray-500);
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1.5px;
+
+    margin-bottom: 6px;
+}
+
+
+.leader-message strong {
+    display: block;
+
+    color: var(--gray-700);
+
+    font-size: 13px;
+
+    line-height: 1.5;
+
+    font-style: italic;
+}
+
+
+/* =====================================================
+   LEADERSHIP FOOTER
+===================================================== */
+
+.leadership-footer {
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    margin-top: 45px;
+
+    padding: 28px 32px;
+
+    background: var(--primary-light);
+
+    border-left:
+        5px solid var(--primary);
+
+    border-radius:
+        0 var(--radius-lg) var(--radius-lg) 0;
+}
+
+
+.footer-icon {
+    min-width: 55px;
+
+    height: 55px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: var(--accent);
+
+    color: var(--primary-dark);
+
+    font-size: 25px;
+
+    font-weight: 900;
+}
+
+
+.leadership-footer h3 {
+    color: var(--primary-dark);
+
+    font-size: 20px;
+
+    margin-bottom: 5px;
+}
+
+
+.leadership-footer p {
+    color: var(--gray-500);
+
+    font-size: 14px;
+
+    margin: 0;
+
+    max-width: 850px;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 1000px) {
+
+    .board-grid-new {
+        grid-template-columns: 1fr;
+    }
+
+
+    .leader-card {
+        grid-template-columns:
+            240px 1fr;
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    .leadership-quote {
+        padding: 30px 25px;
+    }
+
+
+    .leadership-quote p {
+        font-size: 17px;
+    }
+
+
+    .leader-card {
+        display: block;
+    }
+
+
+    .leader-photo {
+        height: 360px;
+
+        min-height: 360px;
+    }
+
+
+    .leader-info {
+        padding: 25px;
+    }
+
+
+    .leader-top {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+
+    .leadership-footer {
+        align-items: flex-start;
+
+        padding: 25px 20px;
+    }
+
+}
+
+
+@media (max-width: 450px) {
+
+    .leader-photo {
+        height: 320px;
+
+        min-height: 320px;
+    }
+
+
+    .leadership-intro h2 {
+        font-size: 36px;
+    }
+
+}
 
         /* =====================================================
            MISSION & VISION
@@ -1673,7 +2064,7 @@
                 <div class="story-image reveal">
 
                     <img
-                        src="./images/kid5.jpeg"
+                        src="./images/directors.jpeg"
                         alt="Children at New Hope for Orphans Africa"
                     >
 
@@ -1749,108 +2140,308 @@
 
 
 
-    <!-- =====================================================
-         DIRECTOR
-    ===================================================== -->
+   <!-- =====================================================
+     BOARD OF DIRECTORS
+===================================================== -->
 
-    <section class="section director">
+<section class="section leadership-section" id="board">
 
-        <div class="container">
+    <div class="container">
 
-            <div class="director-grid">
+        <!-- SECTION INTRO -->
+
+        <div class="leadership-intro reveal">
+
+            <div class="leadership-label">
+                <span></span>
+                OUR LEADERSHIP
+                <span></span>
+            </div>
+
+            <h2>
+                The People Behind
+                <span>Our Mission</span>
+            </h2>
+
+            <p>
+                New Hope for Orphans Africa is guided by a
+                committed Board of Directors who share a
+                passion for children, education, sports,
+                opportunity and community transformation.
+            </p>
+
+        </div>
 
 
-                <div class="director-photo reveal">
+        <!-- LEADERSHIP QUOTE -->
 
-                    <!--
-                    REPLACE director.jpg WITH
-                    THE ACTUAL DIRECTOR'S PHOTO.
-                    -->
+        <div class="leadership-quote reveal">
+
+            <div class="quote-mark">
+                “
+            </div>
+
+            <p>
+                Every child deserves the opportunity to
+                learn, discover their gifts, dream boldly
+                and grow into the person they were created
+                to become.
+            </p>
+
+            <div class="quote-line"></div>
+
+            <span>
+                — Board of Directors, New Hope for Orphans Africa
+            </span>
+
+        </div>
+
+
+        <!-- BOARD MEMBERS -->
+
+        <div class="board-grid-new">
+
+
+            <!-- =================================================
+                 BOARD MEMBER 1
+            ================================================= -->
+
+            <article class="leader-card reveal">
+
+                <div class="leader-photo">
 
                     <img
                         src="./images/director.jpeg"
-                        alt="Director of New Hope for Orphans Africa"
+                        alt="Board Director 1"
                     >
 
+                    <div class="leader-number">
+                        01
+                    </div>
+
                 </div>
 
 
-                <div class="director-info reveal">
+                <div class="leader-info">
 
-                    <span class="tag">
-                        A Message From Leadership
-                    </span>
+                    <div class="leader-top">
 
+                        <span class="leader-role">
+                            Board Director
+                        </span>
 
-                    <!--
-                    REPLACE [DIRECTOR NAME]
-                    WITH THE ACTUAL NAME.
-                    -->
+                        <span class="leader-word">
+                            HOPE
+                        </span>
 
-                    <h2>
-                        Mutebe Naifu
-                    </h2>
-
-
-                    <div class="director-title">
-                        Director, New Hope for Orphans Africa
                     </div>
 
 
-                    <p>
-                        Welcome to New Hope for Orphans Africa.
-                        It is a privilege to serve children and
-                        families and to be part of a community
-                        committed to creating meaningful
-                        opportunities for the next generation.
-                    </p>
+                    <h3>
+                       NAIFU MUTEBE
+                    </h3>
 
 
                     <p>
-                        We believe that every child has
-                        abilities, dreams and potential.
-                        Sometimes what a child needs most is
-                        someone to recognize that potential,
-                        provide an opportunity and walk alongside
-                        them as they grow.
+                        Dedicated to creating an environment
+                        where vulnerable children can feel
+                        valued, supported and encouraged to
+                        believe in themselves and their future.
                     </p>
 
 
-                    <p>
-                        That is why our work goes beyond simply
-                        providing immediate assistance. We focus
-                        on education, sports, personal development,
-                        care and opportunities that can help
-                        children build confidence and prepare for
-                        their future.
-                    </p>
+                    <div class="leader-divider"></div>
 
 
-                    <p>
-                        We are grateful to every individual,
-                        family, organization and partner who
-                        believes in this mission and chooses
-                        to stand with our children.
-                    </p>
+                    <div class="leader-message">
 
+                        <span>
+                            Personal Word
+                        </span>
 
-                    <div class="director-quote">
-
-                        <p>
-                            "When we invest in a child today,
-                            we are helping to build a stronger
-                            community and a brighter tomorrow."
-                        </p>
+                        <strong>
+                            “Hope gives every child
+                            a reason to dream.”
+                        </strong>
 
                     </div>
 
                 </div>
+
+            </article>
+
+
+
+            <!-- =================================================
+                 BOARD MEMBER 2
+            ================================================= -->
+
+            <article class="leader-card reveal">
+
+                <div class="leader-photo">
+
+                    <img
+                        src="./images/pieter-dejong.jpeg"
+                        alt="Board Director 2"
+                    >
+
+                    <div class="leader-number">
+                        02
+                    </div>
+
+                </div>
+
+
+                <div class="leader-info">
+
+                    <div class="leader-top">
+
+                        <span class="leader-role">
+                            Board Director
+                        </span>
+
+                        <span class="leader-word">
+                            EDUCATION
+                        </span>
+
+                    </div>
+
+
+                    <h3>
+                        PIETER DEJONG
+                    </h3>
+
+
+                    <p>
+                        Passionate about ensuring that children
+                        have access to meaningful learning
+                        opportunities that help them develop
+                        knowledge, confidence and independence.
+                    </p>
+
+
+                    <div class="leader-divider"></div>
+
+
+                    <div class="leader-message">
+
+                        <span>
+                            Personal Word
+                        </span>
+
+                        <strong>
+                            “Education opens doors
+                            that can change a lifetime.”
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- =================================================
+                 BOARD MEMBER 3
+            ================================================= -->
+
+            <article class="leader-card reveal">
+
+                <div class="leader-photo">
+
+                    <img
+                        src="./images/linda-dejong.jpeg"
+                        alt="Board Director 3"
+                    >
+
+                    <div class="leader-number">
+                        03
+                    </div>
+
+                </div>
+
+
+                <div class="leader-info">
+
+                    <div class="leader-top">
+
+                        <span class="leader-role">
+                            Board Director
+                        </span>
+
+                        <span class="leader-word">
+                            EMPOWERMENT
+                        </span>
+
+                    </div>
+
+
+                    <h3>
+                        LINDA DEJONG
+                    </h3>
+
+
+                    <p>
+                        Believes that children should be given
+                        opportunities to discover their talents,
+                        develop life skills and participate in
+                        activities that build confidence and
+                        leadership.
+                    </p>
+
+
+                    <div class="leader-divider"></div>
+
+
+                    <div class="leader-message">
+
+                        <span>
+                            Personal Word
+                        </span>
+
+                        <strong>
+                            “Give a child an opportunity
+                            and watch them grow.”
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+        </div>
+
+
+        <!-- LEADERSHIP FOOTER -->
+
+        <div class="leadership-footer reveal">
+
+            <div class="footer-icon">
+                ✦
+            </div>
+
+            <div>
+
+                <h3>
+                    One Mission. Four Leaders. One Hope.
+                </h3>
+
+                <p>
+                    Together, our Board of Directors works to
+                    provide direction, accountability and
+                    leadership as New Hope for Orphans Africa
+                    continues to serve children and communities.
+                </p>
 
             </div>
 
         </div>
 
-    </section>
+    </div>
+
+</section>
 
 
 
