@@ -1,1746 +1,2279 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Sports Program | New Hope for Orphans Africa</title>
 
     <style>
-      /* =====================================================
+
+        /* =====================================================
            BRAND VARIABLES
         ===================================================== */
 
-      :root {
-        --primary: #a41e3c;
-        --primary-dark: #6b0f23;
-        --primary-light: #f5e6eb;
+        :root {
+            --primary: #a41e3c;
+            --primary-dark: #6b0f23;
+            --primary-light: #f5e6eb;
 
-        --secondary: #6b8e23;
+            --secondary: #6b8e23;
 
-        --accent: #d4a747;
-        --accent-light: #f0e5d0;
+            --accent: #d4a747;
+            --accent-light: #f0e5d0;
 
-        --white: #ffffff;
-        --off-white: #f9fafb;
+            --white: #ffffff;
+            --off-white: #f9fafb;
 
-        --gray-100: #f3f4f6;
-        --gray-300: #d1d5db;
-        --gray-500: #6b7280;
-        --gray-700: #374151;
-        --gray-900: #111827;
+            --gray-100: #f3f4f6;
+            --gray-300: #d1d5db;
+            --gray-500: #6b7280;
+            --gray-700: #374151;
+            --gray-900: #111827;
 
-        --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-sm:
+                0 1px 2px 0 rgba(0,0,0,.05);
 
-        --shadow:
-          0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow:
+                0 4px 6px -1px rgba(0,0,0,.1),
+                0 2px 4px -1px rgba(0,0,0,.06);
 
-        --shadow-lg:
-          0 10px 15px -3px rgba(0, 0, 0, 0.1),
-          0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --shadow-lg:
+                0 10px 15px -3px rgba(0,0,0,.1),
+                0 4px 6px -2px rgba(0,0,0,.05);
 
-        --shadow-xl:
-          0 20px 25px -5px rgba(0, 0, 0, 0.1),
-          0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            --shadow-xl:
+                0 20px 25px -5px rgba(0,0,0,.1),
+                0 10px 10px -5px rgba(0,0,0,.04);
 
-        --radius: 12px;
-        --radius-lg: 20px;
+            --radius: 12px;
+            --radius-lg: 20px;
 
-        --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition:
+                all .3s cubic-bezier(.4,0,.2,1);
 
-        --container-width: 1200px;
-      }
+            --container-width: 1200px;
+        }
 
-      /* =====================================================
+
+        /* =====================================================
            RESET
         ===================================================== */
 
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-      html {
-        scroll-behavior: smooth;
-      }
+        html {
+            scroll-behavior: smooth;
+        }
 
-      body {
-        font-family: Arial, Helvetica, sans-serif;
+        body {
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
 
-        color: var(--gray-700);
-        background: var(--white);
-        line-height: 1.7;
-      }
+            color: var(--gray-700);
+            background: var(--white);
+            line-height: 1.7;
+        }
 
-      img {
-        max-width: 100%;
-        display: block;
-      }
+        img {
+            max-width: 100%;
+            display: block;
+        }
 
-      a {
-        text-decoration: none;
-      }
+        a {
+            text-decoration: none;
+        }
 
-      button {
-        font-family: inherit;
-      }
+        button {
+            font-family: inherit;
+        }
 
-      /* =====================================================
+
+        /* =====================================================
            NAVBAR
         ===================================================== */
 
-      .navbar {
-        position: absolute;
+        .navbar {
+            position: absolute;
 
-        top: 0;
-        left: 0;
+            top: 0;
+            left: 0;
 
-        width: 100%;
+            width: 100%;
 
-        z-index: 1000;
+            z-index: 1000;
 
-        padding: 8px 0;
-      }
+            padding: 8px 0;
+        }
 
-      .nav-container {
-        max-width: var(--container-width);
+        .nav-container {
+            max-width: var(--container-width);
 
-        margin: auto;
+            margin: auto;
 
-        padding: 0 20px;
+            padding: 0 20px;
 
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-      }
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
 
-      /* LOGO */
 
-      .logo img {
-        width: 95px;
-        height: 55px;
+        /* LOGO */
 
-        object-fit: contain;
-      }
+        .logo img {
+            width: 95px;
+            height: 55px;
 
-      /* NAVIGATION */
+            object-fit: contain;
+        }
 
-      .nav-list {
-        display: flex;
 
-        align-items: center;
+        /* NAVIGATION */
 
-        gap: 25px;
+        .nav-list {
+            display: flex;
 
-        list-style: none;
-      }
+            align-items: center;
 
-      .nav-list a {
-        color: var(--white);
+            gap: 25px;
 
-        font-size: 15px;
+            list-style: none;
+        }
 
-        font-weight: 600;
+        .nav-list a {
+            color: var(--white);
 
-        transition: var(--transition);
-      }
+            font-size: 15px;
 
-      .nav-list a:hover {
-        color: var(--accent);
-      }
+            font-weight: 600;
 
-      /* CTA */
+            transition: var(--transition);
+        }
 
-      .nav-cta {
-        background: var(--primary);
+        .nav-list a:hover {
+            color: var(--accent);
+        }
 
-        color: var(--white) !important;
 
-        padding: 11px 20px;
+        /* CTA */
 
-        border-radius: 30px;
-      }
+        .nav-cta {
+            background: var(--primary);
 
-      .nav-cta:hover {
-        background: var(--primary-dark);
+            color: var(--white) !important;
 
-        transform: translateY(-2px);
-      }
+            padding: 11px 20px;
 
-      /* MOBILE MENU */
+            border-radius: 30px;
+        }
 
-      .menu-toggle {
-        display: none;
+        .nav-cta:hover {
+            background: var(--primary-dark);
 
-        border: none;
+            transform: translateY(-2px);
+        }
 
-        background: none;
 
-        color: var(--white);
+        /* MOBILE MENU */
 
-        font-size: 28px;
+        .menu-toggle {
+            display: none;
 
-        cursor: pointer;
-      }
+            border: none;
 
-      /* =====================================================
+            background: none;
+
+            color: var(--white);
+
+            font-size: 28px;
+
+            cursor: pointer;
+        }
+
+
+        /* =====================================================
            HERO
         ===================================================== */
 
-      .hero {
-        min-height: 92vh;
+        .hero {
+            min-height: 92vh;
 
-        display: flex;
+            display: flex;
 
-        align-items: center;
+            align-items: center;
 
-        position: relative;
+            position: relative;
 
-        overflow: hidden;
+            overflow: hidden;
 
-        color: var(--white);
+            color: var(--white);
 
-        background:
-          linear-gradient(
-            90deg,
-            rgba(107, 15, 35, 0.96),
-            rgba(164, 30, 60, 0.72),
-            rgba(107, 15, 35, 0.35)
-          ),
-          url("./images/kids.jpeg") center/cover no-repeat;
-      }
+            background:
 
-      .hero-content {
-        max-width: var(--container-width);
+                linear-gradient(
+                    90deg,
+                    rgba(107,15,35,.96),
+                    rgba(164,30,60,.72),
+                    rgba(107,15,35,.35)
+                ),
 
-        width: 100%;
+                url("./images/kids.jpeg")
+                center/cover no-repeat;
+        }
 
-        margin: auto;
 
-        padding: 120px 20px 80px;
-      }
+        .hero-content {
+            max-width: var(--container-width);
 
-      .hero-text {
-        max-width: 700px;
+            width: 100%;
 
-        animation: fadeUp 1s ease;
-      }
+            margin: auto;
 
-      .hero-badge {
-        display: inline-block;
+            padding: 120px 20px 80px;
+        }
 
-        background: rgba(212, 167, 71, 0.95);
 
-        color: var(--primary-dark);
+        .hero-text {
+            max-width: 700px;
 
-        padding: 8px 18px;
+            animation:
+                fadeUp 1s ease;
+        }
 
-        border-radius: 30px;
 
-        font-weight: 700;
+        .hero-badge {
+            display: inline-block;
 
-        margin-bottom: 20px;
-      }
+            background: rgba(212,167,71,.95);
 
-      .hero h1 {
-        font-size: clamp(42px, 6vw, 75px);
+            color: var(--primary-dark);
 
-        line-height: 1.05;
+            padding: 8px 18px;
 
-        margin-bottom: 25px;
-      }
+            border-radius: 30px;
 
-      .hero h1 span {
-        color: var(--accent);
-      }
+            font-weight: 700;
 
-      .hero p {
-        font-size: 20px;
+            margin-bottom: 20px;
+        }
 
-        max-width: 650px;
 
-        margin-bottom: 35px;
+        .hero h1 {
+            font-size: clamp(42px, 6vw, 75px);
 
-        color: rgba(255, 255, 255, 0.92);
-      }
+            line-height: 1.05;
 
-      .hero-buttons {
-        display: flex;
+            margin-bottom: 25px;
+        }
 
-        gap: 15px;
 
-        flex-wrap: wrap;
-      }
+        .hero h1 span {
+            color: var(--accent);
+        }
 
-      .btn {
-        display: inline-flex;
 
-        align-items: center;
+        .hero p {
+            font-size: 20px;
 
-        justify-content: center;
+            max-width: 650px;
 
-        padding: 14px 25px;
+            margin-bottom: 35px;
 
-        border-radius: 30px;
+            color: rgba(255,255,255,.92);
+        }
 
-        font-weight: 700;
 
-        transition: var(--transition);
-      }
+        .hero-buttons {
+            display: flex;
 
-      .btn-primary {
-        background: var(--accent);
+            gap: 15px;
 
-        color: var(--primary-dark);
-      }
+            flex-wrap: wrap;
+        }
 
-      .btn-primary:hover {
-        transform: translateY(-4px);
 
-        box-shadow: var(--shadow-lg);
-      }
+        .btn {
+            display: inline-flex;
 
-      .btn-outline {
-        border: 2px solid var(--white);
+            align-items: center;
 
-        color: var(--white);
-      }
+            justify-content: center;
 
-      .btn-outline:hover {
-        background: var(--white);
+            padding: 14px 25px;
 
-        color: var(--primary-dark);
-      }
+            border-radius: 30px;
 
-      /* =====================================================
+            font-weight: 700;
+
+            transition: var(--transition);
+        }
+
+
+        .btn-primary {
+            background: var(--accent);
+
+            color: var(--primary-dark);
+        }
+
+
+        .btn-primary:hover {
+            transform: translateY(-4px);
+
+            box-shadow: var(--shadow-lg);
+        }
+
+
+        .btn-outline {
+            border: 2px solid var(--white);
+
+            color: var(--white);
+        }
+
+
+        .btn-outline:hover {
+            background: var(--white);
+
+            color: var(--primary-dark);
+        }
+
+
+        /* =====================================================
            SECTION
         ===================================================== */
 
-      .section {
-        padding: 90px 20px;
-      }
+        .section {
+            padding: 90px 20px;
+        }
 
-      .container {
-        max-width: var(--container-width);
 
-        margin: auto;
-      }
+        .container {
+            max-width: var(--container-width);
 
-      .section-heading {
-        text-align: center;
+            margin: auto;
+        }
 
-        max-width: 750px;
 
-        margin: 0 auto 55px;
-      }
+        .section-heading {
+            text-align: center;
 
-      .section-heading .tag {
-        color: var(--primary);
+            max-width: 750px;
 
-        font-weight: 800;
+            margin: 0 auto 55px;
+        }
 
-        text-transform: uppercase;
 
-        letter-spacing: 2px;
+        .section-heading .tag {
+            color: var(--primary);
 
-        font-size: 13px;
-      }
+            font-weight: 800;
 
-      .section-heading h2 {
-        color: var(--gray-900);
+            text-transform: uppercase;
 
-        font-size: clamp(32px, 4vw, 48px);
+            letter-spacing: 2px;
 
-        margin: 10px 0 15px;
+            font-size: 13px;
+        }
 
-        line-height: 1.15;
-      }
 
-      .section-heading p {
-        color: var(--gray-500);
+        .section-heading h2 {
+            color: var(--gray-900);
 
-        font-size: 17px;
-      }
+            font-size: clamp(32px, 4vw, 48px);
 
-      /* =====================================================
+            margin: 10px 0 15px;
+
+            line-height: 1.15;
+        }
+
+
+        .section-heading p {
+            color: var(--gray-500);
+
+            font-size: 17px;
+        }
+
+
+        /* =====================================================
            INTRO
         ===================================================== */
 
-      .intro {
-        background: var(--off-white);
-      }
+        .intro {
+            background: var(--off-white);
+        }
 
-      .intro-grid {
-        display: grid;
 
-        grid-template-columns: 1fr 1fr;
+        .intro-grid {
+            display: grid;
 
-        gap: 60px;
+            grid-template-columns:
+                1fr 1fr;
 
-        align-items: center;
-      }
+            gap: 60px;
 
-      .intro-images {
-        position: relative;
-      }
+            align-items: center;
+        }
 
-      .intro-images img {
-        width: 100%;
 
-        height: 450px;
+        .intro-images {
+            position: relative;
+        }
 
-        object-fit: cover;
 
-        border-radius: var(--radius-lg);
+        .intro-images img {
+            width: 100%;
 
-        box-shadow: var(--shadow-xl);
-      }
+            height: 450px;
 
-      .floating-card {
-        position: absolute;
+            object-fit: cover;
 
-        bottom: -25px;
+            border-radius: var(--radius-lg);
 
-        right: -20px;
+            box-shadow: var(--shadow-xl);
+        }
 
-        background: var(--white);
 
-        padding: 20px;
+        .floating-card {
+            position: absolute;
 
-        border-radius: var(--radius);
+            bottom: -25px;
 
-        box-shadow: var(--shadow-lg);
+            right: -20px;
 
-        max-width: 220px;
-      }
+            background: var(--white);
 
-      .floating-card strong {
-        display: block;
+            padding: 20px;
 
-        font-size: 30px;
+            border-radius: var(--radius);
 
-        color: var(--primary);
-      }
+            box-shadow: var(--shadow-lg);
 
-      .intro-text h3 {
-        color: var(--gray-900);
+            max-width: 220px;
+        }
 
-        font-size: 34px;
 
-        margin-bottom: 20px;
-      }
+        .floating-card strong {
+            display: block;
 
-      .intro-text p {
-        margin-bottom: 18px;
+            font-size: 30px;
 
-        color: var(--gray-500);
-      }
+            color: var(--primary);
+        }
 
-      /* =====================================================
+
+        .intro-text h3 {
+            color: var(--gray-900);
+
+            font-size: 34px;
+
+            margin-bottom: 20px;
+        }
+
+
+        .intro-text p {
+            margin-bottom: 18px;
+
+            color: var(--gray-500);
+        }
+
+
+        /* =====================================================
            SPORTS CARDS
         ===================================================== */
 
-      .sports-grid {
-        display: grid;
+        .sports-grid {
+            display: grid;
 
-        grid-template-columns: repeat(4, 1fr);
+            grid-template-columns:
+                repeat(4, 1fr);
 
-        gap: 25px;
-      }
+            gap: 25px;
+        }
 
-      .sport-card {
-        background: var(--white);
 
-        border-radius: var(--radius-lg);
+        .sport-card {
+            background: var(--white);
 
-        overflow: hidden;
+            border-radius: var(--radius-lg);
 
-        box-shadow: var(--shadow);
+            overflow: hidden;
 
-        transition: var(--transition);
-      }
+            box-shadow: var(--shadow);
 
-      .sport-card:hover {
-        transform: translateY(-10px);
+            transition: var(--transition);
+        }
 
-        box-shadow: var(--shadow-xl);
-      }
 
-      .sport-card img {
-        width: 100%;
+        .sport-card:hover {
+            transform: translateY(-10px);
 
-        height: 210px;
+            box-shadow: var(--shadow-xl);
+        }
 
-        object-fit: cover;
-      }
 
-      .sport-content {
-        padding: 25px;
-      }
+        .sport-card img {
+            width: 100%;
 
-      .sport-icon {
-        width: 52px;
+            height: 210px;
 
-        height: 52px;
+            object-fit: cover;
+        }
 
-        display: flex;
 
-        align-items: center;
+        .sport-content {
+            padding: 25px;
+        }
 
-        justify-content: center;
 
-        background: var(--primary-light);
+        .sport-icon {
+            width: 52px;
 
-        color: var(--primary);
+            height: 52px;
 
-        border-radius: 50%;
+            display: flex;
 
-        font-size: 24px;
+            align-items: center;
 
-        margin-bottom: 15px;
-      }
+            justify-content: center;
 
-      .sport-content h3 {
-        color: var(--gray-900);
+            background: var(--primary-light);
 
-        margin-bottom: 10px;
-      }
+            color: var(--primary);
 
-      .sport-content p {
-        color: var(--gray-500);
+            border-radius: 50%;
 
-        font-size: 14px;
-      }
+            font-size: 24px;
 
-      /* =====================================================
+            margin-bottom: 15px;
+        }
+
+
+        .sport-content h3 {
+            color: var(--gray-900);
+
+            margin-bottom: 10px;
+        }
+
+
+        .sport-content p {
+            color: var(--gray-500);
+
+            font-size: 14px;
+        }
+
+
+        /* =====================================================
            WHY SPORTS
         ===================================================== */
 
-      .why-sports {
-        background: var(--primary-dark);
+        .why-sports {
+            background: var(--primary-dark);
 
-        color: var(--white);
-      }
+            color: var(--white);
+        }
 
-      .why-grid {
-        display: grid;
 
-        grid-template-columns: repeat(3, 1fr);
+        .why-grid {
+            display: grid;
 
-        gap: 25px;
-      }
+            grid-template-columns:
+                repeat(3, 1fr);
 
-      .why-card {
-        padding: 35px 28px;
+            gap: 25px;
+        }
 
-        border-radius: var(--radius-lg);
 
-        background: rgba(255, 255, 255, 0.08);
+        .why-card {
+            padding: 35px 28px;
 
-        border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius-lg);
 
-        transition: var(--transition);
-      }
+            background:
+                rgba(255,255,255,.08);
 
-      .why-card:hover {
-        transform: translateY(-8px);
+            border:
+                1px solid rgba(255,255,255,.1);
 
-        background: rgba(255, 255, 255, 0.13);
-      }
+            transition: var(--transition);
+        }
 
-      .why-number {
-        font-size: 42px;
 
-        color: var(--accent);
+        .why-card:hover {
+            transform: translateY(-8px);
 
-        font-weight: 800;
-      }
+            background:
+                rgba(255,255,255,.13);
+        }
 
-      .why-card h3 {
-        margin: 10px 0;
 
-        font-size: 22px;
-      }
+        .why-number {
+            font-size: 42px;
 
-      .why-card p {
-        color: rgba(255, 255, 255, 0.75);
-      }
+            color: var(--accent);
 
-      /* =====================================================
+            font-weight: 800;
+        }
+
+
+        .why-card h3 {
+            margin: 10px 0;
+
+            font-size: 22px;
+        }
+
+
+        .why-card p {
+            color: rgba(255,255,255,.75);
+        }
+
+
+        /* =====================================================
            VIDEO SECTION
         ===================================================== */
 
-      .video-section {
-        background: var(--accent-light);
-      }
+        .video-section {
+            background: var(--accent-light);
+        }
 
-      .video-grid {
-        display: grid;
 
-        grid-template-columns: 1.2fr 0.8fr;
+        .video-grid {
+            display: grid;
 
-        gap: 35px;
+            grid-template-columns:
+                1.2fr .8fr;
 
-        align-items: center;
-      }
+            gap: 35px;
 
-      .main-video {
-        position: relative;
+            align-items: center;
+        }
 
-        overflow: hidden;
 
-        border-radius: var(--radius-lg);
+        .main-video {
+            position: relative;
 
-        box-shadow: var(--shadow-xl);
-      }
+            overflow: hidden;
 
-      .main-video video {
-        width: 100%;
+            border-radius: var(--radius-lg);
 
-        display: block;
+            box-shadow: var(--shadow-xl);
+        }
 
-        min-height: 400px;
 
-        object-fit: cover;
-      }
+        .main-video video {
+            width: 100%;
 
-      .video-text h2 {
-        color: var(--gray-900);
+            display: block;
 
-        font-size: 38px;
+            min-height: 400px;
 
-        line-height: 1.2;
+            object-fit: cover;
+        }
 
-        margin-bottom: 20px;
-      }
 
-      .video-text p {
-        color: var(--gray-500);
+        .video-text h2 {
+            color: var(--gray-900);
 
-        margin-bottom: 20px;
-      }
+            font-size: 38px;
 
-      /* =====================================================
+            line-height: 1.2;
+
+            margin-bottom: 20px;
+        }
+
+
+        .video-text p {
+            color: var(--gray-500);
+
+            margin-bottom: 20px;
+        }
+
+
+        /* =====================================================
            CHILDREN STORIES
         ===================================================== */
 
-      .stories-grid {
-        display: grid;
+        .stories-grid {
+            display: grid;
 
-        grid-template-columns: repeat(3, 1fr);
+            grid-template-columns:
+                repeat(3, 1fr);
 
-        gap: 25px;
-      }
+            gap: 25px;
+        }
 
-      .story-card {
-        background: var(--white);
 
-        border-radius: var(--radius-lg);
+        .story-card {
+            background: var(--white);
 
-        overflow: hidden;
+            border-radius: var(--radius-lg);
 
-        box-shadow: var(--shadow);
+            overflow: hidden;
 
-        transition: var(--transition);
-      }
+            box-shadow: var(--shadow);
 
-      .story-card:hover {
-        transform: translateY(-8px);
+            transition: var(--transition);
+        }
 
-        box-shadow: var(--shadow-xl);
-      }
 
-      .story-image {
-        position: relative;
-      }
+        .story-card:hover {
+            transform: translateY(-8px);
 
-      .story-image img {
-        width: 100%;
+            box-shadow: var(--shadow-xl);
+        }
 
-        height: 280px;
 
-        object-fit: cover;
-      }
+        .story-image {
+            position: relative;
+        }
 
-      .play-button {
-        position: absolute;
 
-        top: 50%;
+        .story-image img {
+            width: 100%;
 
-        left: 50%;
+            height: 280px;
 
-        transform: translate(-50%, -50%);
+            object-fit: cover;
+        }
 
-        width: 65px;
 
-        height: 65px;
+        .play-button {
+            position: absolute;
 
-        border-radius: 50%;
+            top: 50%;
 
-        background: var(--primary);
+            left: 50%;
 
-        color: var(--white);
+            transform:
+                translate(-50%, -50%);
 
-        display: flex;
+            width: 65px;
 
-        align-items: center;
+            height: 65px;
 
-        justify-content: center;
+            border-radius: 50%;
 
-        font-size: 22px;
+            background: var(--primary);
 
-        box-shadow: var(--shadow-lg);
-      }
+            color: var(--white);
 
-      .story-content {
-        padding: 25px;
-      }
+            display: flex;
 
-      .story-content h3 {
-        color: var(--gray-900);
+            align-items: center;
 
-        margin-bottom: 8px;
-      }
+            justify-content: center;
 
-      .story-content p {
-        color: var(--gray-500);
+            font-size: 22px;
 
-        font-size: 14px;
-      }
+            box-shadow: var(--shadow-lg);
+        }
 
-      /* =====================================================
+
+        .story-content {
+            padding: 25px;
+        }
+
+
+        .story-content h3 {
+            color: var(--gray-900);
+
+            margin-bottom: 8px;
+        }
+
+
+        .story-content p {
+            color: var(--gray-500);
+
+            font-size: 14px;
+        }
+
+
+        /* =====================================================
            ACHIEVEMENTS
         ===================================================== */
 
-      .achievements {
-        background: var(--off-white);
-      }
+        .achievements {
+            background: var(--off-white);
+        }
 
-      .stats-grid {
-        display: grid;
 
-        grid-template-columns: repeat(4, 1fr);
+        .stats-grid {
+            display: grid;
 
-        gap: 20px;
-      }
+            grid-template-columns:
+                repeat(4, 1fr);
 
-      .stat-card {
-        background: var(--white);
+            gap: 20px;
+        }
 
-        padding: 35px 20px;
 
-        text-align: center;
+        .stat-card {
+            background: var(--white);
 
-        border-radius: var(--radius-lg);
+            padding: 35px 20px;
 
-        box-shadow: var(--shadow);
+            text-align: center;
 
-        transition: var(--transition);
-      }
+            border-radius: var(--radius-lg);
 
-      .stat-card:hover {
-        transform: translateY(-7px);
-      }
+            box-shadow: var(--shadow);
 
-      .stat-card strong {
-        display: block;
+            transition: var(--transition);
+        }
 
-        font-size: 45px;
 
-        color: var(--primary);
-      }
+        .stat-card:hover {
+            transform: translateY(-7px);
+        }
 
-      .stat-card span {
-        color: var(--gray-500);
 
-        font-weight: 600;
-      }
+        .stat-card strong {
+            display: block;
 
-      /* =====================================================
+            font-size: 45px;
+
+            color: var(--primary);
+        }
+
+
+        .stat-card span {
+            color: var(--gray-500);
+
+            font-weight: 600;
+        }
+
+
+        /* =====================================================
            GALLERY
         ===================================================== */
 
-      .gallery-grid {
-        display: grid;
+        .gallery-grid {
+            display: grid;
 
-        grid-template-columns: repeat(4, 1fr);
+            grid-template-columns:
+                repeat(4, 1fr);
 
-        gap: 15px;
-      }
+            gap: 15px;
+        }
 
-      .gallery-item {
-        height: 240px;
 
-        overflow: hidden;
+        .gallery-item {
+            height: 240px;
 
-        border-radius: var(--radius);
+            overflow: hidden;
 
-        position: relative;
-      }
+            border-radius: var(--radius);
 
-      .gallery-item.large {
-        grid-column: span 2;
+            position: relative;
+        }
 
-        grid-row: span 2;
 
-        height: 495px;
-      }
+        .gallery-item.large {
+            grid-column: span 2;
 
-      .gallery-item img {
-        width: 100%;
+            grid-row: span 2;
 
-        height: 100%;
+            height: 495px;
+        }
 
-        object-fit: cover;
 
-        transition: transform 0.6s ease;
-      }
+        .gallery-item img {
+            width: 100%;
 
-      .gallery-item:hover img {
-        transform: scale(1.08);
-      }
+            height: 100%;
 
-      .gallery-overlay {
-        position: absolute;
+            object-fit: cover;
 
-        inset: 0;
+            transition:
+                transform .6s ease;
+        }
 
-        display: flex;
 
-        align-items: flex-end;
+        .gallery-item:hover img {
+            transform: scale(1.08);
+        }
 
-        padding: 20px;
 
-        background: linear-gradient(transparent, rgba(0, 0, 0, 0.75));
+        .gallery-overlay {
+            position: absolute;
 
-        color: var(--white);
+            inset: 0;
 
-        opacity: 0;
+            display: flex;
 
-        transition: var(--transition);
-      }
+            align-items: flex-end;
 
-      .gallery-item:hover .gallery-overlay {
-        opacity: 1;
-      }
+            padding: 20px;
 
-      /* =====================================================
+            background:
+                linear-gradient(
+                    transparent,
+                    rgba(0,0,0,.75)
+                );
+
+            color: var(--white);
+
+            opacity: 0;
+
+            transition: var(--transition);
+        }
+
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+
+        /* =====================================================
            SPONSOR SECTION
         ===================================================== */
 
-      .sponsor {
-        background: linear-gradient(
-          135deg,
-          var(--primary-dark),
-          var(--primary)
-        );
+        .sponsor {
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--primary-dark),
+                    var(--primary)
+                );
 
-        color: var(--white);
+            color: var(--white);
 
-        text-align: center;
-      }
+            text-align: center;
+        }
 
-      .sponsor-content {
-        max-width: 800px;
 
-        margin: auto;
-      }
+        .sponsor-content {
+            max-width: 800px;
 
-      .sponsor h2 {
-        font-size: clamp(34px, 5vw, 55px);
+            margin: auto;
+        }
 
-        line-height: 1.1;
 
-        margin-bottom: 20px;
-      }
+        .sponsor h2 {
+            font-size: clamp(34px, 5vw, 55px);
 
-      .sponsor p {
-        color: rgba(255, 255, 255, 0.85);
+            line-height: 1.1;
 
-        font-size: 18px;
+            margin-bottom: 20px;
+        }
 
-        margin-bottom: 30px;
-      }
 
-      /* =====================================================
+        .sponsor p {
+            color: rgba(255,255,255,.85);
+
+            font-size: 18px;
+
+            margin-bottom: 30px;
+        }
+
+
+        /* =====================================================
            FOOTER
         ===================================================== */
 
-      footer {
-        background: var(--gray-900);
+        footer {
+            background: var(--gray-900);
 
-        color: var(--white);
+            color: var(--white);
 
-        padding: 60px 20px 25px;
-      }
+            padding: 60px 20px 25px;
+        }
 
-      .footer-grid {
-        max-width: var(--container-width);
 
-        margin: auto;
+        .footer-grid {
+            max-width: var(--container-width);
 
-        display: grid;
+            margin: auto;
 
-        grid-template-columns: 2fr 1fr 1fr 1fr;
+            display: grid;
 
-        gap: 40px;
-      }
+            grid-template-columns:
+                2fr 1fr 1fr 1fr;
 
-      footer img {
-        width: 90px;
+            gap: 40px;
+        }
 
-        margin-bottom: 20px;
-      }
 
-      footer h3 {
-        margin-bottom: 15px;
-      }
+        footer img {
+            width: 90px;
 
-      footer p,
-      footer a {
-        color: #cbd5e1;
+            margin-bottom: 20px;
+        }
 
-        font-size: 14px;
-      }
 
-      footer ul {
-        list-style: none;
-      }
+        footer h3 {
+            margin-bottom: 15px;
+        }
 
-      footer li {
-        margin-bottom: 8px;
-      }
 
-      footer a:hover {
-        color: var(--accent);
-      }
+        footer p,
+        footer a {
+            color: #cbd5e1;
 
-      .copyright {
-        max-width: var(--container-width);
+            font-size: 14px;
+        }
 
-        margin: 40px auto 0;
 
-        padding-top: 20px;
+        footer ul {
+            list-style: none;
+        }
 
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
 
-        text-align: center;
+        footer li {
+            margin-bottom: 8px;
+        }
 
-        color: #94a3b8;
 
-        font-size: 13px;
-      }
+        footer a:hover {
+            color: var(--accent);
+        }
 
-      /* =====================================================
+
+        .copyright {
+            max-width: var(--container-width);
+
+            margin: 40px auto 0;
+
+            padding-top: 20px;
+
+            border-top:
+                1px solid rgba(255,255,255,.1);
+
+            text-align: center;
+
+            color: #94a3b8;
+
+            font-size: 13px;
+        }
+
+
+        /* =====================================================
            ANIMATIONS
         ===================================================== */
 
-      @keyframes fadeUp {
-        from {
-          opacity: 0;
+        @keyframes fadeUp {
 
-          transform: translateY(30px);
+            from {
+                opacity: 0;
+
+                transform:
+                    translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+
+                transform:
+                    translateY(0);
+            }
+
         }
 
-        to {
-          opacity: 1;
 
-          transform: translateY(0);
+        .reveal {
+            opacity: 0;
+
+            transform:
+                translateY(40px);
+
+            transition:
+                opacity .8s ease,
+                transform .8s ease;
         }
-      }
 
-      .reveal {
-        opacity: 0;
 
-        transform: translateY(40px);
+        .reveal.show {
+            opacity: 1;
 
-        transition:
-          opacity 0.8s ease,
-          transform 0.8s ease;
-      }
+            transform:
+                translateY(0);
+        }
 
-      .reveal.show {
-        opacity: 1;
 
-        transform: translateY(0);
-      }
-
-      /* =====================================================
+        /* =====================================================
            RESPONSIVE
         ===================================================== */
 
-      @media (max-width: 1000px) {
-        .sports-grid {
-          grid-template-columns: repeat(2, 1fr);
+        @media (max-width: 1000px) {
+
+            .sports-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .stats-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .gallery-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .footer-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
         }
 
-        .stats-grid {
-          grid-template-columns: repeat(2, 1fr);
+
+        @media (max-width: 768px) {
+
+            .menu-toggle {
+                display: block;
+            }
+
+
+            .nav-list {
+                position: absolute;
+
+                top: 70px;
+
+                left: 0;
+
+                width: 100%;
+
+                background:
+                    var(--primary-dark);
+
+                display: none;
+
+                flex-direction: column;
+
+                padding: 25px;
+
+                gap: 18px;
+            }
+
+
+            .nav-list.active {
+                display: flex;
+            }
+
+
+            .intro-grid,
+            .video-grid {
+                grid-template-columns: 1fr;
+            }
+
+
+            .why-grid,
+            .stories-grid {
+                grid-template-columns: 1fr;
+            }
+
+
+            .sports-grid {
+                grid-template-columns: 1fr;
+            }
+
+
+            .gallery-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+
+            .gallery-item.large {
+                grid-column: span 2;
+
+                height: 350px;
+            }
+
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
         }
 
-        .gallery-grid {
-          grid-template-columns: repeat(2, 1fr);
+
+        @media (max-width: 500px) {
+
+            .hero h1 {
+                font-size: 42px;
+            }
+
+
+            .hero p {
+                font-size: 16px;
+            }
+
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+
+            .gallery-item.large {
+                grid-column: span 1;
+            }
+
         }
 
-        .footer-grid {
-          grid-template-columns: repeat(2, 1fr);
-        }
-      }
-
-      @media (max-width: 768px) {
-        .menu-toggle {
-          display: block;
-        }
-
-        .nav-list {
-          position: absolute;
-
-          top: 70px;
-
-          left: 0;
-
-          width: 100%;
-
-          background: var(--primary-dark);
-
-          display: none;
-
-          flex-direction: column;
-
-          padding: 25px;
-
-          gap: 18px;
-        }
-
-        .nav-list.active {
-          display: flex;
-        }
-
-        .intro-grid,
-        .video-grid {
-          grid-template-columns: 1fr;
-        }
-
-        .why-grid,
-        .stories-grid {
-          grid-template-columns: 1fr;
-        }
-
-        .sports-grid {
-          grid-template-columns: 1fr;
-        }
-
-        .gallery-grid {
-          grid-template-columns: 1fr 1fr;
-        }
-
-        .gallery-item.large {
-          grid-column: span 2;
-
-          height: 350px;
-        }
-
-        .footer-grid {
-          grid-template-columns: 1fr;
-        }
-      }
-
-      @media (max-width: 500px) {
-        .hero h1 {
-          font-size: 42px;
-        }
-
-        .hero p {
-          font-size: 16px;
-        }
-
-        .stats-grid {
-          grid-template-columns: 1fr;
-        }
-
-        .gallery-grid {
-          grid-template-columns: 1fr;
-        }
-
-        .gallery-item.large {
-          grid-column: span 1;
-        }
-      }
     </style>
-  </head>
+</head>
 
-  <body>
+
+<body>
+
+
     <!-- =====================================================
          NAVIGATION
     ===================================================== -->
 
     <nav class="navbar">
-      <div class="nav-container">
-        <a href="index.html" class="logo">
-          <img src="./images/logo.jpeg" alt="New Hope for Orphans Africa" />
-        </a>
 
-        <button
-          class="menu-toggle"
-          id="menuToggle"
-          aria-label="Open navigation"
-        >
-          ☰
-        </button>
+        <div class="nav-container">
 
-        <ul class="nav-list" id="navList">
-          <li>
-            <a href="index.html#homeSection">Home</a>
-          </li>
-          <li>
-            <a href="index.html#aboutSection"> About Us </a>
-          </li>
+            <a href="index.html" class="logo">
 
-          <li>
-            <a href="index.html#programSection"> Programs </a>
-          </li>
+                <img
+                    src="./images/logo.jpeg"
+                    alt="New Hope for Orphans Africa"
+                >
 
-          <li>
-            <a href="index.html#contactSection"> Contact </a>
-          </li>
+            </a>
 
-          <li>
-            <a href="index.html#joinSection" class="nav-cta"> Join Us </a>
-          </li>
-        </ul>
-      </div>
+
+            <button
+                class="menu-toggle"
+                id="menuToggle"
+                aria-label="Open navigation"
+            >
+                ☰
+            </button>
+
+
+            <ul class="nav-list" id="navList">
+
+                 <li>
+                <a href="index.html#homeSection">Home</a>
+            </li>
+                <li>
+                    <a href="index.html#aboutSection">
+                        About Us
+                    </a>
+                </li>
+
+                <li>
+                    <a href="index.html#programSection">
+                        Programs
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="index.html#contactSection">
+                        Contact
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                        href="index.html#joinSection"
+                        class="nav-cta"
+                    >
+                        Join Us
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
     </nav>
+
+
 
     <!-- =====================================================
          HERO
     ===================================================== -->
 
     <section class="hero">
-      <div class="hero-content">
-        <div class="hero-text">
-          <span class="hero-badge"> ⚽ Sports • Teamwork • Confidence </span>
 
-          <h1>
-            Every Child Has
-            <span>A Champion</span>
-            Within
-          </h1>
+        <div class="hero-content">
 
-          <p>
-            Through sports, New Hope for Orphans Africa gives children more than
-            a game. We give them confidence, discipline, friendship, leadership
-            and the courage to dream bigger.
-          </p>
+            <div class="hero-text">
 
-          <div class="hero-buttons">
-            <a href="#sports" class="btn btn-primary"> Explore Our Sports </a>
+                <span class="hero-badge">
+                    ⚽ Sports • Teamwork • Confidence
+                </span>
 
-            <a href="#stories" class="btn btn-outline">
-              Meet Our Young Athletes
-            </a>
-          </div>
+
+                <h1>
+                    Every Child Has
+                    <span>A Champion</span>
+                    Within
+                </h1>
+
+
+                <p>
+                    Through sports, New Hope for Orphans Africa
+                    gives children more than a game. We give them
+                    confidence, discipline, friendship, leadership
+                    and the courage to dream bigger.
+                </p>
+
+
+                <div class="hero-buttons">
+
+                    <a
+                        href="#sports"
+                        class="btn btn-primary"
+                    >
+                        Explore Our Sports
+                    </a>
+
+
+                    <a
+                        href="#stories"
+                        class="btn btn-outline"
+                    >
+                        Meet Our Young Athletes
+                    </a>
+
+                </div>
+
+            </div>
+
         </div>
-      </div>
+
     </section>
+
+
 
     <!-- =====================================================
          INTRODUCTION
     ===================================================== -->
 
     <section class="section intro reveal">
-      <div class="container">
-        <div class="intro-grid">
-          <div class="intro-images">
-            <img
-              src="images/sports.jpeg"
-              alt="Children participating in sports"
-            />
 
-            <div class="floating-card">
-              <strong> 100+ </strong>
+        <div class="container">
 
-              <span> Young lives being encouraged through sport </span>
+            <div class="intro-grid">
+
+                <div class="intro-images">
+
+                    <img
+                        src="images/sports.jpeg"
+                        alt="Children participating in sports"
+                    >
+
+
+                    <div class="floating-card">
+
+                        <strong>
+                            100+
+                        </strong>
+
+                        <span>
+                            Young lives being encouraged
+                            through sport
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="intro-text">
+
+                    <h3>
+                        More Than Just A Game
+                    </h3>
+
+
+                    <p>
+                        At New Hope for Orphans Africa,
+                        we believe every child deserves the
+                        opportunity to discover their talents,
+                        build friendships and develop confidence.
+                    </p>
+
+
+                    <p>
+                        Sports provide a safe and positive
+                        environment where children can learn
+                        important life skills while having fun.
+                    </p>
+
+
+                    <p>
+                        Whether on the football pitch,
+                        basketball court, athletics track or
+                        volleyball court, our children learn that
+                        success comes through teamwork,
+                        discipline, perseverance and commitment.
+                    </p>
+
+                </div>
+
             </div>
-          </div>
 
-          <div class="intro-text">
-            <h3>More Than Just A Game</h3>
-
-            <p>
-              At New Hope for Orphans Africa, we believe every child deserves
-              the opportunity to discover their talents, build friendships and
-              develop confidence.
-            </p>
-
-            <p>
-              Sports provide a safe and positive environment where children can
-              learn important life skills while having fun.
-            </p>
-
-            <p>
-              Whether on the football pitch, basketball court, athletics track
-              or volleyball court, our children learn that success comes through
-              teamwork, discipline, perseverance and commitment.
-            </p>
-          </div>
         </div>
-      </div>
+
     </section>
+
+
 
     <!-- =====================================================
          SPORTS WE SUPPORT
     ===================================================== -->
 
-    <section class="section" id="sports">
-      <div class="container">
-        <div class="section-heading">
-          <span class="tag"> Our Sports </span>
+    <section
+        class="section"
+        id="sports"
+    >
 
-          <h2>Discover. Play. Grow.</h2>
+        <div class="container">
 
-          <p>
-            We encourage children to explore different sports and discover the
-            talents within them.
-          </p>
+            <div class="section-heading">
+
+                <span class="tag">
+                    Our Sports
+                </span>
+
+                <h2>
+                    Discover. Play. Grow.
+                </h2>
+
+                <p>
+                    We encourage children to explore different
+                    sports and discover the talents within them.
+                </p>
+
+            </div>
+
+
+            <div class="sports-grid">
+
+
+                <!-- FOOTBALL -->
+
+                <div class="sport-card reveal">
+
+                    <img
+                        src="images/sports.jpeg"
+                        alt="Children playing football"
+                    >
+
+                    <div class="sport-content">
+
+                        <div class="sport-icon">
+                            ⚽
+                        </div>
+
+                        <h3>
+                            Football
+                        </h3>
+
+                        <p>
+                            Football teaches teamwork,
+                            communication, discipline and
+                            determination while giving children
+                            a chance to compete and have fun.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ATHLETICS -->
+
+                <div class="sport-card reveal">
+
+                    <img
+                        src="images/athletics.jpg"
+                        alt="Children participating in athletics"
+                    >
+
+                    <div class="sport-content">
+
+                        <div class="sport-icon">
+                            🏃
+                        </div>
+
+                        <h3>
+                            Athletics
+                        </h3>
+
+                        <p>
+                            Athletics helps children develop
+                            endurance, focus, confidence and
+                            a strong understanding of personal
+                            achievement.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- BASKETBALL -->
+
+                <div class="sport-card reveal">
+
+                    <img
+                        src="images/basketball.jpg"
+                        alt="Children playing basketball"
+                    >
+
+                    <div class="sport-content">
+
+                        <div class="sport-icon">
+                            🏀
+                        </div>
+
+                        <h3>
+                            Basketball
+                        </h3>
+
+                        <p>
+                            Basketball encourages quick
+                            thinking, teamwork, coordination
+                            and leadership.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- VOLLEYBALL -->
+
+                <div class="sport-card reveal">
+
+                    <img
+                        src="images/volleyball.jpg"
+                        alt="Children playing volleyball"
+                    >
+
+                    <div class="sport-content">
+
+                        <div class="sport-icon">
+                            🏐
+                        </div>
+
+                        <h3>
+                            Volleyball
+                        </h3>
+
+                        <p>
+                            Volleyball creates opportunities
+                            for children to cooperate, support
+                            one another and develop confidence.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
         </div>
 
-        <div class="sports-grid">
-          <!-- FOOTBALL -->
-
-          <div class="sport-card reveal">
-            <img src="images/sports.jpeg" alt="Children playing football" />
-
-            <div class="sport-content">
-              <div class="sport-icon">⚽</div>
-
-              <h3>Football</h3>
-
-              <p>
-                Football teaches teamwork, communication, discipline and
-                determination while giving children a chance to compete and have
-                fun.
-              </p>
-            </div>
-          </div>
-
-          <!-- ATHLETICS -->
-
-          <div class="sport-card reveal">
-            <img
-              src="images/athletics.jpg"
-              alt="Children participating in athletics"
-            />
-
-            <div class="sport-content">
-              <div class="sport-icon">🏃</div>
-
-              <h3>Athletics</h3>
-
-              <p>
-                Athletics helps children develop endurance, focus, confidence
-                and a strong understanding of personal achievement.
-              </p>
-            </div>
-          </div>
-
-          <!-- BASKETBALL -->
-
-          <div class="sport-card reveal">
-            <img
-              src="images/basketball.jpg"
-              alt="Children playing basketball"
-            />
-
-            <div class="sport-content">
-              <div class="sport-icon">🏀</div>
-
-              <h3>Basketball</h3>
-
-              <p>
-                Basketball encourages quick thinking, teamwork, coordination and
-                leadership.
-              </p>
-            </div>
-          </div>
-
-          <!-- VOLLEYBALL -->
-
-          <div class="sport-card reveal">
-            <img
-              src="images/volleyball.jpg"
-              alt="Children playing volleyball"
-            />
-
-            <div class="sport-content">
-              <div class="sport-icon">🏐</div>
-
-              <h3>Volleyball</h3>
-
-              <p>
-                Volleyball creates opportunities for children to cooperate,
-                support one another and develop confidence.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
     </section>
+
+
 
     <!-- =====================================================
          WHY SPORTS
     ===================================================== -->
 
     <section class="section why-sports">
-      <div class="container">
-        <div class="section-heading">
-          <span class="tag" style="color: var(--accent)">
-            Why Sports Matter
-          </span>
 
-          <h2 style="color: white">Building Stronger Futures</h2>
+        <div class="container">
 
-          <p style="color: rgba(255, 255, 255, 0.75)">
-            The lessons learned through sport can stay with a child for a
-            lifetime.
-          </p>
+            <div class="section-heading">
+
+                <span
+                    class="tag"
+                    style="color: var(--accent);"
+                >
+                    Why Sports Matter
+                </span>
+
+                <h2 style="color:white;">
+                    Building Stronger Futures
+                </h2>
+
+                <p style="color:rgba(255,255,255,.75);">
+                    The lessons learned through sport can
+                    stay with a child for a lifetime.
+                </p>
+
+            </div>
+
+
+            <div class="why-grid">
+
+
+                <div class="why-card reveal">
+
+                    <div class="why-number">
+                        01
+                    </div>
+
+                    <h3>
+                        Confidence
+                    </h3>
+
+                    <p>
+                        Children gain confidence as they
+                        learn new skills, overcome challenges
+                        and celebrate their achievements.
+                    </p>
+
+                </div>
+
+
+                <div class="why-card reveal">
+
+                    <div class="why-number">
+                        02
+                    </div>
+
+                    <h3>
+                        Leadership
+                    </h3>
+
+                    <p>
+                        Sports give children opportunities
+                        to lead, make decisions and inspire
+                        their teammates.
+                    </p>
+
+                </div>
+
+
+                <div class="why-card reveal">
+
+                    <div class="why-number">
+                        03
+                    </div>
+
+                    <h3>
+                        Discipline
+                    </h3>
+
+                    <p>
+                        Training teaches children that
+                        dedication, patience and consistency
+                        can turn dreams into achievements.
+                    </p>
+
+                </div>
+
+
+                <div class="why-card reveal">
+
+                    <div class="why-number">
+                        04
+                    </div>
+
+                    <h3>
+                        Friendship
+                    </h3>
+
+                    <p>
+                        Team sports create meaningful
+                        friendships and teach children how
+                        to respect and support others.
+                    </p>
+
+                </div>
+
+
+                <div class="why-card reveal">
+
+                    <div class="why-number">
+                        05
+                    </div>
+
+                    <h3>
+                        Healthy Living
+                    </h3>
+
+                    <p>
+                        Physical activity encourages children
+                        to develop healthy habits and active
+                        lifestyles.
+                    </p>
+
+                </div>
+
+
+                <div class="why-card reveal">
+
+                    <div class="why-number">
+                        06
+                    </div>
+
+                    <h3>
+                        Hope
+                    </h3>
+
+                    <p>
+                        Sports allow children to dream,
+                        discover their abilities and imagine
+                        new possibilities for their future.
+                    </p>
+
+                </div>
+
+            </div>
+
         </div>
 
-        <div class="why-grid">
-          <div class="why-card reveal">
-            <div class="why-number">01</div>
-
-            <h3>Confidence</h3>
-
-            <p>
-              Children gain confidence as they learn new skills, overcome
-              challenges and celebrate their achievements.
-            </p>
-          </div>
-
-          <div class="why-card reveal">
-            <div class="why-number">02</div>
-
-            <h3>Leadership</h3>
-
-            <p>
-              Sports give children opportunities to lead, make decisions and
-              inspire their teammates.
-            </p>
-          </div>
-
-          <div class="why-card reveal">
-            <div class="why-number">03</div>
-
-            <h3>Discipline</h3>
-
-            <p>
-              Training teaches children that dedication, patience and
-              consistency can turn dreams into achievements.
-            </p>
-          </div>
-
-          <div class="why-card reveal">
-            <div class="why-number">04</div>
-
-            <h3>Friendship</h3>
-
-            <p>
-              Team sports create meaningful friendships and teach children how
-              to respect and support others.
-            </p>
-          </div>
-
-          <div class="why-card reveal">
-            <div class="why-number">05</div>
-
-            <h3>Healthy Living</h3>
-
-            <p>
-              Physical activity encourages children to develop healthy habits
-              and active lifestyles.
-            </p>
-          </div>
-
-          <div class="why-card reveal">
-            <div class="why-number">06</div>
-
-            <h3>Hope</h3>
-
-            <p>
-              Sports allow children to dream, discover their abilities and
-              imagine new possibilities for their future.
-            </p>
-          </div>
-        </div>
-      </div>
     </section>
+
+
 
     <!-- =====================================================
          VIDEO
     ===================================================== -->
 
     <section class="section video-section">
-      <div class="container">
-        <div class="video-grid">
-          <div class="main-video reveal">
-            <video controls poster="images/sports-video-cover.jpg">
-              <source
-                src="videos/children-playing-sports.mp4"
-                type="video/mp4"
-              />
 
-              Your browser does not support the video element.
-            </video>
-          </div>
+        <div class="container">
 
-          <div class="video-text reveal">
-            <span class="tag" style="color: var(--primary)">
-              Watch Their Journey
-            </span>
+            <div class="video-grid">
 
-            <h2>See The Joy, Energy & Talent</h2>
+                <div class="main-video reveal">
 
-            <p>
-              Every training session is an opportunity for our children to learn
-              something new.
-            </p>
+                    <video
+                        controls
+                        poster="images/sports-video-cover.jpg"
+                    >
 
-            <p>
-              Watch moments from our sports activities and see how children
-              encourage one another, develop their talents and celebrate every
-              milestone.
-            </p>
+                        <source
+                            src="videos/children-playing-sports.mp4"
+                            type="video/mp4"
+                        >
 
-            <a href="#stories" class="btn btn-primary"> Watch More Stories </a>
-          </div>
+                        Your browser does not support
+                        the video element.
+
+                    </video>
+
+                </div>
+
+
+                <div class="video-text reveal">
+
+                    <span
+                        class="tag"
+                        style="color: var(--primary);"
+                    >
+                        Watch Their Journey
+                    </span>
+
+
+                    <h2>
+                        See The Joy,
+                        Energy & Talent
+                    </h2>
+
+
+                    <p>
+                        Every training session is an
+                        opportunity for our children to learn
+                        something new.
+                    </p>
+
+
+                    <p>
+                        Watch moments from our sports
+                        activities and see how children
+                        encourage one another, develop their
+                        talents and celebrate every milestone.
+                    </p>
+
+
+                    <a
+                        href="#stories"
+                        class="btn btn-primary"
+                    >
+                        Watch More Stories
+                    </a>
+
+                </div>
+
+            </div>
+
         </div>
-      </div>
+
     </section>
+
+
 
     <!-- =====================================================
          CHILDREN STORIES
     ===================================================== -->
 
-    <section class="section" id="stories">
-      <div class="container">
-        <div class="section-heading">
-          <span class="tag"> Their Stories </span>
+    <section
+        class="section"
+        id="stories"
+    >
 
-          <h2>Hear From Our Young Athletes</h2>
+        <div class="container">
 
-          <p>
-            Behind every achievement is a child with a dream, determination and
-            a story.
-          </p>
+            <div class="section-heading">
+
+                <span class="tag">
+                    Their Stories
+                </span>
+
+                <h2>
+                    Hear From Our Young Athletes
+                </h2>
+
+                <p>
+                    Behind every achievement is a child
+                    with a dream, determination and a story.
+                </p>
+
+            </div>
+
+
+            <div class="stories-grid">
+
+
+                <!-- STORY 1 -->
+
+                <article class="story-card reveal">
+
+                    <div class="story-image">
+
+                        <img
+                            src="images/athlete-story-1.jpg"
+                            alt="Young athlete"
+                        >
+
+                        <div class="play-button">
+                            ▶
+                        </div>
+
+                    </div>
+
+
+                    <div class="story-content">
+
+                        <h3>
+                            "I Want To Be A Footballer"
+                        </h3>
+
+                        <p>
+                            Hear how one young athlete
+                            discovered a passion for football
+                            and learned to believe in her dreams.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- STORY 2 -->
+
+                <article class="story-card reveal">
+
+                    <div class="story-image">
+
+                        <img
+                            src="images/athlete-story-2.jpg"
+                            alt="Young athlete"
+                        >
+
+                        <div class="play-button">
+                            ▶
+                        </div>
+
+                    </div>
+
+
+                    <div class="story-content">
+
+                        <h3>
+                            "Sports Made Me Confident"
+                        </h3>
+
+                        <p>
+                            One child's journey from being shy
+                            to becoming an enthusiastic team
+                            player and young leader.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- STORY 3 -->
+
+                <article class="story-card reveal">
+
+                    <div class="story-image">
+
+                        <img
+                            src="images/athlete-story-3.jpg"
+                            alt="Young athlete"
+                        >
+
+                        <div class="play-button">
+                            ▶
+                        </div>
+
+                    </div>
+
+
+                    <div class="story-content">
+
+                        <h3>
+                            "I Won My First Medal"
+                        </h3>
+
+                        <p>
+                            Celebrate a young athlete's first
+                            major achievement and the journey
+                            behind that special moment.
+                        </p>
+
+                    </div>
+
+                </article>
+
+            </div>
+
         </div>
 
-        <div class="stories-grid">
-          <!-- STORY 1 -->
-
-          <article class="story-card reveal">
-            <div class="story-image">
-              <img src="images/athlete-story-1.jpg" alt="Young athlete" />
-
-              <div class="play-button">▶</div>
-            </div>
-
-            <div class="story-content">
-              <h3>"I Want To Be A Footballer"</h3>
-
-              <p>
-                Hear how one young athlete discovered a passion for football and
-                learned to believe in her dreams.
-              </p>
-            </div>
-          </article>
-
-          <!-- STORY 2 -->
-
-          <article class="story-card reveal">
-            <div class="story-image">
-              <img src="images/athlete-story-2.jpg" alt="Young athlete" />
-
-              <div class="play-button">▶</div>
-            </div>
-
-            <div class="story-content">
-              <h3>"Sports Made Me Confident"</h3>
-
-              <p>
-                One child's journey from being shy to becoming an enthusiastic
-                team player and young leader.
-              </p>
-            </div>
-          </article>
-
-          <!-- STORY 3 -->
-
-          <article class="story-card reveal">
-            <div class="story-image">
-              <img src="images/athlete-story-3.jpg" alt="Young athlete" />
-
-              <div class="play-button">▶</div>
-            </div>
-
-            <div class="story-content">
-              <h3>"I Won My First Medal"</h3>
-
-              <p>
-                Celebrate a young athlete's first major achievement and the
-                journey behind that special moment.
-              </p>
-            </div>
-          </article>
-        </div>
-      </div>
     </section>
+
+
 
     <!-- =====================================================
          ACHIEVEMENTS
     ===================================================== -->
 
     <section class="section achievements">
-      <div class="container">
-        <div class="section-heading">
-          <span class="tag"> Our Impact </span>
 
-          <h2>Every Milestone Matters</h2>
+        <div class="container">
 
-          <p>
-            From a child's first training session to their biggest competition,
-            every step is worth celebrating.
-          </p>
+            <div class="section-heading">
+
+                <span class="tag">
+                    Our Impact
+                </span>
+
+                <h2>
+                    Every Milestone Matters
+                </h2>
+
+                <p>
+                    From a child's first training session
+                    to their biggest competition, every step
+                    is worth celebrating.
+                </p>
+
+            </div>
+
+
+            <div class="stats-grid">
+
+                <div class="stat-card reveal">
+
+                    <strong
+                        data-target="100"
+                        class="counter"
+                    >
+                        0
+                    </strong>
+
+                    <span>
+                        Children Engaged
+                    </span>
+
+                </div>
+
+
+                <div class="stat-card reveal">
+
+                    <strong
+                        data-target="4"
+                        class="counter"
+                    >
+                        0
+                    </strong>
+
+                    <span>
+                        Sports Programs
+                    </span>
+
+                </div>
+
+
+                <div class="stat-card reveal">
+
+                    <strong
+                        data-target="25"
+                        class="counter"
+                    >
+                        0
+                    </strong>
+
+                    <span>
+                        Competitions
+                    </span>
+
+                </div>
+
+
+                <div class="stat-card reveal">
+
+                    <strong
+                        data-target="15"
+                        class="counter"
+                    >
+                        0
+                    </strong>
+
+                    <span>
+                        Young Champions
+                    </span>
+
+                </div>
+
+            </div>
+
         </div>
 
-        <div class="stats-grid">
-          <div class="stat-card reveal">
-            <strong data-target="100" class="counter"> 0 </strong>
-
-            <span> Children Engaged </span>
-          </div>
-
-          <div class="stat-card reveal">
-            <strong data-target="4" class="counter"> 0 </strong>
-
-            <span> Sports Programs </span>
-          </div>
-
-          <div class="stat-card reveal">
-            <strong data-target="25" class="counter"> 0 </strong>
-
-            <span> Competitions </span>
-          </div>
-
-          <div class="stat-card reveal">
-            <strong data-target="15" class="counter"> 0 </strong>
-
-            <span> Young Champions </span>
-          </div>
-        </div>
-      </div>
     </section>
+
+
 
     <!-- =====================================================
          GALLERY
     ===================================================== -->
 
     <section class="section">
-      <div class="container">
-        <div class="section-heading">
-          <span class="tag"> Life In Motion </span>
 
-          <h2>Moments From The Field</h2>
+        <div class="container">
 
-          <p>Training, teamwork, laughter and unforgettable moments.</p>
+            <div class="section-heading">
+
+                <span class="tag">
+                    Life In Motion
+                </span>
+
+                <h2>
+                    Moments From The Field
+                </h2>
+
+                <p>
+                    Training, teamwork, laughter and
+                    unforgettable moments.
+                </p>
+
+            </div>
+
+
+            <div class="gallery-grid">
+
+
+                <div class="gallery-item large">
+
+                    <img
+                        src="images/sports-gallery-1.jpg"
+                        alt="Children playing football"
+                    >
+
+                    <div class="gallery-overlay">
+                        Training Together
+                    </div>
+
+                </div>
+
+
+                <div class="gallery-item">
+
+                    <img
+                        src="images/sports-gallery-2.jpg"
+                        alt="Children training"
+                    >
+
+                    <div class="gallery-overlay">
+                        Teamwork
+                    </div>
+
+                </div>
+
+
+                <div class="gallery-item">
+
+                    <img
+                        src="images/sports-gallery-3.jpg"
+                        alt="Young athletes"
+                    >
+
+                    <div class="gallery-overlay">
+                        Young Champions
+                    </div>
+
+                </div>
+
+
+                <div class="gallery-item">
+
+                    <img
+                        src="images/sports-gallery-4.jpg"
+                        alt="Children celebrating"
+                    >
+
+                    <div class="gallery-overlay">
+                        Celebration
+                    </div>
+
+                </div>
+
+
+                <div class="gallery-item">
+
+                    <img
+                        src="images/sports-gallery-5.jpg"
+                        alt="Children playing"
+                    >
+
+                    <div class="gallery-overlay">
+                        Friendship
+                    </div>
+
+                </div>
+
+            </div>
+
         </div>
 
-        <div class="gallery-grid">
-          <div class="gallery-item large">
-            <img
-              src="images/sports-gallery-1.jpg"
-              alt="Children playing football"
-            />
-
-            <div class="gallery-overlay">Training Together</div>
-          </div>
-
-          <div class="gallery-item">
-            <img src="images/sports-gallery-2.jpg" alt="Children training" />
-
-            <div class="gallery-overlay">Teamwork</div>
-          </div>
-
-          <div class="gallery-item">
-            <img src="images/sports-gallery-3.jpg" alt="Young athletes" />
-
-            <div class="gallery-overlay">Young Champions</div>
-          </div>
-
-          <div class="gallery-item">
-            <img src="images/sports-gallery-4.jpg" alt="Children celebrating" />
-
-            <div class="gallery-overlay">Celebration</div>
-          </div>
-
-          <div class="gallery-item">
-            <img src="images/sports-gallery-5.jpg" alt="Children playing" />
-
-            <div class="gallery-overlay">Friendship</div>
-          </div>
-        </div>
-      </div>
     </section>
+
+
 
     <!-- =====================================================
          SPONSOR CTA
     ===================================================== -->
 
     <section class="section sponsor">
-      <div class="container">
-        <div class="sponsor-content">
-          <h2>Help A Child Discover Their Talent</h2>
 
-          <p>
-            Your support can provide sports equipment, training opportunities,
-            uniforms, transportation and safe spaces where children can develop
-            their talents.
-          </p>
+        <div class="container">
 
-          <a href="index.html#joinSection" class="btn btn-primary">
-            Support Our Sports Program
-          </a>
+            <div class="sponsor-content">
+
+                <h2>
+                    Help A Child Discover Their Talent
+                </h2>
+
+
+                <p>
+                    Your support can provide sports equipment,
+                    training opportunities, uniforms,
+                    transportation and safe spaces where
+                    children can develop their talents.
+                </p>
+
+
+                <a
+                    href="index.html#joinSection"
+                    class="btn btn-primary"
+                >
+                    Support Our Sports Program
+                </a>
+
+            </div>
+
         </div>
-      </div>
+
     </section>
+
+
 
     <!-- =====================================================
          FOOTER
     ===================================================== -->
 
     <footer>
-      <div class="container">
-        <div class="footer-brand">
-          <div class="logo">
-            <div class="logo-icon">
-              <img
-                src="images/logo.jpeg"
-                alt="New Hope For Ophans Africa Logo"
-              />
+        <div class="container">
+            <div class="footer-brand">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <img src="images/logo.jpeg" alt="New Hope For Ophans Africa Logo" />
+                    </div>
+                    <h1>New Hope<span>For Orphans Africa</span></h1>
+                </div>
+                <p>
+                    Lighting hope and transforming lives of African children through
+                    education, care, and community support. Together, we can build a
+                    brighter future.
+                </p>
+                <div class="social-links">
+                    <a href="mailto:info@beaconchildren.org" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    <a href="https://x.com/BeaconChildren" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="https://facebook.com/BeaconChildren" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.linkedin.com/company/beacon-children" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://wa.me/+256741024006" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://instagram.com/beaconchildren" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
             </div>
-            <h1>New Hope<span>For Orphans Africa</span></h1>
-          </div>
-          <p>
-            Lighting hope and transforming lives of African children through
-            education, care, and community support. Together, we can build a
-            brighter future.
-          </p>
-          <div class="social-links">
-            <a href="mailto:info@beaconchildren.org" aria-label="Email"
-              ><i class="fas fa-envelope"></i
-            ></a>
-            <a
-              href="https://x.com/BeaconChildren"
-              target="_blank"
-              aria-label="Twitter"
-              ><i class="fab fa-twitter"></i
-            ></a>
-            <a
-              href="https://facebook.com/BeaconChildren"
-              target="_blank"
-              aria-label="Facebook"
-              ><i class="fab fa-facebook-f"></i
-            ></a>
-            <a
-              href="https://www.linkedin.com/company/beacon-children"
-              target="_blank"
-              aria-label="LinkedIn"
-              ><i class="fab fa-linkedin-in"></i
-            ></a>
-            <a
-              href="https://wa.me/+256741024006"
-              target="_blank"
-              aria-label="WhatsApp"
-              ><i class="fab fa-whatsapp"></i
-            ></a>
-            <a
-              href="https://instagram.com/beaconchildren"
-              target="_blank"
-              aria-label="Instagram"
-              ><i class="fab fa-instagram"></i
-            ></a>
-          </div>
+
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                    <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                    <li><a href="education.html"><i class="fas fa-chevron-right"></i> Education</a></li>
+                    <li><a href="currentproject.html"><i class="fas fa-chevron-right"></i> Current Projects</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>Programs</h3>
+                <ul>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Sports Development</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Youth Leadership</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Health & Wellness</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Community Growth</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>Contact Info</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Iganga, Uganda</p>
+                <p><i class="fas fa-phone"></i> +256 773 272 908</p>
+                <p><i class="fas fa-envelope"></i> info@newhopekids.org</p>
+                <p><i class="fas fa-clock"></i> Mon - Fri: 8:00 AM - 5:00 PM</p>
+            </div>
         </div>
 
-        <div class="footer-column">
-          <h3>Quick Links</h3>
-          <ul>
-            <li>
-              <a href="index.html"><i class="fas fa-chevron-right"></i> Home</a>
-            </li>
-            <li>
-              <a href="about.html"
-                ><i class="fas fa-chevron-right"></i> About Us</a
-              >
-            </li>
-            <li>
-              <a href="education.html"
-                ><i class="fas fa-chevron-right"></i> Education</a
-              >
-            </li>
-            <li>
-              <a href="currentproject.html"
-                ><i class="fas fa-chevron-right"></i> Current Projects</a
-              >
-            </li>
-          </ul>
+        <div class="container footer-bottom">
+            <p>&copy; <span id="year"></span> New Hope For Orphans Africa. All rights reserved.</p>
         </div>
-
-        <div class="footer-column">
-          <h3>Programs</h3>
-          <ul>
-            <li>
-              <a href="#"
-                ><i class="fas fa-chevron-right"></i> Sports Development</a
-              >
-            </li>
-            <li>
-              <a href="#"
-                ><i class="fas fa-chevron-right"></i> Youth Leadership</a
-              >
-            </li>
-            <li>
-              <a href="#"
-                ><i class="fas fa-chevron-right"></i> Health & Wellness</a
-              >
-            </li>
-            <li>
-              <a href="#"
-                ><i class="fas fa-chevron-right"></i> Community Growth</a
-              >
-            </li>
-          </ul>
-        </div>
-
-        <div class="footer-column">
-          <h3>Contact Info</h3>
-          <p><i class="fas fa-map-marker-alt"></i> Iganga, Uganda</p>
-          <p><i class="fas fa-phone"></i> +256 773 272 908</p>
-          <p><i class="fas fa-envelope"></i> info@newhopekids.org</p>
-          <p><i class="fas fa-clock"></i> Mon - Fri: 8:00 AM - 5:00 PM</p>
-        </div>
-      </div>
-
-      <div class="container footer-bottom">
-        <p>
-          &copy; <span id="year"></span> New Hope For Orphans Africa. All rights
-          reserved.
-        </p>
-      </div>
     </footer>
 
     <script>
-      document.getElementById("year").textContent = new Date().getFullYear();
+        document.getElementById("year").textContent = new Date().getFullYear();
     </script>
 
     <!-- =====================================================
@@ -1748,95 +2281,174 @@
     ===================================================== -->
 
     <script>
-      /* =========================================
+
+        /* =========================================
            MOBILE NAVIGATION
         ========================================= */
 
-      const menuToggle = document.getElementById("menuToggle");
+        const menuToggle =
+            document.getElementById("menuToggle");
 
-      const navList = document.getElementById("navList");
+        const navList =
+            document.getElementById("navList");
 
-      menuToggle.addEventListener("click", () => {
-        navList.classList.toggle("active");
-      });
 
-      /* Close mobile menu after clicking link */
+        menuToggle.addEventListener(
+            "click",
+            () => {
 
-      document.querySelectorAll(".nav-list a").forEach((link) => {
-        link.addEventListener("click", () => {
-          navList.classList.remove("active");
-        });
-      });
+                navList.classList.toggle("active");
 
-      /* =========================================
+            }
+        );
+
+
+        /* Close mobile menu after clicking link */
+
+        document
+            .querySelectorAll(".nav-list a")
+            .forEach(link => {
+
+                link.addEventListener(
+                    "click",
+                    () => {
+
+                        navList.classList.remove("active");
+
+                    }
+                );
+
+            });
+
+
+
+        /* =========================================
            SCROLL REVEAL
         ========================================= */
 
-      const revealElements = document.querySelectorAll(".reveal");
+        const revealElements =
+            document.querySelectorAll(".reveal");
 
-      const revealObserver = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add("show");
 
-              revealObserver.unobserve(entry.target);
-            }
-          });
-        },
-        {
-          threshold: 0.15,
-        },
-      );
+        const revealObserver =
+            new IntersectionObserver(
+                entries => {
 
-      revealElements.forEach((element) => {
-        revealObserver.observe(element);
-      });
+                    entries.forEach(entry => {
 
-      /* =========================================
+                        if (entry.isIntersecting) {
+
+                            entry.target.classList.add("show");
+
+                            revealObserver.unobserve(
+                                entry.target
+                            );
+
+                        }
+
+                    });
+
+                },
+                {
+                    threshold: 0.15
+                }
+            );
+
+
+        revealElements.forEach(element => {
+
+            revealObserver.observe(element);
+
+        });
+
+
+
+        /* =========================================
            COUNTER ANIMATION
         ========================================= */
 
-      const counters = document.querySelectorAll(".counter");
+        const counters =
+            document.querySelectorAll(".counter");
 
-      const counterObserver = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              const counter = entry.target;
 
-              const target = Number(counter.dataset.target);
+        const counterObserver =
+            new IntersectionObserver(
+                entries => {
 
-              let current = 0;
+                    entries.forEach(entry => {
 
-              const increment = Math.ceil(target / 50);
+                        if (
+                            entry.isIntersecting
+                        ) {
 
-              const updateCounter = () => {
-                current += increment;
+                            const counter =
+                                entry.target;
 
-                if (current >= target) {
-                  counter.innerText = target + "+";
-                } else {
-                  counter.innerText = current;
+                            const target =
+                                Number(
+                                    counter.dataset.target
+                                );
 
-                  requestAnimationFrame(updateCounter);
+                            let current = 0;
+
+                            const increment =
+                                Math.ceil(
+                                    target / 50
+                                );
+
+
+                            const updateCounter =
+                                () => {
+
+                                    current += increment;
+
+
+                                    if (
+                                        current >= target
+                                    ) {
+
+                                        counter.innerText =
+                                            target + "+";
+
+                                    } else {
+
+                                        counter.innerText =
+                                            current;
+
+                                        requestAnimationFrame(
+                                            updateCounter
+                                        );
+
+                                    }
+
+                                };
+
+
+                            updateCounter();
+
+
+                            counterObserver.unobserve(
+                                counter
+                            );
+
+                        }
+
+                    });
+
+                },
+                {
+                    threshold: 0.6
                 }
-              };
+            );
 
-              updateCounter();
 
-              counterObserver.unobserve(counter);
-            }
-          });
-        },
-        {
-          threshold: 0.6,
-        },
-      );
+        counters.forEach(counter => {
 
-      counters.forEach((counter) => {
-        counterObserver.observe(counter);
-      });
+            counterObserver.observe(counter);
+
+        });
+
     </script>
-  </body>
+
+</body>
 </html>
