@@ -996,10 +996,7 @@
                   src="https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=900&q=80"
                   alt="Doctor checking patient"
                 />
-                <img
-                  src="./images/gate.jpeg"
-                  alt="Community health outreach"
-                />
+                <img src="./images/gate.jpeg" alt="Community health outreach" />
               </div>
               <div class="floating-badge">
                 <strong>20K+</strong>
@@ -1231,60 +1228,123 @@
 
     <footer>
       <div class="container">
-        <div class="footer-grid">
-          <div class="footer-brand">
-            <img
-              src="images/logo.jpeg"
-              alt="New Hope For Orphans Africa Logo"
-            />
-            <p>
-              Supporting children and families through education, care, safe
-              spaces, and sustainable community development.
-            </p>
+        <div class="footer-brand">
+          <div class="logo">
+            <div class="logo-icon">
+              <img
+                src="images/logo.jpeg"
+                alt="New Hope For Ophans Africa Logo"
+              />
+            </div>
+            <h1>New Hope<span>For Orphans Africa</span></h1>
           </div>
-
-          <div class="footer-col">
-            <h3>Explore</h3>
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="education.html">Education</a>
-            <a href="sports.html">Sports</a>
-          </div>
-
-          <div class="footer-col">
-            <h3>Projects</h3>
-            <a href="currentproject.html">Current Projects</a>
-            <a href="index.html#blogSection">Blog</a>
-            <a href="index.html#gallerySection">Gallery</a>
-          </div>
-
-          <div class="footer-col">
-            <h3>Contact</h3>
-            <p>Email: support@newhopeafrica.org</p>
-            <p>Phone: +256 000 000 000</p>
-            <p>Address: Africa</p>
+          <p>
+            Lighting hope and transforming lives of African children through
+            education, care, and community support. Together, we can build a
+            brighter future.
+          </p>
+          <div class="social-links">
+            <a href="mailto:info@beaconchildren.org" aria-label="Email"
+              ><i class="fas fa-envelope"></i
+            ></a>
+            <a
+              href="https://x.com/BeaconChildren"
+              target="_blank"
+              aria-label="Twitter"
+              ><i class="fab fa-twitter"></i
+            ></a>
+            <a
+              href="https://facebook.com/BeaconChildren"
+              target="_blank"
+              aria-label="Facebook"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a
+              href="https://www.linkedin.com/company/beacon-children"
+              target="_blank"
+              aria-label="LinkedIn"
+              ><i class="fab fa-linkedin-in"></i
+            ></a>
+            <a
+              href="https://wa.me/+256741024006"
+              target="_blank"
+              aria-label="WhatsApp"
+              ><i class="fab fa-whatsapp"></i
+            ></a>
+            <a
+              href="https://instagram.com/beaconchildren"
+              target="_blank"
+              aria-label="Instagram"
+              ><i class="fab fa-instagram"></i
+            ></a>
           </div>
         </div>
 
-        <div class="footer-bottom">
-          © 2026 New Hope For Orphans Africa. All rights reserved.
+        <div class="footer-column">
+          <h3>Quick Links</h3>
+          <ul>
+            <li>
+              <a href="index.html"><i class="fas fa-chevron-right"></i> Home</a>
+            </li>
+            <li>
+              <a href="about.html"
+                ><i class="fas fa-chevron-right"></i> About Us</a
+              >
+            </li>
+            <li>
+              <a href="education.html"
+                ><i class="fas fa-chevron-right"></i> Education</a
+              >
+            </li>
+            <li>
+              <a href="sports.html"
+                ><i class="fas fa-chevron-right"></i> Sports</a
+              >
+            </li>
+          </ul>
         </div>
+
+        <div class="footer-column">
+          <h3>Projects</h3>
+          <ul>
+            <li>
+              <a href="currentproject.html"
+                ><i class="fas fa-chevron-right"></i> Current Project</a
+              >
+            </li>
+            <li>
+              <a href="#"><i class="fas fa-chevron-right"></i> Healthcare</a>
+            </li>
+            <li>
+              <a href="#"><i class="fas fa-chevron-right"></i> Child Welfare</a>
+            </li>
+            <li>
+              <a href="#"
+                ><i class="fas fa-chevron-right"></i> Community Support</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h3>Contact Info</h3>
+          <p><i class="fas fa-map-marker-alt"></i> Iganga, Uganda</p>
+          <p><i class="fas fa-phone"></i> +256 773 272 908</p>
+          <p><i class="fas fa-envelope"></i> info@newhopekids.org</p>
+          <p><i class="fas fa-clock"></i> Mon - Fri: 8:00 AM - 5:00 PM</p>
+        </div>
+      </div>
+
+      <div class="container footer-bottom">
+        <p>
+          &copy; <span id="year"></span> New Hope For Orphans Africa. All rights
+          reserved.
+        </p>
       </div>
     </footer>
 
     <script>
-      const menuToggle = document.getElementById("menuToggle");
-      const navList = document.getElementById("navList");
-
-      menuToggle.addEventListener("click", () => {
-        navList.classList.toggle("open");
-      });
-
-      navList.querySelectorAll("a").forEach((link) => {
-        link.addEventListener("click", () => {
-          navList.classList.remove("open");
-        });
-      });
+      document.getElementById("year").textContent = new Date().getFullYear();
     </script>
   </body>
 </html>

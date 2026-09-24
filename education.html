@@ -1,4440 +1,2526 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
 
-<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
-
-    <title>
-        Education Program | New Hope For Orphans Africa
-    </title>
+    <title>Education Program | New Hope For Orphans Africa</title>
 
     <meta
-        name="description"
-        content="Discover how New Hope For Orphans Africa provides education, opportunity, care and hope for vulnerable children."
-    >
+      name="description"
+      content="Discover how New Hope For Orphans Africa provides education, opportunity, care and hope for vulnerable children."
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
     <link
-        rel="preconnect"
-        href="https://fonts.googleapis.com"
-    >
-
-    <link
-        rel="preconnect"
-        href="https://fonts.gstatic.com"
-        crossorigin
-    >
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap"
-        rel="stylesheet"
-    >
-
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
 
     <style>
-
-        /* =====================================================
+      /* =====================================================
            ROOT
         ===================================================== */
 
-        :root {
+      :root {
+        --primary: #a41e3c;
+        --primary-dark: #6b0f23;
+        --primary-light: #f5e6eb;
 
-            --primary: #a41e3c;
-            --primary-dark: #6b0f23;
-            --primary-light: #f5e6eb;
+        --secondary: #6b8e23;
 
-            --secondary: #6b8e23;
+        --accent: #d4a747;
+        --accent-light: #f0e5d0;
 
-            --accent: #d4a747;
-            --accent-light: #f0e5d0;
+        --white: #ffffff;
+        --off-white: #f9fafb;
 
-            --white: #ffffff;
-            --off-white: #f9fafb;
+        --gray-100: #f3f4f6;
+        --gray-300: #d1d5db;
+        --gray-500: #6b7280;
+        --gray-700: #374151;
+        --gray-900: #111827;
 
-            --gray-100: #f3f4f6;
-            --gray-300: #d1d5db;
-            --gray-500: #6b7280;
-            --gray-700: #374151;
-            --gray-900: #111827;
+        --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
 
-            --shadow-sm:
-                0 1px 2px rgba(0,0,0,.05);
+        --shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
 
-            --shadow:
-                0 4px 10px rgba(0,0,0,.08);
+        --shadow-lg: 0 12px 30px rgba(0, 0, 0, 0.12);
 
-            --shadow-lg:
-                0 12px 30px rgba(0,0,0,.12);
+        --shadow-xl: 0 25px 55px rgba(0, 0, 0, 0.15);
 
-            --shadow-xl:
-                0 25px 55px rgba(0,0,0,.15);
+        --radius: 12px;
 
-            --radius: 12px;
+        --radius-lg: 22px;
 
-            --radius-lg: 22px;
+        --transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 
-            --transition:
-                all .35s cubic-bezier(.4,0,.2,1);
+        --container-width: 1200px;
+      }
 
-            --container-width: 1200px;
-        }
-
-
-        /* =====================================================
+      /* =====================================================
            RESET
         ===================================================== */
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
+      html {
+        scroll-behavior: smooth;
+      }
 
-        html {
-            scroll-behavior: smooth;
-        }
+      body {
+        font-family: "DM Sans", sans-serif;
 
+        color: var(--gray-700);
 
-        body {
+        background: var(--white);
 
-            font-family:
-                "DM Sans",
-                sans-serif;
+        line-height: 1.7;
 
-            color:
-                var(--gray-700);
+        overflow-x: hidden;
+      }
 
-            background:
-                var(--white);
+      img,
+      video {
+        width: 100%;
 
-            line-height:
-                1.7;
+        display: block;
+      }
 
-            overflow-x:
-                hidden;
-        }
+      a {
+        text-decoration: none;
 
+        color: inherit;
+      }
 
-        img,
-        video {
+      button {
+        font-family: inherit;
+      }
 
-            width:
-                100%;
+      .container {
+        width: min(var(--container-width), 92%);
 
-            display:
-                block;
-        }
+        margin: auto;
+      }
 
-
-        a {
-
-            text-decoration:
-                none;
-
-            color:
-                inherit;
-        }
-
-
-        button {
-
-            font-family:
-                inherit;
-        }
-
-
-        .container {
-
-            width:
-                min(
-                    var(--container-width),
-                    92%
-                );
-
-            margin:
-                auto;
-        }
-
-
-        /* =====================================================
+      /* =====================================================
            NAVBAR
         ===================================================== */
 
-        .navbar {
+      .navbar {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        background: transparent;
+      }
 
-           position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-    background: transparent;
-        }
+      .navbar.scrolled {
+        background: rgba(255, 255, 255, 0.97);
 
+        box-shadow: var(--shadow);
+      }
 
-        .navbar.scrolled {
+      .nav-container {
+        min-height: 82px;
 
-            background:
-                rgba(255,255,255,.97);
+        display: flex;
 
-            box-shadow:
-                var(--shadow);
-        }
+        align-items: center;
 
+        justify-content: space-between;
+      }
 
-        .nav-container {
+      /* REAL LOGO */
 
-            min-height:
-                82px;
+      .logo img {
+        width: 150px;
 
-            display:
-                flex;
+        height: auto;
 
-            align-items:
-                center;
+        object-fit: contain;
+      }
 
-            justify-content:
-                space-between;
-        }
+      .nav-links {
+        list-style: none;
 
+        display: flex;
 
-        /* REAL LOGO */
+        align-items: center;
 
-        .logo img {
+        gap: 27px;
+      }
 
-            width:
-                150px;
+      .nav-links a {
+        color: var(--white);
 
-            height:
-                auto;
+        font-size: 0.9rem;
 
-            object-fit:
-                contain;
-        }
+        font-weight: 700;
 
+        transition: var(--transition);
+      }
 
-        .nav-links {
+      .navbar.scrolled .nav-links a {
+        color: var(--gray-900);
+      }
 
-            list-style:
-                none;
+      .nav-links a:hover {
+        color: var(--accent);
+      }
 
-            display:
-                flex;
+      .nav-donate {
+        padding: 10px 19px;
 
-            align-items:
-                center;
+        border-radius: 30px;
 
-            gap:
-                27px;
-        }
+        background: var(--primary);
 
+        color: var(--white) !important;
+      }
 
-        .nav-links a {
+      .nav-donate:hover {
+        background: var(--primary-dark);
+      }
 
-            color:
-                var(--white);
+      .menu-toggle {
+        display: none;
 
-            font-size:
-                .9rem;
+        border: none;
 
-            font-weight:
-                700;
+        background: transparent;
 
-            transition:
-                var(--transition);
-        }
+        color: var(--white);
 
+        font-size: 1.7rem;
 
-        .navbar.scrolled
-        .nav-links a {
+        cursor: pointer;
+      }
 
-            color:
-                var(--gray-900);
-        }
+      .navbar.scrolled .menu-toggle {
+        color: var(--gray-900);
+      }
 
-
-        .nav-links a:hover {
-
-            color:
-                var(--accent);
-        }
-
-
-        .nav-donate {
-
-            padding:
-                10px 19px;
-
-            border-radius:
-                30px;
-
-            background:
-                var(--primary);
-
-            color:
-                var(--white) !important;
-        }
-
-
-        .nav-donate:hover {
-
-            background:
-                var(--primary-dark);
-        }
-
-
-        .menu-toggle {
-
-            display:
-                none;
-
-            border:
-                none;
-
-            background:
-                transparent;
-
-            color:
-                var(--white);
-
-            font-size:
-                1.7rem;
-
-            cursor:
-                pointer;
-        }
-
-
-        .navbar.scrolled
-        .menu-toggle {
-
-            color:
-                var(--gray-900);
-        }
-
-
-        /* =====================================================
+      /* =====================================================
            HERO
         ===================================================== */
 
-        .hero {
+      .hero {
+        min-height: 96vh;
 
-            min-height:
-                96vh;
+        display: flex;
 
-            display:
-                flex;
+        align-items: center;
 
-            align-items:
-                center;
+        position: relative;
 
-            position:
-                relative;
+        overflow: hidden;
 
-            overflow:
-                hidden;
+        color: var(--white);
 
-            color:
-                var(--white);
+        background:
+          linear-gradient(
+            90deg,
+            rgba(107, 15, 35, 0.97),
+            rgba(164, 30, 60, 0.78),
+            rgba(107, 15, 35, 0.35)
+          ),
+          url("./images/kids.jpeg") center/cover no-repeat;
+      }
 
-            background:
+      .hero-content {
+        max-width: 760px;
 
-                linear-gradient(
-                    90deg,
-                    rgba(107,15,35,.97),
-                    rgba(164,30,60,.78),
-                    rgba(107,15,35,.35)
-                ),
+        padding-top: 70px;
 
-                url("./images/kids.jpeg")
-                center/cover no-repeat;
-        }
+        position: relative;
 
+        z-index: 2;
+      }
 
-        .hero-content {
+      .hero-label {
+        display: inline-flex;
 
-            max-width:
-                760px;
+        padding: 8px 16px;
 
-            padding-top:
-                70px;
+        border: 1px solid rgba(212, 167, 71, 0.5);
 
-            position:
-                relative;
+        border-radius: 30px;
 
-            z-index:
-                2;
-        }
+        background: rgba(212, 167, 71, 0.15);
 
+        color: #f5dc95;
 
-        .hero-label {
+        font-size: 0.76rem;
 
-            display:
-                inline-flex;
+        text-transform: uppercase;
 
-            padding:
-                8px 16px;
+        letter-spacing: 1.6px;
 
-            border:
-                1px solid
-                rgba(212,167,71,.5);
+        font-weight: 800;
 
-            border-radius:
-                30px;
+        animation: fadeDown 0.8s ease both;
+      }
 
-            background:
-                rgba(212,167,71,.15);
+      .hero h1 {
+        font-family: "Playfair Display", serif;
 
-            color:
-                #f5dc95;
+        font-size: clamp(3rem, 7vw, 5.8rem);
 
-            font-size:
-                .76rem;
+        line-height: 1.02;
 
-            text-transform:
-                uppercase;
+        margin: 22px 0;
 
-            letter-spacing:
-                1.6px;
+        animation: fadeUp 0.9s 0.1s ease both;
+      }
 
-            font-weight:
-                800;
+      .hero h1 span {
+        color: var(--accent);
+      }
 
-            animation:
-                fadeDown .8s ease both;
-        }
+      .hero p {
+        font-size: 1.08rem;
 
+        color: rgba(255, 255, 255, 0.88);
 
-        .hero h1 {
+        max-width: 690px;
 
-            font-family:
-                "Playfair Display",
-                serif;
+        margin-bottom: 30px;
 
-            font-size:
-                clamp(
-                    3rem,
-                    7vw,
-                    5.8rem
-                );
+        animation: fadeUp 0.9s 0.2s ease both;
+      }
 
-            line-height:
-                1.02;
+      .hero-buttons {
+        display: flex;
 
-            margin:
-                22px 0;
+        flex-wrap: wrap;
 
-            animation:
-                fadeUp .9s .1s ease both;
-        }
+        gap: 12px;
 
+        animation: fadeUp 0.9s 0.3s ease both;
+      }
 
-        .hero h1 span {
+      .btn {
+        display: inline-flex;
 
-            color:
-                var(--accent);
-        }
+        align-items: center;
 
+        justify-content: center;
 
-        .hero p {
+        gap: 8px;
 
-            font-size:
-                1.08rem;
+        padding: 14px 24px;
 
-            color:
-                rgba(255,255,255,.88);
+        border: none;
 
-            max-width:
-                690px;
+        border-radius: 40px;
 
-            margin-bottom:
-                30px;
+        font-weight: 800;
 
-            animation:
-                fadeUp .9s .2s ease both;
-        }
+        cursor: pointer;
 
+        transition: var(--transition);
+      }
 
-        .hero-buttons {
+      .btn-primary {
+        background: var(--primary);
 
-            display:
-                flex;
+        color: var(--white);
+      }
 
-            flex-wrap:
-                wrap;
+      .btn-primary:hover {
+        background: var(--primary-dark);
 
-            gap:
-                12px;
+        transform: translateY(-4px);
 
-            animation:
-                fadeUp .9s .3s ease both;
-        }
+        box-shadow: var(--shadow-lg);
+      }
 
+      .btn-gold {
+        background: var(--accent);
 
-        .btn {
+        color: var(--gray-900);
+      }
 
-            display:
-                inline-flex;
+      .btn-gold:hover {
+        transform: translateY(-4px);
 
-            align-items:
-                center;
+        box-shadow: var(--shadow-lg);
+      }
 
-            justify-content:
-                center;
+      .btn-outline {
+        border: 1px solid rgba(255, 255, 255, 0.6);
 
-            gap:
-                8px;
+        color: var(--white);
+      }
 
-            padding:
-                14px 24px;
+      .btn-outline:hover {
+        background: var(--white);
 
-            border:
-                none;
+        color: var(--primary);
+      }
 
-            border-radius:
-                40px;
+      /* Floating hero circles */
 
-            font-weight:
-                800;
+      .hero-circle {
+        position: absolute;
 
-            cursor:
-                pointer;
+        border-radius: 50%;
 
-            transition:
-                var(--transition);
-        }
+        pointer-events: none;
 
+        animation: float 6s ease-in-out infinite;
+      }
 
-        .btn-primary {
+      .hero-circle.one {
+        width: 150px;
 
-            background:
-                var(--primary);
+        height: 150px;
 
-            color:
-                var(--white);
-        }
+        right: 8%;
 
+        top: 20%;
 
-        .btn-primary:hover {
+        border: 2px solid rgba(212, 167, 71, 0.35);
+      }
 
-            background:
-                var(--primary-dark);
+      .hero-circle.two {
+        width: 80px;
 
-            transform:
-                translateY(-4px);
+        height: 80px;
 
-            box-shadow:
-                var(--shadow-lg);
-        }
+        right: 20%;
 
+        bottom: 18%;
 
-        .btn-gold {
+        background: rgba(255, 255, 255, 0.08);
 
-            background:
-                var(--accent);
+        animation-delay: 1.5s;
+      }
 
-            color:
-                var(--gray-900);
-        }
-
-
-        .btn-gold:hover {
-
-            transform:
-                translateY(-4px);
-
-            box-shadow:
-                var(--shadow-lg);
-        }
-
-
-        .btn-outline {
-
-            border:
-                1px solid
-                rgba(255,255,255,.6);
-
-            color:
-                var(--white);
-        }
-
-
-        .btn-outline:hover {
-
-            background:
-                var(--white);
-
-            color:
-                var(--primary);
-        }
-
-
-        /* Floating hero circles */
-
-        .hero-circle {
-
-            position:
-                absolute;
-
-            border-radius:
-                50%;
-
-            pointer-events:
-                none;
-
-            animation:
-                float 6s ease-in-out infinite;
-        }
-
-
-        .hero-circle.one {
-
-            width:
-                150px;
-
-            height:
-                150px;
-
-            right:
-                8%;
-
-            top:
-                20%;
-
-            border:
-                2px solid
-                rgba(212,167,71,.35);
-        }
-
-
-        .hero-circle.two {
-
-            width:
-                80px;
-
-            height:
-                80px;
-
-            right:
-                20%;
-
-            bottom:
-                18%;
-
-            background:
-                rgba(255,255,255,.08);
-
-            animation-delay:
-                1.5s;
-        }
-
-
-        /* =====================================================
+      /* =====================================================
            SECTION
         ===================================================== */
 
-        .section {
+      .section {
+        padding: 105px 0;
+      }
 
-            padding:
-                105px 0;
-        }
+      .section-label {
+        color: var(--primary);
 
+        font-size: 0.78rem;
 
-        .section-label {
+        text-transform: uppercase;
 
-            color:
-                var(--primary);
+        letter-spacing: 1.6px;
 
-            font-size:
-                .78rem;
+        font-weight: 800;
 
-            text-transform:
-                uppercase;
+        margin-bottom: 10px;
+      }
 
-            letter-spacing:
-                1.6px;
+      .section-title {
+        font-family: "Playfair Display", serif;
 
-            font-weight:
-                800;
+        color: var(--gray-900);
 
-            margin-bottom:
-                10px;
-        }
+        font-size: clamp(2.2rem, 4vw, 3.5rem);
 
+        line-height: 1.15;
 
-        .section-title {
+        margin-bottom: 18px;
+      }
 
-            font-family:
-                "Playfair Display",
-                serif;
+      .section-description {
+        max-width: 720px;
 
-            color:
-                var(--gray-900);
+        font-size: 1rem;
+      }
 
-            font-size:
-                clamp(
-                    2.2rem,
-                    4vw,
-                    3.5rem
-                );
+      .center {
+        text-align: center;
 
-            line-height:
-                1.15;
+        margin-left: auto;
 
-            margin-bottom:
-                18px;
-        }
+        margin-right: auto;
+      }
 
-
-        .section-description {
-
-            max-width:
-                720px;
-
-            font-size:
-                1rem;
-        }
-
-
-        .center {
-
-            text-align:
-                center;
-
-            margin-left:
-                auto;
-
-            margin-right:
-                auto;
-        }
-
-
-        /* =====================================================
+      /* =====================================================
            INTRO
         ===================================================== */
 
-        .intro-grid {
+      .intro-grid {
+        display: grid;
 
-            display:
-                grid;
+        grid-template-columns: 1fr 1fr;
 
-            grid-template-columns:
-                1fr 1fr;
+        gap: 70px;
 
-            gap:
-                70px;
+        align-items: center;
+      }
 
-            align-items:
-                center;
-        }
+      .image-stack {
+        position: relative;
 
+        padding: 15px;
+      }
 
-        .image-stack {
+      .main-image {
+        border-radius: 25px;
 
-            position:
-                relative;
+        overflow: hidden;
 
-            padding:
-                15px;
-        }
+        box-shadow: var(--shadow-xl);
+      }
 
+      .main-image img {
+        height: 520px;
 
-        .main-image {
+        object-fit: cover;
 
-            border-radius:
-                25px;
+        transition: transform 0.7s ease;
+      }
 
-            overflow:
-                hidden;
+      .image-stack:hover .main-image img {
+        transform: scale(1.05);
+      }
 
-            box-shadow:
-                var(--shadow-xl);
-        }
+      .small-image {
+        position: absolute;
 
+        width: 220px;
 
-        .main-image img {
+        height: 170px;
 
-            height:
-                520px;
+        right: -15px;
 
-            object-fit:
-                cover;
+        bottom: -30px;
 
-            transition:
-                transform .7s ease;
-        }
+        border: 8px solid var(--white);
 
+        border-radius: 20px;
 
-        .image-stack:hover
-        .main-image img {
+        overflow: hidden;
 
-            transform:
-                scale(1.05);
-        }
+        box-shadow: var(--shadow-lg);
+      }
 
+      .small-image img {
+        height: 100%;
 
-        .small-image {
+        object-fit: cover;
+      }
 
-            position:
-                absolute;
+      .floating-stat {
+        position: absolute;
 
-            width:
-                220px;
+        top: 30px;
 
-            height:
-                170px;
+        left: -20px;
 
-            right:
-                -15px;
+        background: var(--accent);
 
-            bottom:
-                -30px;
+        color: var(--gray-900);
 
-            border:
-                8px solid
-                var(--white);
+        padding: 17px 22px;
 
-            border-radius:
-                20px;
+        border-radius: 15px;
 
-            overflow:
-                hidden;
+        box-shadow: var(--shadow-lg);
 
-            box-shadow:
-                var(--shadow-lg);
-        }
+        animation: float 5s ease-in-out infinite;
+      }
 
+      .floating-stat strong {
+        display: block;
 
-        .small-image img {
+        font-size: 1.35rem;
+      }
 
-            height:
-                100%;
+      .intro-text p {
+        margin-bottom: 17px;
+      }
 
-            object-fit:
-                cover;
-        }
-
-
-        .floating-stat {
-
-            position:
-                absolute;
-
-            top:
-                30px;
-
-            left:
-                -20px;
-
-            background:
-                var(--accent);
-
-            color:
-                var(--gray-900);
-
-            padding:
-                17px 22px;
-
-            border-radius:
-                15px;
-
-            box-shadow:
-                var(--shadow-lg);
-
-            animation:
-                float 5s ease-in-out infinite;
-        }
-
-
-        .floating-stat strong {
-
-            display:
-                block;
-
-            font-size:
-                1.35rem;
-        }
-
-
-        .intro-text p {
-
-            margin-bottom:
-                17px;
-        }
-
-
-        /* =====================================================
+      /* =====================================================
            STATS
         ===================================================== */
 
-        .stats {
+      .stats {
+        background: var(--primary-dark);
 
-            background:
-                var(--primary-dark);
+        color: var(--white);
+      }
 
-            color:
-                var(--white);
-        }
+      .stats-grid {
+        display: grid;
 
+        grid-template-columns: repeat(4, 1fr);
 
-        .stats-grid {
+        gap: 20px;
+      }
 
-            display:
-                grid;
+      .stat {
+        text-align: center;
 
-            grid-template-columns:
-                repeat(4,1fr);
+        padding: 25px;
 
-            gap:
-                20px;
-        }
+        border-right: 1px solid rgba(255, 255, 255, 0.12);
+      }
 
+      .stat:last-child {
+        border: none;
+      }
 
-        .stat {
+      .stat-number {
+        font-family: "Playfair Display", serif;
 
-            text-align:
-                center;
+        font-size: 3rem;
 
-            padding:
-                25px;
+        font-weight: 800;
 
-            border-right:
-                1px solid
-                rgba(255,255,255,.12);
-        }
+        color: var(--accent);
+      }
 
+      .stat p {
+        color: rgba(255, 255, 255, 0.7);
+      }
 
-        .stat:last-child {
-
-            border:
-                none;
-        }
-
-
-        .stat-number {
-
-            font-family:
-                "Playfair Display",
-                serif;
-
-            font-size:
-                3rem;
-
-            font-weight:
-                800;
-
-            color:
-                var(--accent);
-        }
-
-
-        .stat p {
-
-            color:
-                rgba(255,255,255,.7);
-        }
-
-
-        /* =====================================================
+      /* =====================================================
            PILLARS
         ===================================================== */
 
-        .pillars {
+      .pillars {
+        background: var(--off-white);
+      }
 
-            background:
-                var(--off-white);
-        }
+      .pillar-grid {
+        margin-top: 50px;
 
+        display: grid;
 
-        .pillar-grid {
+        grid-template-columns: repeat(3, 1fr);
 
-            margin-top:
-                50px;
+        gap: 22px;
+      }
 
-            display:
-                grid;
+      .pillar {
+        background: var(--white);
 
-            grid-template-columns:
-                repeat(3,1fr);
+        padding: 32px;
 
-            gap:
-                22px;
-        }
+        border-radius: var(--radius-lg);
 
+        border: 1px solid var(--gray-100);
 
-        .pillar {
+        transition: var(--transition);
+      }
 
-            background:
-                var(--white);
+      .pillar:hover {
+        transform: translateY(-8px);
 
-            padding:
-                32px;
+        box-shadow: var(--shadow-lg);
+      }
 
-            border-radius:
-                var(--radius-lg);
+      .pillar-icon {
+        width: 58px;
 
-            border:
-                1px solid
-                var(--gray-100);
+        height: 58px;
 
-            transition:
-                var(--transition);
-        }
+        display: grid;
 
+        place-items: center;
 
-        .pillar:hover {
+        border-radius: 15px;
 
-            transform:
-                translateY(-8px);
+        background: var(--primary-light);
 
-            box-shadow:
-                var(--shadow-lg);
-        }
+        color: var(--primary);
 
+        font-size: 1.5rem;
 
-        .pillar-icon {
+        margin-bottom: 18px;
 
-            width:
-                58px;
+        transition: var(--transition);
+      }
 
-            height:
-                58px;
+      .pillar:hover .pillar-icon {
+        transform: rotate(8deg) scale(1.1);
+      }
 
-            display:
-                grid;
+      .pillar h3 {
+        color: var(--gray-900);
 
-            place-items:
-                center;
+        margin-bottom: 8px;
+      }
 
-            border-radius:
-                15px;
-
-            background:
-                var(--primary-light);
-
-            color:
-                var(--primary);
-
-            font-size:
-                1.5rem;
-
-            margin-bottom:
-                18px;
-
-            transition:
-                var(--transition);
-        }
-
-
-        .pillar:hover
-        .pillar-icon {
-
-            transform:
-                rotate(8deg)
-                scale(1.1);
-        }
-
-
-        .pillar h3 {
-
-            color:
-                var(--gray-900);
-
-            margin-bottom:
-                8px;
-        }
-
-
-        /* =====================================================
+      /* =====================================================
            PHOTO STORY
         ===================================================== */
 
-        .photo-story {
+      .photo-story {
+        display: grid;
 
-            display:
-                grid;
+        grid-template-columns: repeat(12, 1fr);
 
-            grid-template-columns:
-                repeat(12,1fr);
+        grid-auto-rows: 230px;
 
-            grid-auto-rows:
-                230px;
+        gap: 15px;
 
-            gap:
-                15px;
+        margin-top: 50px;
+      }
 
-            margin-top:
-                50px;
-        }
+      .photo {
+        position: relative;
 
+        overflow: hidden;
 
-        .photo {
+        border-radius: 18px;
+      }
 
-            position:
-                relative;
+      .photo img {
+        height: 100%;
 
-            overflow:
-                hidden;
+        object-fit: cover;
 
-            border-radius:
-                18px;
-        }
+        transition: transform 0.7s ease;
+      }
 
+      .photo:hover img {
+        transform: scale(1.08);
+      }
 
-        .photo img {
+      .photo::after {
+        content: "";
 
-            height:
-                100%;
+        position: absolute;
 
-            object-fit:
-                cover;
+        inset: 0;
 
-            transition:
-                transform .7s ease;
-        }
+        background: linear-gradient(transparent 45%, rgba(0, 0, 0, 0.65));
 
+        opacity: 0.75;
+      }
 
-        .photo:hover img {
+      .photo-caption {
+        position: absolute;
 
-            transform:
-                scale(1.08);
-        }
+        z-index: 2;
 
+        left: 20px;
 
-        .photo::after {
+        bottom: 16px;
 
-            content:
-                "";
+        color: var(--white);
 
-            position:
-                absolute;
+        font-weight: 700;
+      }
 
-            inset:
-                0;
+      .photo:nth-child(1) {
+        grid-column: span 6;
 
-            background:
-                linear-gradient(
-                    transparent 45%,
-                    rgba(0,0,0,.65)
-                );
+        grid-row: span 2;
+      }
 
-            opacity:
-                .75;
-        }
+      .photo:nth-child(2) {
+        grid-column: span 3;
+      }
 
+      .photo:nth-child(3) {
+        grid-column: span 3;
+      }
 
-        .photo-caption {
+      .photo:nth-child(4) {
+        grid-column: span 6;
+      }
 
-            position:
-                absolute;
+      .photo:nth-child(5) {
+        grid-column: span 3;
+      }
 
-            z-index:
-                2;
+      .photo:nth-child(6) {
+        grid-column: span 3;
+      }
 
-            left:
-                20px;
-
-            bottom:
-                16px;
-
-            color:
-                var(--white);
-
-            font-weight:
-                700;
-        }
-
-
-        .photo:nth-child(1) {
-
-            grid-column:
-                span 6;
-
-            grid-row:
-                span 2;
-        }
-
-
-        .photo:nth-child(2) {
-
-            grid-column:
-                span 3;
-        }
-
-
-        .photo:nth-child(3) {
-
-            grid-column:
-                span 3;
-        }
-
-
-        .photo:nth-child(4) {
-
-            grid-column:
-                span 6;
-        }
-
-
-        .photo:nth-child(5) {
-
-            grid-column:
-                span 3;
-        }
-
-
-        .photo:nth-child(6) {
-
-            grid-column:
-                span 3;
-        }
-
-
-        /* =====================================================
+      /* =====================================================
            VIDEO STORIES
         ===================================================== */
 
-        .stories {
+      .stories {
+        background: var(--primary-light);
+      }
 
-            background:
-                var(--primary-light);
-        }
+      .story-header {
+        display: flex;
 
+        align-items: flex-end;
 
-        .story-header {
+        justify-content: space-between;
 
-            display:
-                flex;
+        gap: 30px;
 
-            align-items:
-                flex-end;
+        margin-bottom: 45px;
+      }
 
-            justify-content:
-                space-between;
+      .video-grid {
+        display: grid;
 
-            gap:
-                30px;
+        grid-template-columns: 1.3fr 0.7fr;
 
-            margin-bottom:
-                45px;
-        }
+        gap: 25px;
+      }
 
+      .video-card {
+        background: var(--white);
 
-        .video-grid {
+        border-radius: var(--radius-lg);
 
-            display:
-                grid;
+        overflow: hidden;
 
-            grid-template-columns:
-                1.3fr .7fr;
+        box-shadow: var(--shadow);
 
-            gap:
-                25px;
-        }
+        transition: var(--transition);
+      }
 
+      .video-card:hover {
+        transform: translateY(-7px);
 
-        .video-card {
+        box-shadow: var(--shadow-xl);
+      }
 
-            background:
-                var(--white);
+      .video-wrapper {
+        position: relative;
 
-            border-radius:
-                var(--radius-lg);
+        background: var(--gray-900);
+      }
 
-            overflow:
-                hidden;
+      .video-wrapper video {
+        width: 100%;
 
-            box-shadow:
-                var(--shadow);
+        aspect-ratio: 16/9;
 
-            transition:
-                var(--transition);
-        }
+        object-fit: cover;
+      }
 
+      .video-label {
+        position: absolute;
 
-        .video-card:hover {
+        top: 15px;
 
-            transform:
-                translateY(-7px);
+        left: 15px;
 
-            box-shadow:
-                var(--shadow-xl);
-        }
+        padding: 7px 12px;
 
+        border-radius: 20px;
 
-        .video-wrapper {
+        background: var(--primary);
 
-            position:
-                relative;
+        color: var(--white);
 
-            background:
-                var(--gray-900);
-        }
+        font-size: 0.72rem;
 
+        font-weight: 800;
 
-        .video-wrapper video {
+        pointer-events: none;
+      }
 
-            width:
-                100%;
+      .video-content {
+        padding: 22px;
+      }
 
-            aspect-ratio:
-                16/9;
+      .video-content h3 {
+        color: var(--gray-900);
 
-            object-fit:
-                cover;
-        }
+        margin-bottom: 7px;
+      }
 
+      .video-content p {
+        font-size: 0.88rem;
+      }
 
-        .video-label {
+      .video-side {
+        display: grid;
 
-            position:
-                absolute;
+        gap: 25px;
+      }
 
-            top:
-                15px;
-
-            left:
-                15px;
-
-            padding:
-                7px 12px;
-
-            border-radius:
-                20px;
-
-            background:
-                var(--primary);
-
-            color:
-                var(--white);
-
-            font-size:
-                .72rem;
-
-            font-weight:
-                800;
-
-            pointer-events:
-                none;
-        }
-
-
-        .video-content {
-
-            padding:
-                22px;
-        }
-
-
-        .video-content h3 {
-
-            color:
-                var(--gray-900);
-
-            margin-bottom:
-                7px;
-        }
-
-
-        .video-content p {
-
-            font-size:
-                .88rem;
-        }
-
-
-        .video-side {
-
-            display:
-                grid;
-
-            gap:
-                25px;
-        }
-
-
-        /* =====================================================
+      /* =====================================================
            CHILDREN STORIES
         ===================================================== */
 
-        .children-stories {
+      .children-stories {
+        margin-top: 55px;
 
-            margin-top:
-                55px;
+        display: grid;
 
-            display:
-                grid;
+        grid-template-columns: repeat(3, 1fr);
 
-            grid-template-columns:
-                repeat(3,1fr);
+        gap: 25px;
+      }
 
-            gap:
-                25px;
-        }
+      .child-card {
+        background: var(--white);
 
+        border-radius: 20px;
 
-        .child-card {
+        overflow: hidden;
 
-            background:
-                var(--white);
+        box-shadow: var(--shadow);
 
-            border-radius:
-                20px;
+        transition: var(--transition);
+      }
 
-            overflow:
-                hidden;
+      .child-card:hover {
+        transform: translateY(-8px);
 
-            box-shadow:
-                var(--shadow);
+        box-shadow: var(--shadow-xl);
+      }
 
-            transition:
-                var(--transition);
-        }
+      .child-image {
+        height: 270px;
 
+        overflow: hidden;
 
-        .child-card:hover {
+        position: relative;
+      }
 
-            transform:
-                translateY(-8px);
+      .child-image img {
+        height: 100%;
 
-            box-shadow:
-                var(--shadow-xl);
-        }
+        object-fit: cover;
 
+        transition: transform 0.7s ease;
+      }
 
-        .child-image {
+      .child-card:hover .child-image img {
+        transform: scale(1.07);
+      }
 
-            height:
-                270px;
+      .child-content {
+        padding: 25px;
+      }
 
-            overflow:
-                hidden;
+      .child-content h3 {
+        color: var(--gray-900);
 
-            position:
-                relative;
-        }
+        margin-bottom: 5px;
+      }
 
+      .child-role {
+        color: var(--primary);
 
-        .child-image img {
+        font-size: 0.78rem;
 
-            height:
-                100%;
+        font-weight: 800;
 
-            object-fit:
-                cover;
+        text-transform: uppercase;
 
-            transition:
-                transform .7s ease;
-        }
+        letter-spacing: 1px;
+      }
 
+      .child-content p {
+        margin: 12px 0 18px;
 
-        .child-card:hover
-        .child-image img {
+        font-size: 0.9rem;
+      }
 
-            transform:
-                scale(1.07);
-        }
-
-
-        .child-content {
-
-            padding:
-                25px;
-        }
-
-
-        .child-content h3 {
-
-            color:
-                var(--gray-900);
-
-            margin-bottom:
-                5px;
-        }
-
-
-        .child-role {
-
-            color:
-                var(--primary);
-
-            font-size:
-                .78rem;
-
-            font-weight:
-                800;
-
-            text-transform:
-                uppercase;
-
-            letter-spacing:
-                1px;
-        }
-
-
-        .child-content p {
-
-            margin:
-                12px 0 18px;
-
-            font-size:
-                .9rem;
-        }
-
-
-        /* =====================================================
+      /* =====================================================
            ACHIEVEMENT
         ===================================================== */
 
-        .achievement {
+      .achievement {
+        background: var(--accent-light);
+      }
 
-            background:
-                var(--accent-light);
-        }
+      .achievement-grid {
+        display: grid;
 
+        grid-template-columns: 0.9fr 1.1fr;
 
-        .achievement-grid {
+        gap: 60px;
 
-            display:
-                grid;
+        align-items: center;
+      }
 
-            grid-template-columns:
-                .9fr 1.1fr;
+      .achievement-video {
+        border-radius: 25px;
 
-            gap:
-                60px;
+        overflow: hidden;
 
-            align-items:
-                center;
-        }
+        box-shadow: var(--shadow-xl);
+      }
 
+      .achievement-video video {
+        aspect-ratio: 4/3;
 
-        .achievement-video {
+        object-fit: cover;
+      }
 
-            border-radius:
-                25px;
+      .achievement-list {
+        list-style: none;
 
-            overflow:
-                hidden;
+        margin: 25px 0;
+      }
 
-            box-shadow:
-                var(--shadow-xl);
-        }
+      .achievement-list li {
+        display: flex;
 
+        gap: 12px;
 
-        .achievement-video video {
+        margin-bottom: 14px;
+      }
 
-            aspect-ratio:
-                4/3;
+      .check {
+        width: 27px;
 
-            object-fit:
-                cover;
-        }
+        height: 27px;
 
+        min-width: 27px;
 
-        .achievement-list {
+        display: grid;
 
-            list-style:
-                none;
+        place-items: center;
 
-            margin:
-                25px 0;
-        }
+        border-radius: 50%;
 
+        background: #eaf1dc;
 
-        .achievement-list li {
+        color: var(--secondary);
 
-            display:
-                flex;
+        font-weight: 800;
+      }
 
-            gap:
-                12px;
-
-            margin-bottom:
-                14px;
-        }
-
-
-        .check {
-
-            width:
-                27px;
-
-            height:
-                27px;
-
-            min-width:
-                27px;
-
-            display:
-                grid;
-
-            place-items:
-                center;
-
-            border-radius:
-                50%;
-
-            background:
-                #eaf1dc;
-
-            color:
-                var(--secondary);
-
-            font-weight:
-                800;
-        }
-
-
-        /* =====================================================
+      /* =====================================================
            SPONSOR
         ===================================================== */
 
-        .sponsor {
+      .sponsor {
+        background: var(--primary-dark);
 
-            background:
-                var(--primary-dark);
+        color: var(--white);
+      }
 
-            color:
-                var(--white);
-        }
+      .sponsor-grid {
+        display: grid;
 
+        grid-template-columns: 1fr 1fr;
 
-        .sponsor-grid {
+        gap: 65px;
 
-            display:
-                grid;
+        align-items: center;
+      }
 
-            grid-template-columns:
-                1fr 1fr;
+      .sponsor .section-label {
+        color: var(--accent);
+      }
 
-            gap:
-                65px;
+      .sponsor .section-title {
+        color: var(--white);
+      }
 
-            align-items:
-                center;
-        }
+      .sponsor p {
+        color: rgba(255, 255, 255, 0.76);
 
+        margin-bottom: 17px;
+      }
 
-        .sponsor .section-label {
+      .sponsor-image {
+        border-radius: 25px;
 
-            color:
-                var(--accent);
-        }
+        overflow: hidden;
 
+        position: relative;
 
-        .sponsor .section-title {
+        box-shadow: var(--shadow-xl);
+      }
 
-            color:
-                var(--white);
-        }
+      .sponsor-image img {
+        height: 520px;
 
+        object-fit: cover;
 
-        .sponsor p {
+        transition: transform 0.8s ease;
+      }
 
-            color:
-                rgba(255,255,255,.76);
+      .sponsor-image:hover img {
+        transform: scale(1.06);
+      }
 
-            margin-bottom:
-                17px;
-        }
-
-
-        .sponsor-image {
-
-            border-radius:
-                25px;
-
-            overflow:
-                hidden;
-
-            position:
-                relative;
-
-            box-shadow:
-                var(--shadow-xl);
-        }
-
-
-        .sponsor-image img {
-
-            height:
-                520px;
-
-            object-fit:
-                cover;
-
-            transition:
-                transform .8s ease;
-        }
-
-
-        .sponsor-image:hover img {
-
-            transform:
-                scale(1.06);
-        }
-
-
-        /* =====================================================
+      /* =====================================================
            FAQ
         ===================================================== */
 
-        .faq-container {
+      .faq-container {
+        max-width: 850px;
 
-            max-width:
-                850px;
+        margin: 45px auto 0;
+      }
 
-            margin:
-                45px auto 0;
-        }
+      .faq {
+        border-bottom: 1px solid var(--gray-300);
+      }
 
+      .faq-question {
+        width: 100%;
 
-        .faq {
+        display: flex;
 
-            border-bottom:
-                1px solid
-                var(--gray-300);
-        }
+        justify-content: space-between;
 
+        align-items: center;
 
-        .faq-question {
+        padding: 21px 4px;
 
-            width:
-                100%;
+        border: none;
 
-            display:
-                flex;
+        background: none;
 
-            justify-content:
-                space-between;
+        color: var(--gray-900);
 
-            align-items:
-                center;
+        font-weight: 800;
 
-            padding:
-                21px 4px;
+        text-align: left;
 
-            border:
-                none;
+        cursor: pointer;
+      }
 
-            background:
-                none;
+      .faq-icon {
+        color: var(--primary);
 
-            color:
-                var(--gray-900);
+        font-size: 1.4rem;
 
-            font-weight:
-                800;
+        transition: var(--transition);
+      }
 
-            text-align:
-                left;
+      .faq-answer {
+        max-height: 0;
 
-            cursor:
-                pointer;
-        }
+        overflow: hidden;
 
+        transition: max-height 0.4s ease;
+      }
 
-        .faq-icon {
+      .faq-answer p {
+        padding: 0 4px 20px;
+      }
 
-            color:
-                var(--primary);
+      .faq.active .faq-icon {
+        transform: rotate(45deg);
+      }
 
-            font-size:
-                1.4rem;
-
-            transition:
-                var(--transition);
-        }
-
-
-        .faq-answer {
-
-            max-height:
-                0;
-
-            overflow:
-                hidden;
-
-            transition:
-                max-height .4s ease;
-        }
-
-
-        .faq-answer p {
-
-            padding:
-                0 4px 20px;
-        }
-
-
-        .faq.active
-        .faq-icon {
-
-            transform:
-                rotate(45deg);
-        }
-
-
-        /* =====================================================
+      /* =====================================================
            FINAL CTA
         ===================================================== */
 
-        .final-cta {
+      .final-cta {
+        text-align: center;
 
-            text-align:
-                center;
+        padding: 100px 0;
 
-            padding:
-                100px 0;
+        background: linear-gradient(
+          135deg,
+          var(--primary),
+          var(--primary-dark)
+        );
 
-            background:
-                linear-gradient(
-                    135deg,
-                    var(--primary),
-                    var(--primary-dark)
-                );
+        color: var(--white);
+      }
 
-            color:
-                var(--white);
-        }
+      .final-cta h2 {
+        font-family: "Playfair Display", serif;
 
+        font-size: clamp(2.3rem, 5vw, 4rem);
 
-        .final-cta h2 {
+        margin-bottom: 15px;
+      }
 
-            font-family:
-                "Playfair Display",
-                serif;
+      .final-cta p {
+        max-width: 700px;
 
-            font-size:
-                clamp(
-                    2.3rem,
-                    5vw,
-                    4rem
-                );
+        margin: 0 auto 28px;
 
-            margin-bottom:
-                15px;
-        }
+        color: rgba(255, 255, 255, 0.8);
+      }
 
+      .final-buttons {
+        display: flex;
 
-        .final-cta p {
+        justify-content: center;
 
-            max-width:
-                700px;
+        gap: 12px;
 
-            margin:
-                0 auto 28px;
+        flex-wrap: wrap;
+      }
 
-            color:
-                rgba(255,255,255,.8);
-        }
-
-
-        .final-buttons {
-
-            display:
-                flex;
-
-            justify-content:
-                center;
-
-            gap:
-                12px;
-
-            flex-wrap:
-                wrap;
-        }
-
-
-        /* =====================================================
+      /* =====================================================
            FOOTER
         ===================================================== */
 
-        footer {
+      footer {
+        background: #4f0a1a;
 
-            background:
-                #4f0a1a;
+        color: rgba(255, 255, 255, 0.7);
 
-            color:
-                rgba(255,255,255,.7);
+        padding: 60px 0 25px;
+      }
 
-            padding:
-                60px 0 25px;
-        }
+      .footer-grid {
+        display: grid;
 
+        grid-template-columns: 1.5fr 1fr 1fr;
 
-        .footer-grid {
+        gap: 50px;
 
-            display:
-                grid;
+        padding-bottom: 40px;
+      }
 
-            grid-template-columns:
-                1.5fr 1fr 1fr;
+      .footer-logo img {
+        width: 160px;
 
-            gap:
-                50px;
+        margin-bottom: 18px;
+      }
 
-            padding-bottom:
-                40px;
-        }
+      footer h3 {
+        color: var(--white);
 
+        margin-bottom: 15px;
+      }
 
-        .footer-logo img {
+      .footer-links {
+        list-style: none;
+      }
 
-            width:
-                160px;
+      .footer-links li {
+        margin-bottom: 8px;
+      }
 
-            margin-bottom:
-                18px;
-        }
+      .footer-links a:hover {
+        color: var(--accent);
+      }
 
+      .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
 
-        footer h3 {
+        padding-top: 20px;
 
-            color:
-                var(--white);
+        text-align: center;
 
-            margin-bottom:
-                15px;
-        }
+        font-size: 0.82rem;
+      }
 
-
-        .footer-links {
-
-            list-style:
-                none;
-        }
-
-
-        .footer-links li {
-
-            margin-bottom:
-                8px;
-        }
-
-
-        .footer-links a:hover {
-
-            color:
-                var(--accent);
-        }
-
-
-        .footer-bottom {
-
-            border-top:
-                1px solid
-                rgba(255,255,255,.1);
-
-            padding-top:
-                20px;
-
-            text-align:
-                center;
-
-            font-size:
-                .82rem;
-        }
-
-
-        /* =====================================================
+      /* =====================================================
            BACK TO TOP
         ===================================================== */
 
-        .scroll-top {
+      .scroll-top {
+        position: fixed;
 
-            position:
-                fixed;
+        right: 22px;
 
-            right:
-                22px;
+        bottom: 22px;
 
-            bottom:
-                22px;
+        width: 45px;
 
-            width:
-                45px;
+        height: 45px;
 
-            height:
-                45px;
+        border: none;
 
-            border:
-                none;
+        border-radius: 50%;
 
-            border-radius:
-                50%;
+        background: var(--accent);
 
-            background:
-                var(--accent);
+        color: var(--gray-900);
 
-            color:
-                var(--gray-900);
+        font-size: 1.1rem;
 
-            font-size:
-                1.1rem;
+        cursor: pointer;
 
-            cursor:
-                pointer;
+        opacity: 0;
 
-            opacity:
-                0;
+        transform: translateY(15px);
 
-            transform:
-                translateY(15px);
+        pointer-events: none;
 
-            pointer-events:
-                none;
+        transition: var(--transition);
 
-            transition:
-                var(--transition);
+        z-index: 900;
+      }
 
-            z-index:
-                900;
-        }
+      .scroll-top.show {
+        opacity: 1;
 
+        transform: translateY(0);
 
-        .scroll-top.show {
+        pointer-events: auto;
+      }
 
-            opacity:
-                1;
-
-            transform:
-                translateY(0);
-
-            pointer-events:
-                auto;
-        }
-
-
-        /* =====================================================
+      /* =====================================================
            REVEAL ANIMATION
         ===================================================== */
 
-        .reveal {
+      .reveal {
+        opacity: 0;
 
-            opacity:
-                0;
+        transform: translateY(35px);
 
-            transform:
-                translateY(35px);
+        transition:
+          opacity 0.8s ease,
+          transform 0.8s ease;
+      }
 
-            transition:
-                opacity .8s ease,
-                transform .8s ease;
-        }
+      .reveal.visible {
+        opacity: 1;
 
+        transform: translateY(0);
+      }
 
-        .reveal.visible {
-
-            opacity:
-                1;
-
-            transform:
-                translateY(0);
-        }
-
-
-        /* =====================================================
+      /* =====================================================
            KEYFRAMES
         ===================================================== */
 
-        @keyframes fadeUp {
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
 
-            from {
-
-                opacity:
-                    0;
-
-                transform:
-                    translateY(30px);
-            }
-
-            to {
-
-                opacity:
-                    1;
-
-                transform:
-                    translateY(0);
-            }
+          transform: translateY(30px);
         }
 
+        to {
+          opacity: 1;
 
-        @keyframes fadeDown {
+          transform: translateY(0);
+        }
+      }
 
-            from {
+      @keyframes fadeDown {
+        from {
+          opacity: 0;
 
-                opacity:
-                    0;
-
-                transform:
-                    translateY(-20px);
-            }
-
-            to {
-
-                opacity:
-                    1;
-
-                transform:
-                    translateY(0);
-            }
+          transform: translateY(-20px);
         }
 
+        to {
+          opacity: 1;
 
-        @keyframes float {
+          transform: translateY(0);
+        }
+      }
 
-            0%,
-            100% {
-
-                transform:
-                    translateY(0);
-            }
-
-            50% {
-
-                transform:
-                    translateY(-15px);
-            }
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0);
         }
 
+        50% {
+          transform: translateY(-15px);
+        }
+      }
 
-        /* =====================================================
+      /* =====================================================
            RESPONSIVE
         ===================================================== */
 
-        @media(max-width: 950px) {
+      @media (max-width: 950px) {
+        .nav-links {
+          position: absolute;
 
-            .nav-links {
+          top: 82px;
 
-                position:
-                    absolute;
+          left: 4%;
 
-                top:
-                    82px;
+          width: 92%;
 
-                left:
-                    4%;
+          display: none;
 
-                width:
-                    92%;
+          flex-direction: column;
 
-                display:
-                    none;
+          align-items: flex-start;
 
-                flex-direction:
-                    column;
+          padding: 25px;
 
-                align-items:
-                    flex-start;
+          background: var(--white);
 
-                padding:
-                    25px;
+          border-radius: 15px;
 
-                background:
-                    var(--white);
-
-                border-radius:
-                    15px;
-
-                box-shadow:
-                    var(--shadow-xl);
-            }
-
-
-            .nav-links.active {
-
-                display:
-                    flex;
-            }
-
-
-            .nav-links a {
-
-                color:
-                    var(--gray-900) !important;
-            }
-
-
-            .menu-toggle {
-
-                display:
-                    block;
-            }
-
-
-            .intro-grid,
-            .achievement-grid,
-            .sponsor-grid {
-
-                grid-template-columns:
-                    1fr;
-            }
-
-
-            .pillar-grid {
-
-                grid-template-columns:
-                    repeat(2,1fr);
-            }
-
-
-            .stats-grid {
-
-                grid-template-columns:
-                    repeat(2,1fr);
-            }
-
-
-            .stat {
-
-                border:
-                    none;
-            }
-
-
-            .video-grid {
-
-                grid-template-columns:
-                    1fr;
-            }
-
-
-            .children-stories {
-
-                grid-template-columns:
-                    repeat(2,1fr);
-            }
-
-
-            .footer-grid {
-
-                grid-template-columns:
-                    1fr 1fr;
-            }
+          box-shadow: var(--shadow-xl);
         }
 
+        .nav-links.active {
+          display: flex;
+        }
 
-        @media(max-width: 650px) {
+        .nav-links a {
+          color: var(--gray-900) !important;
+        }
 
-            .section {
+        .menu-toggle {
+          display: block;
+        }
 
-                padding:
-                    75px 0;
-            }
+        .intro-grid,
+        .achievement-grid,
+        .sponsor-grid {
+          grid-template-columns: 1fr;
+        }
 
+        .pillar-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
 
-            .hero {
+        .stats-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
 
-                min-height:
-                    90vh;
-            }
+        .stat {
+          border: none;
+        }
 
+        .video-grid {
+          grid-template-columns: 1fr;
+        }
 
-            .hero h1 {
+        .children-stories {
+          grid-template-columns: repeat(2, 1fr);
+        }
 
-                font-size:
-                    3rem;
-            }
+        .footer-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
 
+      @media (max-width: 650px) {
+        .section {
+          padding: 75px 0;
+        }
 
-            .hero-buttons {
+        .hero {
+          min-height: 90vh;
+        }
 
-                flex-direction:
-                    column;
-            }
+        .hero h1 {
+          font-size: 3rem;
+        }
 
+        .hero-buttons {
+          flex-direction: column;
+        }
 
-            .btn {
-
-                width:
-                    100%;
-            }
-
-
-            .logo img {
-
-                width:
-                    125px;
-            }
-
-
-            .intro-grid {
-
-                gap:
-                    40px;
-            }
-
-
-            .main-image img {
-
-                height:
-                    390px;
-            }
-
-
-            .small-image {
-
-                width:
-                    160px;
-
-                height:
-                    130px;
-
-                right:
-                    0;
-            }
-
-
-            .floating-stat {
-
-                left:
-                    0;
-            }
-
-
-            .pillar-grid,
-            .children-stories,
-            .footer-grid {
-
-                grid-template-columns:
-                    1fr;
-            }
-
-
-            .stats-grid {
-
-                grid-template-columns:
-                    1fr 1fr;
-            }
-
-
-            .photo-story {
-
-                display:
-                    grid;
-
-                grid-template-columns:
-                    1fr 1fr;
-
-                grid-auto-rows:
-                    180px;
-            }
-
-
-            .photo:nth-child(n) {
-
-                grid-column:
-                    span 1;
-
-                grid-row:
-                    span 1;
-            }
-
-
-            .photo:nth-child(1) {
-
-                grid-column:
-                    span 2;
-            }
-
-
-            .story-header {
-
-                flex-direction:
-                    column;
-
-                align-items:
-                    flex-start;
-            }
-
-
-            .final-buttons {
-
-                flex-direction:
-                    column;
-            }
-
+        .btn {
+          width: 100%;
         }
 
         .logo img {
-    width: 95px;
-    height: 55px;
-    object-fit: contain;
-    display: block;
-}
+          width: 125px;
+        }
 
+        .intro-grid {
+          gap: 40px;
+        }
+
+        .main-image img {
+          height: 390px;
+        }
+
+        .small-image {
+          width: 160px;
+
+          height: 130px;
+
+          right: 0;
+        }
+
+        .floating-stat {
+          left: 0;
+        }
+
+        .pillar-grid,
+        .children-stories,
+        .footer-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .stats-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+
+        .photo-story {
+          display: grid;
+
+          grid-template-columns: 1fr 1fr;
+
+          grid-auto-rows: 180px;
+        }
+
+        .photo:nth-child(n) {
+          grid-column: span 1;
+
+          grid-row: span 1;
+        }
+
+        .photo:nth-child(1) {
+          grid-column: span 2;
+        }
+
+        .story-header {
+          flex-direction: column;
+
+          align-items: flex-start;
+        }
+
+        .final-buttons {
+          flex-direction: column;
+        }
+      }
+
+      .logo img {
+        width: 95px;
+        height: 55px;
+        object-fit: contain;
+        display: block;
+      }
     </style>
+  </head>
 
-</head>
-
-
-<body>
-
-
+  <body>
     <!-- =====================================================
          NAVIGATION
     ===================================================== -->
 
-    <header
-        class="navbar"
-        id="navbar"
-    >
+    <header class="navbar" id="navbar">
+      <div class="container nav-container">
+        <!-- USE YOUR EXISTING LOGO -->
 
-        <div class="container nav-container">
+        <a href="index.html" class="logo">
+          <img src="./images/logo.jpeg" alt="New Hope For Orphans Africa" />
+        </a>
 
+        <button class="menu-toggle" id="menuToggle">☰</button>
 
-            <!-- USE YOUR EXISTING LOGO -->
+        <ul class="nav-links" id="navLinks">
+          <li>
+            <a href="index.html#homeSection">Home</a>
+          </li>
+          <li><a href="sports.html">Sports</a></li>
 
-            <a
-                href="index.html"
-                class="logo"
-            >
+          <li>
+            <a href="#support"> Support </a>
+          </li>
 
-                <img
-                    src="./images/logo.jpeg"
-                    alt="New Hope For Orphans Africa"
-                >
+          <li>
+            <a href="#stories"> Stories </a>
+          </li>
 
-            </a>
+          <li>
+            <a href="#gallery"> Gallery </a>
+          </li>
 
-
-            <button
-                class="menu-toggle"
-                id="menuToggle"
-            >
-                ☰
-            </button>
-
-
-            <ul
-                class="nav-links"
-                id="navLinks"
-            >
-                  
-            <li>
-                <a href="index.html#homeSection">Home</a>
-            </li>
-                           <li><a href="sports.html">Sports</a></li>
-
-
-                <li>
-                    <a href="#support">
-                        Support
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#stories">
-                        Stories
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#gallery">
-                        Gallery
-                    </a>
-                </li>
-
-                <li>
-                    <a
-                        href="#sponsor"
-                        class="nav-donate"
-                    >
-                        Sponsor a Child
-                    </a>
-                </li>
-
-            </ul>
-
-        </div>
-
+          <li>
+            <a href="#sponsor" class="nav-donate"> Sponsor a Child </a>
+          </li>
+        </ul>
+      </div>
     </header>
-
-
 
     <!-- =====================================================
          HERO
     ===================================================== -->
 
     <section class="hero">
+      <div class="hero-circle one"></div>
 
+      <div class="hero-circle two"></div>
 
-        <div class="hero-circle one"></div>
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-label">✦ Education • Hope • Opportunity</div>
 
-        <div class="hero-circle two"></div>
+          <h1>
+            Every child deserves
 
+            <span> a chance to learn. </span>
+          </h1>
 
-        <div class="container">
+          <p>
+            Education can change the direction of a child's life. Through
+            learning, care, mentorship and opportunity, New Hope For Orphans
+            Africa is helping vulnerable children build brighter futures.
+          </p>
 
+          <div class="hero-buttons">
+            <a href="#stories" class="btn btn-gold"> ▶ Meet the Children </a>
 
-            <div class="hero-content">
-
-
-                <div class="hero-label">
-
-                    ✦ Education • Hope • Opportunity
-
-                </div>
-
-
-                <h1>
-
-                    Every child deserves
-
-                    <span>
-                        a chance to learn.
-                    </span>
-
-                </h1>
-
-
-                <p>
-
-                    Education can change the direction of a child's
-                    life. Through learning, care, mentorship and
-                    opportunity, New Hope For Orphans Africa is
-                    helping vulnerable children build brighter futures.
-
-                </p>
-
-
-                <div class="hero-buttons">
-
-                    <a
-                        href="#stories"
-                        class="btn btn-gold"
-                    >
-
-                        ▶ Meet the Children
-
-                    </a>
-
-
-                    <a
-                        href="#sponsor"
-                        class="btn btn-outline"
-                    >
-
-                        ❤️ Sponsor a Child
-
-                    </a>
-
-                </div>
-
-            </div>
-
+            <a href="#sponsor" class="btn btn-outline"> ❤️ Sponsor a Child </a>
+          </div>
         </div>
-
+      </div>
     </section>
-
-
 
     <!-- =====================================================
          INTRODUCTION
     ===================================================== -->
 
-    <section
-        class="section"
-        id="program"
-    >
-
-        <div class="container">
-
-
-            <div class="intro-grid">
-
-
-                <div class="image-stack reveal">
-
-
-                    <div class="main-image">
-
-                        <img
-                            src="./images/kids.jpeg"
-                            alt="Children learning"
-                            loading="lazy"
-                        >
-
-                    </div>
-
-
-                    <div class="small-image">
-
-                        <img
-                            src="./images/kids.jpeg"
-                            alt="Children playing"
-                            loading="lazy"
-                        >
-
-                    </div>
-
-
-                    <div class="floating-stat">
-
-                        <strong>
-                            📚 Learn
-                        </strong>
-
-                        Grow • Dream • Achieve
-
-                    </div>
-
-
-                </div>
-
-
-                <div class="reveal">
-
-
-                    <div class="section-label">
-
-                        Our Education Program
-
-                    </div>
-
-
-                    <h2 class="section-title">
-
-                        More than a classroom.
-                        A pathway to possibility.
-
-                    </h2>
-
-
-                    <p>
-
-                        Education is one of the most powerful ways
-                        of giving a child the tools to shape their
-                        own future.
-
-                    </p>
-
-
-                    <p>
-
-                        New Hope For Orphans Africa works to ensure
-                        that vulnerable children have opportunities
-                        to learn while also receiving the care,
-                        encouragement and support they need to thrive.
-
-                    </p>
-
-
-                    <p>
-
-                        From school support to life skills and
-                        emotional wellbeing, the goal is to help
-                        children grow into confident young people
-                        who can contribute positively to their
-                        communities.
-
-                    </p>
-
-
-                    <a
-                        href="#support"
-                        class="btn btn-primary"
-                    >
-
-                        Discover Our Approach →
-
-                    </a>
-
-                </div>
-
+    <section class="section" id="program">
+      <div class="container">
+        <div class="intro-grid">
+          <div class="image-stack reveal">
+            <div class="main-image">
+              <img
+                src="./images/kids.jpeg"
+                alt="Children learning"
+                loading="lazy"
+              />
             </div>
 
+            <div class="small-image">
+              <img
+                src="./images/kids.jpeg"
+                alt="Children playing"
+                loading="lazy"
+              />
+            </div>
+
+            <div class="floating-stat">
+              <strong> 📚 Learn </strong>
+
+              Grow • Dream • Achieve
+            </div>
+          </div>
+
+          <div class="reveal">
+            <div class="section-label">Our Education Program</div>
+
+            <h2 class="section-title">
+              More than a classroom. A pathway to possibility.
+            </h2>
+
+            <p>
+              Education is one of the most powerful ways of giving a child the
+              tools to shape their own future.
+            </p>
+
+            <p>
+              New Hope For Orphans Africa works to ensure that vulnerable
+              children have opportunities to learn while also receiving the
+              care, encouragement and support they need to thrive.
+            </p>
+
+            <p>
+              From school support to life skills and emotional wellbeing, the
+              goal is to help children grow into confident young people who can
+              contribute positively to their communities.
+            </p>
+
+            <a href="#support" class="btn btn-primary">
+              Discover Our Approach →
+            </a>
+          </div>
         </div>
-
+      </div>
     </section>
-
-
 
     <!-- =====================================================
          STATS
     ===================================================== -->
 
     <section class="section stats">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat">
+            <div class="stat-number" data-target="100">0+</div>
 
-        <div class="container">
+            <p>Children supported</p>
+          </div>
 
+          <div class="stat">
+            <div class="stat-number" data-target="100">0%</div>
 
-            <div class="stats-grid">
+            <p>Hope for tomorrow</p>
+          </div>
 
+          <div class="stat">
+            <div class="stat-number" data-target="1">0</div>
 
-                <div class="stat">
+            <p>Child at a time</p>
+          </div>
 
-                    <div
-                        class="stat-number"
-                        data-target="100"
-                    >
-                        0+
-                    </div>
+          <div class="stat">
+            <div class="stat-number" data-target="∞">∞</div>
 
-                    <p>
-                        Children supported
-                    </p>
-
-                </div>
-
-
-                <div class="stat">
-
-                    <div
-                        class="stat-number"
-                        data-target="100"
-                    >
-                        0%
-                    </div>
-
-                    <p>
-                        Hope for tomorrow
-                    </p>
-
-                </div>
-
-
-                <div class="stat">
-
-                    <div
-                        class="stat-number"
-                        data-target="1"
-                    >
-                        0
-                    </div>
-
-                    <p>
-                        Child at a time
-                    </p>
-
-                </div>
-
-
-                <div class="stat">
-
-                    <div
-                        class="stat-number"
-                        data-target="∞"
-                    >
-                        ∞
-                    </div>
-
-                    <p>
-                        Possibilities
-                    </p>
-
-                </div>
-
-
-            </div>
-
+            <p>Possibilities</p>
+          </div>
         </div>
-
+      </div>
     </section>
-
-
 
     <!-- =====================================================
          EDUCATION PILLARS
     ===================================================== -->
 
     <section class="section pillars">
+      <div class="container">
+        <div class="section-label center">A Holistic Approach</div>
 
-        <div class="container">
+        <h2 class="section-title center">Helping children learn and thrive.</h2>
 
+        <p class="section-description center">
+          Education becomes more powerful when children are supported as whole
+          individuals.
+        </p>
 
-            <div class="section-label center">
+        <div class="pillar-grid">
+          <article class="pillar reveal">
+            <div class="pillar-icon">📚</div>
 
-                A Holistic Approach
+            <h3>Quality Education</h3>
 
-            </div>
-
-
-            <h2 class="section-title center">
-
-                Helping children
-                learn and thrive.
-
-            </h2>
-
-
-            <p class="section-description center">
-
-                Education becomes more powerful when
-                children are supported as whole individuals.
-
+            <p>
+              Helping vulnerable children access education and develop knowledge
+              for their future.
             </p>
+          </article>
 
+          <article class="pillar reveal">
+            <div class="pillar-icon">🎒</div>
 
-            <div class="pillar-grid">
+            <h3>School Support</h3>
 
+            <p>
+              Supporting essential school needs such as uniforms and educational
+              materials.
+            </p>
+          </article>
 
-                <article class="pillar reveal">
+          <article class="pillar reveal">
+            <div class="pillar-icon">🌱</div>
 
-                    <div class="pillar-icon">
-                        📚
-                    </div>
+            <h3>Life Skills</h3>
 
-                    <h3>
-                        Quality Education
-                    </h3>
+            <p>
+              Encouraging children to develop practical skills and confidence.
+            </p>
+          </article>
 
-                    <p>
+          <article class="pillar reveal">
+            <div class="pillar-icon">❤️</div>
 
-                        Helping vulnerable children access
-                        education and develop knowledge
-                        for their future.
+            <h3>Emotional Care</h3>
 
-                    </p>
+            <p>
+              Creating a caring environment where children can develop
+              resilience and hope.
+            </p>
+          </article>
 
-                </article>
+          <article class="pillar reveal">
+            <div class="pillar-icon">🤝</div>
 
+            <h3>Mentorship</h3>
 
-                <article class="pillar reveal">
+            <p>Positive guidance helps children recognize their potential.</p>
+          </article>
 
-                    <div class="pillar-icon">
-                        🎒
-                    </div>
+          <article class="pillar reveal">
+            <div class="pillar-icon">🏡</div>
 
-                    <h3>
-                        School Support
-                    </h3>
+            <h3>Safe Environment</h3>
 
-                    <p>
-
-                        Supporting essential school needs
-                        such as uniforms and educational
-                        materials.
-
-                    </p>
-
-                </article>
-
-
-                <article class="pillar reveal">
-
-                    <div class="pillar-icon">
-                        🌱
-                    </div>
-
-                    <h3>
-                        Life Skills
-                    </h3>
-
-                    <p>
-
-                        Encouraging children to develop
-                        practical skills and confidence.
-
-                    </p>
-
-                </article>
-
-
-                <article class="pillar reveal">
-
-                    <div class="pillar-icon">
-                        ❤️
-                    </div>
-
-                    <h3>
-                        Emotional Care
-                    </h3>
-
-                    <p>
-
-                        Creating a caring environment where
-                        children can develop resilience and hope.
-
-                    </p>
-
-                </article>
-
-
-                <article class="pillar reveal">
-
-                    <div class="pillar-icon">
-                        🤝
-                    </div>
-
-                    <h3>
-                        Mentorship
-                    </h3>
-
-                    <p>
-
-                        Positive guidance helps children
-                        recognize their potential.
-
-                    </p>
-
-                </article>
-
-
-                <article class="pillar reveal">
-
-                    <div class="pillar-icon">
-                        🏡
-                    </div>
-
-                    <h3>
-                        Safe Environment
-                    </h3>
-
-                    <p>
-
-                        Children learn best when they feel
-                        safe, valued and supported.
-
-                    </p>
-
-                </article>
-
-
-            </div>
-
+            <p>
+              Children learn best when they feel safe, valued and supported.
+            </p>
+          </article>
         </div>
-
+      </div>
     </section>
-
-
 
     <!-- =====================================================
          PHOTO GALLERY
     ===================================================== -->
 
-    <section
-        class="section"
-        id="gallery"
-    >
+    <section class="section" id="gallery">
+      <div class="container">
+        <div class="section-label center">Life At New Hope</div>
 
-        <div class="container">
+        <h2 class="section-title center">
+          Learning is more than sitting in a classroom.
+        </h2>
 
+        <p class="section-description center">
+          Capture the everyday moments that make childhood meaningful —
+          learning, friendship, creativity, play and achievement.
+        </p>
 
-            <div class="section-label center">
+        <div class="photo-story">
+          <div class="photo reveal">
+            <img
+              src="images/classroom.jpg"
+              alt="Children in classroom"
+              loading="lazy"
+            />
 
-                Life At New Hope
+            <div class="photo-caption">Learning together</div>
+          </div>
 
-            </div>
+          <div class="photo reveal">
+            <img
+              src="images/children-reading.jpg"
+              alt="Children reading"
+              loading="lazy"
+            />
 
+            <div class="photo-caption">Discovering books</div>
+          </div>
 
-            <h2 class="section-title center">
+          <div class="photo reveal">
+            <img
+              src="images/teacher.jpg"
+              alt="Teacher with children"
+              loading="lazy"
+            />
 
-                Learning is more than
-                sitting in a classroom.
+            <div class="photo-caption">Teachers who care</div>
+          </div>
 
-            </h2>
+          <div class="photo reveal">
+            <img
+              src="images/children-playing.jpg"
+              alt="Children playing"
+              loading="lazy"
+            />
 
+            <div class="photo-caption">Growing together</div>
+          </div>
 
-            <p class="section-description center">
+          <div class="photo reveal">
+            <img
+              src="images/school-activity.jpg"
+              alt="School activity"
+              loading="lazy"
+            />
 
-                Capture the everyday moments that make
-                childhood meaningful — learning, friendship,
-                creativity, play and achievement.
+            <div class="photo-caption">Creativity</div>
+          </div>
 
-            </p>
+          <div class="photo reveal">
+            <img
+              src="images/children-group.jpg"
+              alt="Children together"
+              loading="lazy"
+            />
 
-
-            <div class="photo-story">
-
-
-                <div class="photo reveal">
-
-                    <img
-                        src="images/classroom.jpg"
-                        alt="Children in classroom"
-                        loading="lazy"
-                    >
-
-                    <div class="photo-caption">
-                        Learning together
-                    </div>
-
-                </div>
-
-
-                <div class="photo reveal">
-
-                    <img
-                        src="images/children-reading.jpg"
-                        alt="Children reading"
-                        loading="lazy"
-                    >
-
-                    <div class="photo-caption">
-                        Discovering books
-                    </div>
-
-                </div>
-
-
-                <div class="photo reveal">
-
-                    <img
-                        src="images/teacher.jpg"
-                        alt="Teacher with children"
-                        loading="lazy"
-                    >
-
-                    <div class="photo-caption">
-                        Teachers who care
-                    </div>
-
-                </div>
-
-
-                <div class="photo reveal">
-
-                    <img
-                        src="images/children-playing.jpg"
-                        alt="Children playing"
-                        loading="lazy"
-                    >
-
-                    <div class="photo-caption">
-                        Growing together
-                    </div>
-
-                </div>
-
-
-                <div class="photo reveal">
-
-                    <img
-                        src="images/school-activity.jpg"
-                        alt="School activity"
-                        loading="lazy"
-                    >
-
-                    <div class="photo-caption">
-                        Creativity
-                    </div>
-
-                </div>
-
-
-                <div class="photo reveal">
-
-                    <img
-                        src="images/children-group.jpg"
-                        alt="Children together"
-                        loading="lazy"
-                    >
-
-                    <div class="photo-caption">
-                        Friendship
-                    </div>
-
-                </div>
-
-
-            </div>
-
+            <div class="photo-caption">Friendship</div>
+          </div>
         </div>
-
+      </div>
     </section>
-
-
 
     <!-- =====================================================
          VIDEO STORIES
     ===================================================== -->
 
-    <section
-        class="section stories"
-        id="stories"
-    >
-
-        <div class="container">
-
-
-            <div class="story-header">
-
-
-                <div>
-
-                    <div class="section-label">
-
-                        Real Stories
-
-                    </div>
-
-
-                    <h2 class="section-title">
-
-                        See education
-                        in action.
-
-                    </h2>
-
-                </div>
-
-
-                <p class="section-description">
-
-                    Let visitors see the children learning,
-                    interacting, discovering new skills and
-                    enjoying their journey.
-
-                </p>
-
-            </div>
-
-
-            <div class="video-grid">
-
-
-                <article class="video-card reveal">
-
-
-                    <div class="video-wrapper">
-
-                        <video
-                            controls
-                            poster="images/learning-video-poster.jpg"
-                        >
-
-                            <source
-                                src="videos/kids-learning.mp4"
-                                type="video/mp4"
-                            >
-
-                            Your browser does not support video.
-
-                        </video>
-
-
-                        <div class="video-label">
-                            📚 Learning
-                        </div>
-
-                    </div>
-
-
-                    <div class="video-content">
-
-                        <h3>
-                            A Day of Learning
-                        </h3>
-
-                        <p>
-
-                            Give sponsors a glimpse into
-                            a normal day of learning and
-                            discovery.
-
-                        </p>
-
-                    </div>
-
-                </article>
-
-
-                <div class="video-side">
-
-
-                    <article class="video-card reveal">
-
-                        <div class="video-wrapper">
-
-                            <video
-                                controls
-                                poster="images/classroom-video.jpg"
-                            >
-
-                                <source
-                                    src="videos/classroom-moments.mp4"
-                                    type="video/mp4"
-                                >
-
-                            </video>
-
-
-                            <div class="video-label">
-                                🎒 Classroom
-                            </div>
-
-                        </div>
-
-
-                        <div class="video-content">
-
-                            <h3>
-                                Classroom Moments
-                            </h3>
-
-                            <p>
-                                Small moments. Big dreams.
-                            </p>
-
-                        </div>
-
-                    </article>
-
-
-                    <article class="video-card reveal">
-
-                        <div class="video-wrapper">
-
-                            <video
-                                controls
-                                poster="images/play-video.jpg"
-                            >
-
-                                <source
-                                    src="videos/learning-through-play.mp4"
-                                    type="video/mp4"
-                                >
-
-                            </video>
-
-
-                            <div class="video-label">
-                                🌱 Growing
-                            </div>
-
-                        </div>
-
-
-                        <div class="video-content">
-
-                            <h3>
-                                Learning Through Play
-                            </h3>
-
-                            <p>
-                                Childhood, friendship and discovery.
-                            </p>
-
-                        </div>
-
-                    </article>
-
-
-                </div>
-
-            </div>
-
+    <section class="section stories" id="stories">
+      <div class="container">
+        <div class="story-header">
+          <div>
+            <div class="section-label">Real Stories</div>
+
+            <h2 class="section-title">See education in action.</h2>
+          </div>
+
+          <p class="section-description">
+            Let visitors see the children learning, interacting, discovering new
+            skills and enjoying their journey.
+          </p>
         </div>
 
+        <div class="video-grid">
+          <article class="video-card reveal">
+            <div class="video-wrapper">
+              <video controls poster="images/learning-video-poster.jpg">
+                <source src="videos/kids-learning.mp4" type="video/mp4" />
+
+                Your browser does not support video.
+              </video>
+
+              <div class="video-label">📚 Learning</div>
+            </div>
+
+            <div class="video-content">
+              <h3>A Day of Learning</h3>
+
+              <p>
+                Give sponsors a glimpse into a normal day of learning and
+                discovery.
+              </p>
+            </div>
+          </article>
+
+          <div class="video-side">
+            <article class="video-card reveal">
+              <div class="video-wrapper">
+                <video controls poster="images/classroom-video.jpg">
+                  <source src="videos/classroom-moments.mp4" type="video/mp4" />
+                </video>
+
+                <div class="video-label">🎒 Classroom</div>
+              </div>
+
+              <div class="video-content">
+                <h3>Classroom Moments</h3>
+
+                <p>Small moments. Big dreams.</p>
+              </div>
+            </article>
+
+            <article class="video-card reveal">
+              <div class="video-wrapper">
+                <video controls poster="images/play-video.jpg">
+                  <source
+                    src="videos/learning-through-play.mp4"
+                    type="video/mp4"
+                  />
+                </video>
+
+                <div class="video-label">🌱 Growing</div>
+              </div>
+
+              <div class="video-content">
+                <h3>Learning Through Play</h3>
+
+                <p>Childhood, friendship and discovery.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
     </section>
-
-
 
     <!-- =====================================================
          CHILDREN'S STORIES
     ===================================================== -->
 
     <section class="section">
+      <div class="container">
+        <div class="section-label center">Children's Voices</div>
 
+        <h2 class="section-title center">
+          Meet the young people behind the mission.
+        </h2>
 
-        <div class="container">
+        <p class="section-description center">
+          Use this section to introduce children, their interests, achievements
+          and dreams. Only publish information approved for public use.
+        </p>
 
-
-            <div class="section-label center">
-
-                Children's Voices
-
+        <div class="children-stories">
+          <article class="child-card reveal">
+            <div class="child-image">
+              <img src="images/child-one.jpg" alt="Student" loading="lazy" />
             </div>
 
-
-            <h2 class="section-title center">
-
-                Meet the young people
-                behind the mission.
-
-            </h2>
-
-
-            <p class="section-description center">
-
-                Use this section to introduce children,
-                their interests, achievements and dreams.
-                Only publish information approved for public use.
-
-            </p>
-
-
-            <div class="children-stories">
-
-
-                <article class="child-card reveal">
-
-
-                    <div class="child-image">
-
-                        <img
-                            src="images/child-one.jpg"
-                            alt="Student"
-                            loading="lazy"
-                        >
-
-                    </div>
-
-
-                    <div class="child-content">
-
-                        <div class="child-role">
-                            Student
-                        </div>
-
-                        <h3>
-                            Meet [Child's Name]
-                        </h3>
-
-                        <p>
-
-                            "Add the child's real story here —
-                            what they enjoy learning, what they
-                            have achieved and what they dream
-                            of becoming."
-
-                        </p>
-
-                        <a
-                            href="#sponsor"
-                            class="btn btn-primary"
-                        >
-
-                            Support Their Journey
-
-                        </a>
-
-                    </div>
-
-                </article>
-
-
-                <article class="child-card reveal">
-
-
-                    <div class="child-image">
-
-                        <img
-                            src="images/child-two.jpg"
-                            alt="Student"
-                            loading="lazy"
-                        >
-
-                    </div>
-
-
-                    <div class="child-content">
-
-                        <div class="child-role">
-                            Student
-                        </div>
-
-                        <h3>
-                            Meet [Child's Name]
-                        </h3>
-
-                        <p>
-
-                            "Add a real story about this child's
-                            interests, achievements and future
-                            dreams."
-
-                        </p>
-
-                        <a
-                            href="#sponsor"
-                            class="btn btn-primary"
-                        >
-
-                            Support Their Journey
-
-                        </a>
-
-                    </div>
-
-                </article>
-
-
-                <article class="child-card reveal">
-
-
-                    <div class="child-image">
-
-                        <img
-                            src="images/child-three.jpg"
-                            alt="Student"
-                            loading="lazy"
-                        >
-
-                    </div>
-
-
-                    <div class="child-content">
-
-                        <div class="child-role">
-                            Student
-                        </div>
-
-                        <h3>
-                            Meet [Child's Name]
-                        </h3>
-
-                        <p>
-
-                            "Add a genuine story about what
-                            this child has accomplished and
-                            what they hope to achieve."
-
-                        </p>
-
-                        <a
-                            href="#sponsor"
-                            class="btn btn-primary"
-                        >
-
-                            Support Their Journey
-
-                        </a>
-
-                    </div>
-
-                </article>
-
-
+            <div class="child-content">
+              <div class="child-role">Student</div>
+
+              <h3>Meet [Child's Name]</h3>
+
+              <p>
+                "Add the child's real story here — what they enjoy learning,
+                what they have achieved and what they dream of becoming."
+              </p>
+
+              <a href="#sponsor" class="btn btn-primary">
+                Support Their Journey
+              </a>
+            </div>
+          </article>
+
+          <article class="child-card reveal">
+            <div class="child-image">
+              <img src="images/child-two.jpg" alt="Student" loading="lazy" />
             </div>
 
+            <div class="child-content">
+              <div class="child-role">Student</div>
+
+              <h3>Meet [Child's Name]</h3>
+
+              <p>
+                "Add a real story about this child's interests, achievements and
+                future dreams."
+              </p>
+
+              <a href="#sponsor" class="btn btn-primary">
+                Support Their Journey
+              </a>
+            </div>
+          </article>
+
+          <article class="child-card reveal">
+            <div class="child-image">
+              <img src="images/child-three.jpg" alt="Student" loading="lazy" />
+            </div>
+
+            <div class="child-content">
+              <div class="child-role">Student</div>
+
+              <h3>Meet [Child's Name]</h3>
+
+              <p>
+                "Add a genuine story about what this child has accomplished and
+                what they hope to achieve."
+              </p>
+
+              <a href="#sponsor" class="btn btn-primary">
+                Support Their Journey
+              </a>
+            </div>
+          </article>
         </div>
-
+      </div>
     </section>
-
-
 
     <!-- =====================================================
          ACHIEVEMENTS
     ===================================================== -->
 
     <section class="section achievement">
-
-
-        <div class="container">
-
-
-            <div class="achievement-grid">
-
-
-                <div class="achievement-video reveal">
-
-                    <video
-                        controls
-                        poster="images/achievement-poster.jpg"
-                    >
-
-                        <source
-                            src="videos/children-achievements.mp4"
-                            type="video/mp4"
-                        >
-
-                    </video>
-
-                </div>
-
-
-                <div class="reveal">
-
-
-                    <div class="section-label">
-
-                        Their Dreams.
-                        Their Achievements.
-
-                    </div>
-
-
-                    <h2 class="section-title">
-
-                        Let children
-                        tell you what
-                        they have achieved.
-
-                    </h2>
-
-
-                    <p>
-
-                        A powerful sponsor experience should
-                        allow children to speak for themselves.
-
-                    </p>
-
-
-                    <p>
-
-                        Record short videos where children
-                        introduce themselves, talk about what
-                        they have learned and share their dreams.
-
-                    </p>
-
-
-                    <ul class="achievement-list">
-
-
-                        <li>
-
-                            <span class="check">
-                                ✓
-                            </span>
-
-                            Academic achievements
-
-                        </li>
-
-
-                        <li>
-
-                            <span class="check">
-                                ✓
-                            </span>
-
-                            New skills learned
-
-                        </li>
-
-
-                        <li>
-
-                            <span class="check">
-                                ✓
-                            </span>
-
-                            Sports and creative achievements
-
-                        </li>
-
-
-                        <li>
-
-                            <span class="check">
-                                ✓
-                            </span>
-
-                            Personal growth
-
-                        </li>
-
-
-                        <li>
-
-                            <span class="check">
-                                ✓
-                            </span>
-
-                            Dreams for the future
-
-                        </li>
-
-
-                    </ul>
-
-
-                    <a
-                        href="#sponsor"
-                        class="btn btn-primary"
-                    >
-
-                        Help Create More Stories →
-
-                    </a>
-
-                </div>
-
-            </div>
-
+      <div class="container">
+        <div class="achievement-grid">
+          <div class="achievement-video reveal">
+            <video controls poster="images/achievement-poster.jpg">
+              <source src="videos/children-achievements.mp4" type="video/mp4" />
+            </video>
+          </div>
+
+          <div class="reveal">
+            <div class="section-label">Their Dreams. Their Achievements.</div>
+
+            <h2 class="section-title">
+              Let children tell you what they have achieved.
+            </h2>
+
+            <p>
+              A powerful sponsor experience should allow children to speak for
+              themselves.
+            </p>
+
+            <p>
+              Record short videos where children introduce themselves, talk
+              about what they have learned and share their dreams.
+            </p>
+
+            <ul class="achievement-list">
+              <li>
+                <span class="check"> ✓ </span>
+
+                Academic achievements
+              </li>
+
+              <li>
+                <span class="check"> ✓ </span>
+
+                New skills learned
+              </li>
+
+              <li>
+                <span class="check"> ✓ </span>
+
+                Sports and creative achievements
+              </li>
+
+              <li>
+                <span class="check"> ✓ </span>
+
+                Personal growth
+              </li>
+
+              <li>
+                <span class="check"> ✓ </span>
+
+                Dreams for the future
+              </li>
+            </ul>
+
+            <a href="#sponsor" class="btn btn-primary">
+              Help Create More Stories →
+            </a>
+          </div>
         </div>
-
+      </div>
     </section>
-
-
 
     <!-- =====================================================
          SPONSOR
     ===================================================== -->
 
-    <section
-        class="section sponsor"
-        id="sponsor"
-    >
+    <section class="section sponsor" id="sponsor">
+      <div class="container">
+        <div class="sponsor-grid">
+          <div class="reveal">
+            <div class="section-label">Become Part of a Story</div>
 
+            <h2 class="section-title">Your support can open a door.</h2>
 
-        <div class="container">
+            <p>
+              Behind every book, every lesson, every school uniform and every
+              achievement is a child with dreams.
+            </p>
 
+            <p>
+              By supporting education, you can help create opportunities for
+              children to learn, grow and work toward a brighter future.
+            </p>
 
-            <div class="sponsor-grid">
+            <a href="#" class="btn btn-gold"> ❤️ Sponsor a Child </a>
+          </div>
 
-
-                <div class="reveal">
-
-
-                    <div class="section-label">
-
-                        Become Part of a Story
-
-                    </div>
-
-
-                    <h2 class="section-title">
-
-                        Your support
-                        can open a door.
-
-                    </h2>
-
-
-                    <p>
-
-                        Behind every book, every lesson,
-                        every school uniform and every
-                        achievement is a child with dreams.
-
-                    </p>
-
-
-                    <p>
-
-                        By supporting education, you can help
-                        create opportunities for children to
-                        learn, grow and work toward a brighter
-                        future.
-
-                    </p>
-
-
-                    <a
-                        href="#"
-                        class="btn btn-gold"
-                    >
-
-                        ❤️ Sponsor a Child
-
-                    </a>
-
-                </div>
-
-
-                <div class="sponsor-image reveal">
-
-                    <img
-                        src="images/sponsor-children.jpg"
-                        alt="Children smiling"
-                        loading="lazy"
-                    >
-
-                </div>
-
-            </div>
-
+          <div class="sponsor-image reveal">
+            <img
+              src="images/sponsor-children.jpg"
+              alt="Children smiling"
+              loading="lazy"
+            />
+          </div>
         </div>
-
+      </div>
     </section>
-
-
 
     <!-- =====================================================
          FAQ
     ===================================================== -->
 
     <section class="section">
+      <div class="container">
+        <div class="section-label center">Questions</div>
 
+        <h2 class="section-title center">Education Program FAQ</h2>
 
-        <div class="container">
+        <div class="faq-container">
+          <div class="faq">
+            <button class="faq-question">
+              What does the education program support?
 
+              <span class="faq-icon"> + </span>
+            </button>
 
-            <div class="section-label center">
-                Questions
+            <div class="faq-answer">
+              <p>
+                Education support may include school-related needs, educational
+                materials and other forms of support that help vulnerable
+                children continue their education.
+              </p>
             </div>
+          </div>
 
+          <div class="faq">
+            <button class="faq-question">
+              Can I sponsor a child?
 
-            <h2 class="section-title center">
+              <span class="faq-icon"> + </span>
+            </button>
 
-                Education Program FAQ
-
-            </h2>
-
-
-            <div class="faq-container">
-
-
-                <div class="faq">
-
-                    <button
-                        class="faq-question"
-                    >
-
-                        What does the education program support?
-
-                        <span class="faq-icon">
-                            +
-                        </span>
-
-                    </button>
-
-
-                    <div class="faq-answer">
-
-                        <p>
-
-                            Education support may include
-                            school-related needs, educational
-                            materials and other forms of support
-                            that help vulnerable children continue
-                            their education.
-
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-                <div class="faq">
-
-                    <button
-                        class="faq-question"
-                    >
-
-                        Can I sponsor a child?
-
-                        <span class="faq-icon">
-                            +
-                        </span>
-
-                    </button>
-
-
-                    <div class="faq-answer">
-
-                        <p>
-
-                            Yes. Visitors can use the sponsorship
-                            and contact channels provided by the
-                            organization to learn about available
-                            opportunities.
-
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-                <div class="faq">
-
-                    <button
-                        class="faq-question"
-                    >
-
-                        Can organizations partner with New Hope?
-
-                        <span class="faq-icon">
-                            +
-                        </span>
-
-                    </button>
-
-
-                    <div class="faq-answer">
-
-                        <p>
-
-                            Organizations and individuals interested
-                            in supporting the mission can contact
-                            New Hope For Orphans Africa about
-                            partnerships and collaboration.
-
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-                <div class="faq">
-
-                    <button
-                        class="faq-question"
-                    >
-
-                        How can I help?
-
-                        <span class="faq-icon">
-                            +
-                        </span>
-
-                    </button>
-
-
-                    <div class="faq-answer">
-
-                        <p>
-
-                            You can help through sponsorship,
-                            donations, volunteering, partnerships
-                            and sharing the organization's work.
-
-                        </p>
-
-                    </div>
-
-                </div>
-
-
+            <div class="faq-answer">
+              <p>
+                Yes. Visitors can use the sponsorship and contact channels
+                provided by the organization to learn about available
+                opportunities.
+              </p>
             </div>
+          </div>
 
+          <div class="faq">
+            <button class="faq-question">
+              Can organizations partner with New Hope?
+
+              <span class="faq-icon"> + </span>
+            </button>
+
+            <div class="faq-answer">
+              <p>
+                Organizations and individuals interested in supporting the
+                mission can contact New Hope For Orphans Africa about
+                partnerships and collaboration.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq">
+            <button class="faq-question">
+              How can I help?
+
+              <span class="faq-icon"> + </span>
+            </button>
+
+            <div class="faq-answer">
+              <p>
+                You can help through sponsorship, donations, volunteering,
+                partnerships and sharing the organization's work.
+              </p>
+            </div>
+          </div>
         </div>
-
+      </div>
     </section>
-
-
 
     <!-- =====================================================
          FINAL CTA
     ===================================================== -->
 
     <section class="final-cta">
+      <div class="container">
+        <h2>Give a child a chance to dream.</h2>
 
+        <p>
+          Every child deserves the opportunity to learn, discover their
+          potential and imagine a future filled with possibilities.
+        </p>
 
-        <div class="container">
+        <div class="final-buttons">
+          <a href="#sponsor" class="btn btn-gold"> ❤️ Sponsor a Child </a>
 
+          <a href="#" class="btn btn-outline"> Donate to Education </a>
 
-            <h2>
-
-                Give a child
-                a chance to dream.
-
-            </h2>
-
-
-            <p>
-
-                Every child deserves the opportunity to learn,
-                discover their potential and imagine a future
-                filled with possibilities.
-
-            </p>
-
-
-            <div class="final-buttons">
-
-
-                <a
-                    href="#sponsor"
-                    class="btn btn-gold"
-                >
-
-                    ❤️ Sponsor a Child
-
-                </a>
-
-
-                <a
-                    href="#"
-                    class="btn btn-outline"
-                >
-
-                    Donate to Education
-
-                </a>
-
-
-                <a
-                    href="#"
-                    class="btn btn-outline"
-                >
-
-                    Become a Partner
-
-                </a>
-
-            </div>
-
+          <a href="#" class="btn btn-outline"> Become a Partner </a>
         </div>
-
+      </div>
     </section>
-
-
 
     <!-- =====================================================
          FOOTER
     ===================================================== -->
 
     <footer>
-
-
-        <div class="container">
-
-
-            <div class="footer-grid">
-
-
-                <div>
-
-                    <div class="footer-logo">
-
-                        <img
-                            src="images/logo.png"
-                            alt="New Hope For Orphans Africa"
-                        >
-
-                    </div>
-
-
-                    <p>
-
-                        Helping orphaned and vulnerable children
-                        access opportunities to learn, grow and
-                        build brighter futures.
-
-                    </p>
-
-                </div>
-
-
-                <div>
-
-                    <h3>
-                        Education
-                    </h3>
-
-
-                    <ul class="footer-links">
-
-                        <li>
-                            <a href="#program">
-                                Education Program
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="#support">
-                                Education Support
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="#stories">
-                                Children's Stories
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="#gallery">
-                                Gallery
-                            </a>
-                        </li>
-
-                    </ul>
-
-                </div>
-
-
-                <div>
-
-                    <h3>
-                        Get Involved
-                    </h3>
-
-
-                    <ul class="footer-links">
-
-                        <li>
-                            <a href="#sponsor">
-                                Sponsor a Child
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="#sponsor">
-                                Donate
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="#sponsor">
-                                Volunteer
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="#sponsor">
-                                Partner With Us
-                            </a>
-                        </li>
-
-                    </ul>
-
-                </div>
-
-
+      <div class="container">
+        <div class="footer-brand">
+          <div class="logo">
+            <div class="logo-icon">
+              <img
+                src="images/logo.jpeg"
+                alt="New Hope For Ophans Africa Logo"
+              />
             </div>
-
-
-            <div class="footer-bottom">
-
-                ©
-                <span id="year"></span>
-
-                New Hope For Orphans Africa.
-
-                All Rights Reserved.
-
-            </div>
-
+            <h1>New Hope<span>For Orphans Africa</span></h1>
+          </div>
+          <p>
+            Lighting hope and transforming lives of African children through
+            education, care, and community support. Together, we can build a
+            brighter future.
+          </p>
+          <div class="social-links">
+            <a href="mailto:info@beaconchildren.org" aria-label="Email"
+              ><i class="fas fa-envelope"></i
+            ></a>
+            <a
+              href="https://x.com/BeaconChildren"
+              target="_blank"
+              aria-label="Twitter"
+              ><i class="fab fa-twitter"></i
+            ></a>
+            <a
+              href="https://facebook.com/BeaconChildren"
+              target="_blank"
+              aria-label="Facebook"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a
+              href="https://www.linkedin.com/company/beacon-children"
+              target="_blank"
+              aria-label="LinkedIn"
+              ><i class="fab fa-linkedin-in"></i
+            ></a>
+            <a
+              href="https://wa.me/+256741024006"
+              target="_blank"
+              aria-label="WhatsApp"
+              ><i class="fab fa-whatsapp"></i
+            ></a>
+            <a
+              href="https://instagram.com/beaconchildren"
+              target="_blank"
+              aria-label="Instagram"
+              ><i class="fab fa-instagram"></i
+            ></a>
+          </div>
         </div>
 
+        <div class="footer-column">
+          <h3>Quick Links</h3>
+          <ul>
+            <li>
+              <a href="index.html"><i class="fas fa-chevron-right"></i> Home</a>
+            </li>
+            <li>
+              <a href="about.html"
+                ><i class="fas fa-chevron-right"></i> About Us</a
+              >
+            </li>
+            <li>
+              <a href="currentproject.html"
+                ><i class="fas fa-chevron-right"></i> Current Projects</a
+              >
+            </li>
+            <li>
+              <a href="sports.html"
+                ><i class="fas fa-chevron-right"></i> Sports</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h3>Programs</h3>
+          <ul>
+            <li>
+              <a href="#"
+                ><i class="fas fa-chevron-right"></i> Education Support</a
+              >
+            </li>
+            <li>
+              <a href="#"
+                ><i class="fas fa-chevron-right"></i> Child Protection</a
+              >
+            </li>
+            <li>
+              <a href="#"><i class="fas fa-chevron-right"></i> Healthcare</a>
+            </li>
+            <li>
+              <a href="#"
+                ><i class="fas fa-chevron-right"></i> Skills Training</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h3>Contact Info</h3>
+          <p><i class="fas fa-map-marker-alt"></i> Iganga, Uganda</p>
+          <p><i class="fas fa-phone"></i> +256 773 272 908</p>
+          <p><i class="fas fa-envelope"></i> info@newhopekids.org</p>
+          <p><i class="fas fa-clock"></i> Mon - Fri: 8:00 AM - 5:00 PM</p>
+        </div>
+      </div>
+
+      <div class="container footer-bottom">
+        <p>
+          &copy; <span id="year"></span> New Hope For Orphans Africa. All rights
+          reserved.
+        </p>
+      </div>
     </footer>
 
+    <!-- =====================================================
+           BACK TO TOP
+        ===================================================== -->
 
+    <button class="scroll-top" id="scrollTop">↑</button>
 
     <!-- =====================================================
-         BACK TO TOP
-    ===================================================== -->
-
-    <button
-        class="scroll-top"
-        id="scrollTop"
-    >
-
-        ↑
-
-    </button>
-
-
-
-    <!-- =====================================================
-         JAVASCRIPT
-    ===================================================== -->
+           JAVASCRIPT
+        ===================================================== -->
 
     <script>
+      /* =====================================================
+               NAVBAR
+            ===================================================== */
 
+      const navbar = document.getElementById("navbar");
 
-        /* =====================================================
-           NAVBAR
-        ===================================================== */
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 60) {
+          navbar.classList.add("scrolled");
+        } else {
+          navbar.classList.remove("scrolled");
+        }
+      });
 
-        const navbar =
-            document.getElementById("navbar");
+      /* =====================================================
+               MOBILE MENU
+            ===================================================== */
 
+      const menuToggle = document.getElementById("menuToggle");
 
-        window.addEventListener(
-            "scroll",
-            () => {
+      const navLinks = document.getElementById("navLinks");
 
-                if (window.scrollY > 60) {
+      menuToggle.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
 
-                    navbar.classList.add("scrolled");
+        menuToggle.textContent = navLinks.classList.contains("active")
+          ? "✕"
+          : "☰";
+      });
 
-                } else {
+      document.querySelectorAll(".nav-links a").forEach((link) => {
+        link.addEventListener("click", () => {
+          navLinks.classList.remove("active");
 
-                    navbar.classList.remove("scrolled");
+          menuToggle.textContent = "☰";
+        });
+      });
 
+      /* =====================================================
+               SCROLL REVEAL
+            ===================================================== */
+
+      const revealElements = document.querySelectorAll(".reveal");
+
+      const revealObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+
+              revealObserver.unobserve(entry.target);
+            }
+          });
+        },
+
+        {
+          threshold: 0.12,
+        },
+      );
+
+      revealElements.forEach((element) => {
+        revealObserver.observe(element);
+      });
+
+      /* =====================================================
+               FAQ
+            ===================================================== */
+
+      document.querySelectorAll(".faq-question").forEach((question) => {
+        question.addEventListener("click", () => {
+          const faq = question.parentElement;
+
+          const answer = faq.querySelector(".faq-answer");
+
+          const isActive = faq.classList.contains("active");
+
+          document.querySelectorAll(".faq").forEach((item) => {
+            item.classList.remove("active");
+
+            item.querySelector(".faq-answer").style.maxHeight = null;
+          });
+
+          if (!isActive) {
+            faq.classList.add("active");
+
+            answer.style.maxHeight = answer.scrollHeight + "px";
+          }
+        });
+      });
+
+      /* =====================================================
+               BACK TO TOP
+            ===================================================== */
+
+      const scrollTop = document.getElementById("scrollTop");
+
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 500) {
+          scrollTop.classList.add("show");
+        } else {
+          scrollTop.classList.remove("show");
+        }
+      });
+
+      scrollTop.addEventListener("click", () => {
+        window.scrollTo({
+          top: 0,
+
+          behavior: "smooth",
+        });
+      });
+
+      /* =====================================================
+               COUNTER ANIMATION
+            ===================================================== */
+
+      const counters = document.querySelectorAll(".stat-number");
+
+      const counterObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const counter = entry.target;
+
+              const target = counter.dataset.target;
+
+              if (target === "∞") {
+                counter.textContent = "∞";
+
+                return;
+              }
+
+              let count = 0;
+
+              const targetNumber = Number(target);
+
+              const interval = setInterval(() => {
+                count += Math.ceil(targetNumber / 40);
+
+                if (count >= targetNumber) {
+                  count = targetNumber;
+
+                  clearInterval(interval);
                 }
 
+                counter.textContent = count + (targetNumber === 100 ? "+" : "");
+              }, 35);
+
+              counterObserver.unobserve(counter);
             }
-        );
+          });
+        },
 
+        {
+          threshold: 0.6,
+        },
+      );
 
-        /* =====================================================
-           MOBILE MENU
-        ===================================================== */
+      counters.forEach((counter) => {
+        counterObserver.observe(counter);
+      });
 
-        const menuToggle =
-            document.getElementById("menuToggle");
+      /* =====================================================
+               YEAR
+            ===================================================== */
 
-        const navLinks =
-            document.getElementById("navLinks");
+      document.getElementById("year").textContent = new Date().getFullYear();
 
+      /* =====================================================
+               SMOOTH LINKS
+            ===================================================== */
 
-        menuToggle.addEventListener(
-            "click",
-            () => {
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (event) {
+          const id = this.getAttribute("href");
 
-                navLinks.classList.toggle("active");
+          if (id === "#") {
+            return;
+          }
 
-                menuToggle.textContent =
-                    navLinks.classList.contains("active")
-                        ? "✕"
-                        : "☰";
+          const target = document.querySelector(id);
 
-            }
-        );
+          if (target) {
+            event.preventDefault();
 
+            target.scrollIntoView({
+              behavior: "smooth",
 
-        document
-            .querySelectorAll(".nav-links a")
-            .forEach(link => {
-
-                link.addEventListener(
-                    "click",
-                    () => {
-
-                        navLinks.classList.remove("active");
-
-                        menuToggle.textContent = "☰";
-
-                    }
-                );
-
+              block: "start",
             });
-
-
-        /* =====================================================
-           SCROLL REVEAL
-        ===================================================== */
-
-        const revealElements =
-            document.querySelectorAll(".reveal");
-
-
-        const revealObserver =
-            new IntersectionObserver(
-
-                entries => {
-
-                    entries.forEach(
-                        entry => {
-
-                            if (
-                                entry.isIntersecting
-                            ) {
-
-                                entry.target
-                                    .classList
-                                    .add("visible");
-
-                                revealObserver
-                                    .unobserve(
-                                        entry.target
-                                    );
-
-                            }
-
-                        }
-                    );
-
-                },
-
-                {
-                    threshold: .12
-                }
-
-            );
-
-
-        revealElements.forEach(
-            element => {
-
-                revealObserver.observe(
-                    element
-                );
-
-            }
-        );
-
-
-        /* =====================================================
-           FAQ
-        ===================================================== */
-
-        document
-            .querySelectorAll(".faq-question")
-            .forEach(question => {
-
-                question.addEventListener(
-                    "click",
-                    () => {
-
-                        const faq =
-                            question.parentElement;
-
-                        const answer =
-                            faq.querySelector(
-                                ".faq-answer"
-                            );
-
-                        const isActive =
-                            faq.classList.contains(
-                                "active"
-                            );
-
-
-                        document
-                            .querySelectorAll(".faq")
-                            .forEach(item => {
-
-                                item.classList.remove(
-                                    "active"
-                                );
-
-                                item.querySelector(
-                                    ".faq-answer"
-                                ).style.maxHeight = null;
-
-                            });
-
-
-                        if (!isActive) {
-
-                            faq.classList.add(
-                                "active"
-                            );
-
-                            answer.style.maxHeight =
-                                answer.scrollHeight +
-                                "px";
-
-                        }
-
-                    }
-                );
-
-            });
-
-
-        /* =====================================================
-           BACK TO TOP
-        ===================================================== */
-
-        const scrollTop =
-            document.getElementById(
-                "scrollTop"
-            );
-
-
-        window.addEventListener(
-            "scroll",
-            () => {
-
-                if (
-                    window.scrollY > 500
-                ) {
-
-                    scrollTop.classList.add(
-                        "show"
-                    );
-
-                } else {
-
-                    scrollTop.classList.remove(
-                        "show"
-                    );
-
-                }
-
-            }
-        );
-
-
-        scrollTop.addEventListener(
-            "click",
-            () => {
-
-                window.scrollTo({
-
-                    top: 0,
-
-                    behavior: "smooth"
-
-                });
-
-            }
-        );
-
-
-        /* =====================================================
-           COUNTER ANIMATION
-        ===================================================== */
-
-        const counters =
-            document.querySelectorAll(
-                ".stat-number"
-            );
-
-
-        const counterObserver =
-            new IntersectionObserver(
-
-                entries => {
-
-                    entries.forEach(
-                        entry => {
-
-                            if (
-                                entry.isIntersecting
-                            ) {
-
-                                const counter =
-                                    entry.target;
-
-                                const target =
-                                    counter.dataset.target;
-
-
-                                if (
-                                    target === "∞"
-                                ) {
-
-                                    counter.textContent =
-                                        "∞";
-
-                                    return;
-
-                                }
-
-
-                                let count = 0;
-
-                                const targetNumber =
-                                    Number(target);
-
-
-                                const interval =
-                                    setInterval(
-                                        () => {
-
-                                            count +=
-                                                Math.ceil(
-                                                    targetNumber / 40
-                                                );
-
-
-                                            if (
-                                                count >=
-                                                targetNumber
-                                            ) {
-
-                                                count =
-                                                    targetNumber;
-
-                                                clearInterval(
-                                                    interval
-                                                );
-
-                                            }
-
-
-                                            counter.textContent =
-                                                count +
-                                                (
-                                                    targetNumber === 100
-                                                        ? "+"
-                                                        : ""
-                                                );
-
-                                        },
-                                        35
-                                    );
-
-
-                                counterObserver
-                                    .unobserve(
-                                        counter
-                                    );
-
-                            }
-
-                        }
-                    );
-
-                },
-
-                {
-                    threshold: .6
-                }
-
-            );
-
-
-        counters.forEach(
-            counter => {
-
-                counterObserver.observe(
-                    counter
-                );
-
-            }
-        );
-
-
-        /* =====================================================
-           YEAR
-        ===================================================== */
-
-        document.getElementById(
-            "year"
-        ).textContent =
-            new Date().getFullYear();
-
-
-        /* =====================================================
-           SMOOTH LINKS
-        ===================================================== */
-
-        document
-            .querySelectorAll(
-                'a[href^="#"]'
-            )
-            .forEach(anchor => {
-
-                anchor.addEventListener(
-                    "click",
-                    function(event) {
-
-                        const id =
-                            this.getAttribute(
-                                "href"
-                            );
-
-
-                        if (id === "#") {
-
-                            return;
-
-                        }
-
-
-                        const target =
-                            document.querySelector(
-                                id
-                            );
-
-
-                        if (target) {
-
-                            event.preventDefault();
-
-                            target.scrollIntoView({
-
-                                behavior:
-                                    "smooth",
-
-                                block:
-                                    "start"
-
-                            });
-
-                        }
-
-                    }
-                );
-
-            });
-
+          }
+        });
+      });
     </script>
-
-
-</body>
-
+  </body>
 </html>
