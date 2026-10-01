@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog | New Hope For Orphans Africa</title>
+    <meta
+      name="description"
+      content="Stories, updates, and impact from New Hope For Orphans Africa."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      :root {
+        --primary: #a41e3c;
+        --primary-dark: #6b0f23;
+        --primary-light: #f8e7ec;
+        --secondary: #6b8e23;
+        --secondary-dark: #4d6615;
+        --accent: #d4a747;
+        --accent-light: #f5ebd1;
+        --white: #ffffff;
+        --off-white: #f7f9fc;
+        --gray-100: #f3f4f6;
+        --gray-200: #e5e7eb;
+        --gray-300: #d1d5db;
+        --gray-400: #9ca3af;
+        --gray-500: #6b7280;
+        --gray-700: #374151;
+        --gray-900: #111827;
+        --shadow: 0 18px 45px rgba(17, 24, 39, 0.08);
+        --radius: 22px;
+        --radius-sm: 14px;
+        --container: 1200px;
+        --transition: all 0.3s ease;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        background: var(--off-white);
+        color: var(--gray-700);
+        line-height: 1.7;
+      }
+
+      img {
+        display: block;
+        max-width: 100%;
+        width: 100%;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      ul {
+        list-style: none;
+      }
+
+      .container {
+        width: min(var(--container), calc(100% - 32px));
+        margin: 0 auto;
+      }
+
+      .section {
+        padding: 90px 0;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 13px 22px;
+        border-radius: 999px;
+        font-weight: 700;
+        transition: var(--transition);
+      }
+
+      .btn:hover {
+        transform: translateY(-2px);
+      }
+
+      .btn-primary {
+        background: var(--primary);
+        color: var(--white);
+      }
+
+      .btn-primary:hover {
+        background: var(--primary-dark);
+      }
+
+      .btn-outline {
+        background: transparent;
+        border: 1px solid rgba(164, 30, 60, 0.25);
+        color: var(--primary);
+      }
+
+      .btn-outline:hover {
+        background: var(--primary);
+        color: var(--white);
+      }
+
+      .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        background: rgba(255, 255, 255, 0.96);
+        border-bottom: 1px solid rgba(17, 24, 39, 0.06);
+        backdrop-filter: blur(8px);
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 86px;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .brand-mark {
+        width: 54px;
+        height: 54px;
+        border-radius: 14px;
+        overflow: hidden;
+        background: var(--primary-light);
+        flex-shrink: 0;
+      }
+
+      .brand-mark img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .brand-text {
+        font-size: 1.02rem;
+        font-weight: 800;
+        line-height: 1.1;
+        color: var(--gray-900);
+      }
+
+      .brand-text span {
+        display: block;
+        font-size: 0.7rem;
+        letter-spacing: 0.05em;
+        font-weight: 600;
+        color: var(--gray-500);
+      }
+
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 26px;
+      }
+
+      .nav-links a {
+        position: relative;
+        color: var(--gray-700);
+        font-weight: 500;
+      }
+
+      .nav-links a::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -8px;
+        width: 0;
+        height: 2px;
+        background: var(--primary);
+        transition: var(--transition);
+      }
+
+      .nav-links a:hover::after,
+      .nav-links a.active::after {
+        width: 100%;
+      }
+
+      .nav-links a:hover {
+        color: var(--primary);
+      }
+
+      .nav-cta {
+        background: var(--primary);
+        color: var(--white) !important;
+        padding: 12px 20px;
+        border-radius: 999px;
+        font-weight: 700;
+      }
+
+      .nav-cta:hover {
+        background: var(--primary-dark);
+      }
+
+      .blog-hero {
+        background:
+          linear-gradient(135deg, rgba(17, 24, 39, 0.82), rgba(164, 30, 60, 0.65)),
+          url("https://images.unsplash.com/photo-1517486808906-6ca8b3d5b0d3?auto=format&fit=crop&w=1600&q=80")
+            center/cover no-repeat;
+        color: var(--white);
+        padding: 120px 0 90px;
+      }
+
+      .hero-inner {
+        display: grid;
+        grid-template-columns: 1.4fr 0.8fr;
+        gap: 32px;
+        align-items: center;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        padding: 8px 16px;
+        border-radius: 999px;
+        background: rgba(212, 167, 71, 0.15);
+        border: 1px solid rgba(212, 167, 71, 0.4);
+        color: #f7d77f;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        font-size: 0.72rem;
+        font-weight: 800;
+      }
+
+      .blog-hero h1 {
+        margin-top: 20px;
+        font-size: clamp(2.7rem, 4vw, 5rem);
+        line-height: 1.08;
+        letter-spacing: -0.05em;
+      }
+
+      .blog-hero p {
+        margin-top: 18px;
+        font-size: 1.1rem;
+        max-width: 620px;
+        color: rgba(255, 255, 255, 0.9);
+      }
+
+      .hero-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 18px;
+        margin-top: 26px;
+        color: rgba(255, 255, 255, 0.78);
+        font-size: 0.9rem;
+      }
+
+      .hero-meta span {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .hero-panel {
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        border-radius: 22px;
+        padding: 26px 22px;
+        backdrop-filter: blur(8px);
+      }
+
+      .hero-panel h3 {
+        margin-bottom: 16px;
+        font-size: 0.82rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: rgba(255, 255, 255, 0.7);
+      }
+
+      .panel-list {
+        display: grid;
+        gap: 14px;
+      }
+
+      .panel-item {
+        padding: 12px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+      }
+
+      .panel-item:last-child {
+        border-bottom: none;
+      }
+
+      .panel-item strong {
+        display: block;
+        color: var(--white);
+        font-size: 1.05rem;
+      }
+
+      .panel-item span {
+        display: block;
+        margin-top: 4px;
+        color: rgba(255, 255, 255, 0.75);
+        font-size: 0.8rem;
+      }
+
+      .main-wrap {
+        padding: 80px 0 20px;
+      }
+
+      .content-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 2fr) minmax(300px, 0.9fr);
+        gap: 34px;
+        align-items: start;
+      }
+
+      .featured-card {
+        background: var(--white);
+        border-radius: var(--radius);
+        overflow: hidden;
+        box-shadow: var(--shadow);
+      }
+
+      .featured-image {
+        height: 420px;
+        overflow: hidden;
+      }
+
+      .featured-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .featured-body {
+        padding: 30px 32px 28px;
+      }
+
+      .tag {
+        display: inline-block;
+        padding: 7px 12px;
+        border-radius: 999px;
+        background: var(--primary-light);
+        color: var(--primary);
+        font-size: 0.75rem;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .featured-body h2 {
+        margin-top: 18px;
+        font-size: clamp(1.8rem, 2vw, 2.7rem);
+        line-height: 1.2;
+        color: var(--gray-900);
+      }
+
+      .featured-body p {
+        margin-top: 16px;
+        color: var(--gray-500);
+        font-size: 1.02rem;
+      }
+
+      .post-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        margin-top: 18px;
+        color: var(--gray-500);
+        font-size: 0.85rem;
+      }
+
+      .post-meta span {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .post-actions {
+        margin-top: 22px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+
+      .read-more {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        color: var(--primary);
+        font-weight: 700;
+      }
+
+      .article-list {
+        display: grid;
+        gap: 20px;
+        margin-top: 30px;
+      }
+
+      .article-card {
+        background: var(--white);
+        border-radius: var(--radius);
+        overflow: hidden;
+        box-shadow: var(--shadow);
+        display: grid;
+        grid-template-columns: 220px 1fr;
+        min-height: 200px;
+      }
+
+      .article-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .article-body {
+        padding: 20px 22px;
+      }
+
+      .article-body h3 {
+        color: var(--gray-900);
+        font-size: 1.38rem;
+        line-height: 1.35;
+      }
+
+      .article-body p {
+        margin-top: 10px;
+        color: var(--gray-500);
+        font-size: 0.96rem;
+      }
+
+      .article-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+        margin-top: 12px;
+        font-size: 0.8rem;
+        color: var(--gray-500);
+      }
+
+      .sidebar {
+        display: grid;
+        gap: 22px;
+      }
+
+      .sidebar-card {
+        background: var(--white);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        padding: 22px 20px;
+      }
+
+      .sidebar-card h3 {
+        color: var(--gray-900);
+        font-size: 1.15rem;
+        margin-bottom: 18px;
+      }
+
+      .mini-list {
+        display: grid;
+        gap: 14px;
+      }
+
+      .mini-item {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+        padding-bottom: 12px;
+        border-bottom: 1px solid var(--gray-100);
+      }
+
+      .mini-item:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+      }
+
+      .mini-thumb {
+        width: 60px;
+        height: 60px;
+        border-radius: 12px;
+        overflow: hidden;
+        flex-shrink: 0;
+      }
+
+      .mini-thumb img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .mini-item h4 {
+        font-size: 0.93rem;
+        color: var(--gray-900);
+        line-height: 1.4;
+      }
+
+      .mini-item span {
+        display: block;
+        margin-top: 5px;
+        color: var(--gray-500);
+        font-size: 0.76rem;
+      }
+
+      .category-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .category-list a {
+        display: inline-flex;
+        padding: 9px 12px;
+        border-radius: 999px;
+        background: var(--gray-100);
+        color: var(--gray-700);
+        font-size: 0.8rem;
+        font-weight: 600;
+      }
+
+      .signup-box {
+        background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+        border-radius: var(--radius);
+        padding: 24px 20px;
+        color: var(--white);
+      }
+
+      .signup-box h3 {
+        color: var(--white);
+        margin-bottom: 10px;
+      }
+
+      .signup-box p {
+        color: rgba(255, 255, 255, 0.8);
+        margin-bottom: 16px;
+        font-size: 0.92rem;
+      }
+
+      .signup-box input {
+        width: 100%;
+        border: none;
+        padding: 12px 14px;
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.15);
+        color: var(--white);
+        margin-bottom: 12px;
+      }
+
+      .signup-box input::placeholder {
+        color: rgba(255, 255, 255, 0.72);
+      }
+
+      .signup-box .btn {
+        width: 100%;
+        background: var(--white);
+        color: var(--primary);
+      }
+
+      footer {
+        background: #0f172a;
+        color: rgba(255, 255, 255, 0.8);
+        padding: 80px 0 28px;
+      }
+
+      .footer-grid {
+        display: grid;
+        grid-template-columns: 1.6fr 1fr 1fr 1.2fr;
+        gap: 28px;
+      }
+
+      .footer-brand img {
+        width: 90px;
+        height: 56px;
+        object-fit: cover;
+        border-radius: 12px;
+      }
+
+      .footer-brand p {
+        margin-top: 18px;
+        color: rgba(255, 255, 255, 0.7);
+      }
+
+      .footer-col h3 {
+        color: var(--white);
+        margin-bottom: 18px;
+      }
+
+      .footer-col a,
+      .footer-col p {
+        display: block;
+        margin-bottom: 10px;
+        color: rgba(255, 255, 255, 0.7);
+      }
+
+      .footer-bottom {
+        margin-top: 24px;
+        padding-top: 18px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        text-align: center;
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 0.82rem;
+      }
+
+      @media (max-width: 980px) {
+        .hero-inner,
+        .content-grid,
+        .footer-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .article-card {
+          grid-template-columns: 1fr;
+        }
+
+        .article-card img {
+          height: 220px;
+        }
+      }
+
+      @media (max-width: 700px) {
+        .nav-links {
+          display: none;
+        }
+
+        .blog-hero {
+          padding-top: 90px;
+        }
+
+        .featured-image {
+          height: 280px;
+        }
+
+        .featured-body {
+          padding: 22px 20px;
+        }
+
+        .article-body {
+          padding: 18px 18px 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav">
+        <a href="index.html" class="brand" aria-label="Home">
+          <div class="brand-mark">
+            <img src="images/logo.jpeg" alt="New Hope For Ophans Africa logo" />
+          </div>
+          <div class="brand-text">
+            New Hope
+            <span>For Orphans Africa</span>
+          </div>
+        </a>
+
+        <nav class="nav-links" aria-label="Main navigation">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="currentproject.html">Projects</a>
+          <a href="education.html">Education</a>
+          <a href="sports.html">Sports</a>
+          <a href="blog.html" class="active">Blog</a>
+          <a href="index.html#contactSection" class="nav-cta">Donate</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="blog-hero">
+        <div class="container hero-inner">
+          <div>
+            <div class="eyebrow">Latest stories</div>
+            <h1>Hope, impact, and the people behind the mission.</h1>
+            <p>
+              Discover inspiring stories, project updates, and real moments of
+              transformation from children and communities supported by New Hope
+              For Orphans Africa.
+            </p>
+
+            <div class="hero-meta">
+              <span><i class="fa-regular fa-calendar"></i> Updated weekly</span>
+              <span><i class="fa-regular fa-clock"></i> 4 min read</span>
+              <span><i class="fa-solid fa-heart"></i> Community stories</span>
+            </div>
+          </div>
+
+          <aside class="hero-panel">
+            <h3>Highlights</h3>
+            <div class="panel-list">
+              <div class="panel-item">
+                <strong>Education success</strong>
+                <span>Read how a student returned to school and became a leader.</span>
+              </div>
+              <div class="panel-item">
+                <strong>Healthcare progress</strong>
+                <span>New clinic updates and support for families in need.</span>
+              </div>
+              <div class="panel-item">
+                <strong>Volunteer stories</strong>
+                <span>See how local and global supporters are making a difference.</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <div class="container main-wrap">
+        <div class="content-grid">
+          <div>
+            <article class="featured-card">
+              <div class="featured-image">
+                <img
+                  src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1200&q=80"
+                  alt="Featured blog story"
+                />
+              </div>
+              <div class="featured-body">
+                <span class="tag">Featured</span>
+                <h2>From hardship to hope: how education is changing lives in Uganda</h2>
+                <div class="post-meta">
+                  <span><i class="fa-regular fa-user"></i> Team NHOA</span>
+                  <span><i class="fa-regular fa-calendar"></i> 18 July 2026</span>
+                  <span><i class="fa-regular fa-clock"></i> 5 min read</span>
+                </div>
+                <p>
+                  Every child deserves a future built on dignity, safety, and opportunity.
+                  Through education, mentorship, and community support, we are helping
+                  vulnerable children move from uncertainty to confidence and purpose.
+                </p>
+                <div class="post-actions">
+                  <a href="#" class="read-more">
+                    Read article <i class="fa-solid fa-arrow-right"></i>
+                  </a>
+                  <a href="index.html#joinSection" class="btn btn-outline">Support the mission</a>
+                </div>
+              </div>
+            </article>
+
+            <div class="article-list">
+              <article class="article-card">
+                <img
+                  src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=900&q=80"
+                  alt="School children studying"
+                />
+                <div class="article-body">
+                  <span class="tag">Education</span>
+                  <h3>Building brighter futures one classroom at a time</h3>
+                  <p>
+                    We continue to invest in learning spaces, school materials, and
+                    mentorship programs that help children stay in school and dream bigger.
+                  </p>
+                  <div class="article-meta">
+                    <span><i class="fa-regular fa-calendar"></i> 11 July 2026</span>
+                    <span><i class="fa-regular fa-clock"></i> 4 min read</span>
+                  </div>
+                </div>
+              </article>
+
+              <article class="article-card">
+                <img
+                  src="https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?auto=format&fit=crop&w=900&q=80"
+                  alt="Community healthcare support"
+                />
+                <div class="article-body">
+                  <span class="tag">Health</span>
+                  <h3>Why healthcare access is essential for every child’s future</h3>
+                  <p>
+                    Healthy children learn better, grow stronger, and become more resilient.
+                    Our healthcare initiatives aim to provide timely treatment and support.
+                  </p>
+                  <div class="article-meta">
+                    <span><i class="fa-regular fa-calendar"></i> 7 July 2026</span>
+                    <span><i class="fa-regular fa-clock"></i> 3 min read</span>
+                  </div>
+                </div>
+              </article>
+
+              <article class="article-card">
+                <img
+                  src="https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=900&q=80"
+                  alt="Community care and support"
+                />
+                <div class="article-body">
+                  <span class="tag">Community</span>
+                  <h3>What it means to protect and uplift every vulnerable child</h3>
+                  <p>
+                    Community care is more than support — it is safety, belonging, and a
+                    stronger pathway toward long-term stability for children in need.
+                  </p>
+                  <div class="article-meta">
+                    <span><i class="fa-regular fa-calendar"></i> 4 July 2026</span>
+                    <span><i class="fa-regular fa-clock"></i> 5 min read</span>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <aside class="sidebar">
+            <div class="sidebar-card">
+              <h3>Most read</h3>
+              <div class="mini-list">
+                <div class="mini-item">
+                  <div class="mini-thumb">
+                    <img
+                      src="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=400&q=80"
+                      alt="Most read article"
+                    />
+                  </div>
+                  <div>
+                    <h4>How local support transformed one family’s future</h4>
+                    <span>6 min read</span>
+                  </div>
+                </div>
+
+                <div class="mini-item">
+                  <div class="mini-thumb">
+                    <img
+                      src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?auto=format&fit=crop&w=400&q=80"
+                      alt="Most read article"
+                    />
+                  </div>
+                  <div>
+                    <h4>What a new clinic means for rural communities</h4>
+                    <span>4 min read</span>
+                  </div>
+                </div>
+
+                <div class="mini-item">
+                  <div class="mini-thumb">
+                    <img
+                      src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=400&q=80"
+                      alt="Most read article"
+                    />
+                  </div>
+                  <div>
+                    <h4>Team stories: volunteers making a lasting impact</h4>
+                    <span>7 min read</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="sidebar-card">
+              <h3>Topics</h3>
+              <div class="category-list">
+                <a href="#">Education</a>
+                <a href="#">Healthcare</a>
+                <a href="#">Child Care</a>
+                <a href="#">Impact</a>
+                <a href="#">Stories</a>
+                <a href="#">Community</a>
+              </div>
+            </div>
+
+            <div class="signup-box">
+              <h3>Stay inspired</h3>
+              <p>Get updates from our mission and community stories in your inbox.</p>
+              <input type="email" placeholder="Your email address" />
+              <button class="btn btn-primary">Subscribe</button>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <img src="images/logo.jpeg" alt="New Hope For Ophans Africa Logo" />
+            <p>
+              Supporting children and families through care, compassion, and
+              sustainable community development.
+            </p>
+          </div>
+
+          <div class="footer-col">
+            <h3>Explore</h3>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="currentproject.html">Projects</a>
+            <a href="education.html">Education</a>
+          </div>
+
+          <div class="footer-col">
+            <h3>Programs</h3>
+            <a href="#">Education</a>
+            <a href="#">Healthcare</a>
+            <a href="#">Care & Protection</a>
+            <a href="#">Community Support</a>
+          </div>
+
+          <div class="footer-col">
+            <h3>Contact</h3>
+            <p>Email: Lindaglass22@gmail.com</p>
+            <p>Phone: +256 773 272 908</p>
+            <p>Uganda, East Africa</p>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          © 2026 New Hope For Orphans Africa. All rights reserved.
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
