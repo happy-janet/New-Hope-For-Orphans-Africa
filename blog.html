@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -126,6 +126,7 @@
         background: rgba(255, 255, 255, 0.96);
         border-bottom: 1px solid rgba(17, 24, 39, 0.06);
         backdrop-filter: blur(8px);
+        box-shadow: var(--shadow);
       }
 
       .nav {
@@ -206,18 +207,27 @@
       .nav-cta {
         background: var(--primary);
         color: var(--white) !important;
-        padding: 12px 20px;
-        border-radius: 999px;
+        padding: 0.6rem 1.5rem !important;
+        border-radius: 50px;
         font-weight: 700;
+      }
+
+      .nav-cta::after {
+        display: none;
       }
 
       .nav-cta:hover {
         background: var(--primary-dark);
+        transform: translateY(-2px);
       }
 
       .blog-hero {
         background:
-          linear-gradient(135deg, rgba(17, 24, 39, 0.82), rgba(164, 30, 60, 0.65)),
+          linear-gradient(
+            135deg,
+            rgba(17, 24, 39, 0.82),
+            rgba(164, 30, 60, 0.65)
+          ),
           url("https://images.unsplash.com/photo-1517486808906-6ca8b3d5b0d3?auto=format&fit=crop&w=1600&q=80")
             center/cover no-repeat;
         color: var(--white);
@@ -533,7 +543,11 @@
       }
 
       .signup-box {
-        background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+        background: linear-gradient(
+          135deg,
+          var(--primary),
+          var(--primary-dark)
+        );
         border-radius: var(--radius);
         padding: 24px 20px;
         color: var(--white);
@@ -672,9 +686,12 @@
           <a href="about.html">About</a>
           <a href="currentproject.html">Projects</a>
           <a href="education.html">Education</a>
-          <a href="sports.html">Sports</a>
           <a href="blog.html" class="active">Blog</a>
-          <a href="index.html#contactSection" class="nav-cta">Donate</a>
+          <a
+            href="https://www.paypal.com/donate/?hosted_button_id=ALSHWSL23L42N"
+            class="nav-cta"
+            >Donate</a
+          >
         </nav>
       </div>
     </header>
@@ -703,15 +720,23 @@
             <div class="panel-list">
               <div class="panel-item">
                 <strong>Education success</strong>
-                <span>Read how a student returned to school and became a leader.</span>
+                <span
+                  >Read how a student returned to school and became a
+                  leader.</span
+                >
               </div>
               <div class="panel-item">
                 <strong>Healthcare progress</strong>
-                <span>New clinic updates and support for families in need.</span>
+                <span
+                  >New clinic updates and support for families in need.</span
+                >
               </div>
               <div class="panel-item">
                 <strong>Volunteer stories</strong>
-                <span>See how local and global supporters are making a difference.</span>
+                <span
+                  >See how local and global supporters are making a
+                  difference.</span
+                >
               </div>
             </div>
           </aside>
@@ -730,22 +755,30 @@
               </div>
               <div class="featured-body">
                 <span class="tag">Featured</span>
-                <h2>From hardship to hope: how education is changing lives in Uganda</h2>
+                <h2>
+                  From hardship to hope: how education is changing lives in
+                  Uganda
+                </h2>
                 <div class="post-meta">
                   <span><i class="fa-regular fa-user"></i> Team NHOA</span>
-                  <span><i class="fa-regular fa-calendar"></i> 18 July 2026</span>
+                  <span
+                    ><i class="fa-regular fa-calendar"></i> 18 July 2026</span
+                  >
                   <span><i class="fa-regular fa-clock"></i> 5 min read</span>
                 </div>
                 <p>
-                  Every child deserves a future built on dignity, safety, and opportunity.
-                  Through education, mentorship, and community support, we are helping
-                  vulnerable children move from uncertainty to confidence and purpose.
+                  Every child deserves a future built on dignity, safety, and
+                  opportunity. Through education, mentorship, and community
+                  support, we are helping vulnerable children move from
+                  uncertainty to confidence and purpose.
                 </p>
                 <div class="post-actions">
                   <a href="#" class="read-more">
                     Read article <i class="fa-solid fa-arrow-right"></i>
                   </a>
-                  <a href="index.html#joinSection" class="btn btn-outline">Support the mission</a>
+                  <a href="index.html#joinSection" class="btn btn-outline"
+                    >Support the mission</a
+                  >
                 </div>
               </div>
             </article>
@@ -760,11 +793,14 @@
                   <span class="tag">Education</span>
                   <h3>Building brighter futures one classroom at a time</h3>
                   <p>
-                    We continue to invest in learning spaces, school materials, and
-                    mentorship programs that help children stay in school and dream bigger.
+                    We continue to invest in learning spaces, school materials,
+                    and mentorship programs that help children stay in school
+                    and dream bigger.
                   </p>
                   <div class="article-meta">
-                    <span><i class="fa-regular fa-calendar"></i> 11 July 2026</span>
+                    <span
+                      ><i class="fa-regular fa-calendar"></i> 11 July 2026</span
+                    >
                     <span><i class="fa-regular fa-clock"></i> 4 min read</span>
                   </div>
                 </div>
@@ -777,13 +813,18 @@
                 />
                 <div class="article-body">
                   <span class="tag">Health</span>
-                  <h3>Why healthcare access is essential for every child’s future</h3>
+                  <h3>
+                    Why healthcare access is essential for every child’s future
+                  </h3>
                   <p>
-                    Healthy children learn better, grow stronger, and become more resilient.
-                    Our healthcare initiatives aim to provide timely treatment and support.
+                    Healthy children learn better, grow stronger, and become
+                    more resilient. Our healthcare initiatives aim to provide
+                    timely treatment and support.
                   </p>
                   <div class="article-meta">
-                    <span><i class="fa-regular fa-calendar"></i> 7 July 2026</span>
+                    <span
+                      ><i class="fa-regular fa-calendar"></i> 7 July 2026</span
+                    >
                     <span><i class="fa-regular fa-clock"></i> 3 min read</span>
                   </div>
                 </div>
@@ -796,13 +837,18 @@
                 />
                 <div class="article-body">
                   <span class="tag">Community</span>
-                  <h3>What it means to protect and uplift every vulnerable child</h3>
+                  <h3>
+                    What it means to protect and uplift every vulnerable child
+                  </h3>
                   <p>
-                    Community care is more than support — it is safety, belonging, and a
-                    stronger pathway toward long-term stability for children in need.
+                    Community care is more than support — it is safety,
+                    belonging, and a stronger pathway toward long-term stability
+                    for children in need.
                   </p>
                   <div class="article-meta">
-                    <span><i class="fa-regular fa-calendar"></i> 4 July 2026</span>
+                    <span
+                      ><i class="fa-regular fa-calendar"></i> 4 July 2026</span
+                    >
                     <span><i class="fa-regular fa-clock"></i> 5 min read</span>
                   </div>
                 </div>
@@ -869,7 +915,10 @@
 
             <div class="signup-box">
               <h3>Stay inspired</h3>
-              <p>Get updates from our mission and community stories in your inbox.</p>
+              <p>
+                Get updates from our mission and community stories in your
+                inbox.
+              </p>
               <input type="email" placeholder="Your email address" />
               <button class="btn btn-primary">Subscribe</button>
             </div>

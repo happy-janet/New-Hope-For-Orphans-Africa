@@ -30,41 +30,26 @@
         --primary: #a41e3c;
         --primary-dark: #6b0f23;
         --primary-light: #f5e6eb;
-
         --secondary: #6b8e23;
-
+        --secondary-dark: #496615;
         --accent: #d4a747;
         --accent-light: #f0e5d0;
-
         --white: #ffffff;
         --off-white: #f9fafb;
-
         --gray-100: #f3f4f6;
         --gray-300: #d1d5db;
         --gray-500: #6b7280;
         --gray-700: #374151;
         --gray-900: #111827;
-
         --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
-
         --shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-
         --shadow-lg: 0 12px 30px rgba(0, 0, 0, 0.12);
-
         --shadow-xl: 0 25px 55px rgba(0, 0, 0, 0.15);
-
         --radius: 12px;
-
         --radius-lg: 22px;
-
         --transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-
         --container-width: 1200px;
       }
-
-      /* =====================================================
-           RESET
-        ===================================================== */
 
       * {
         margin: 0;
@@ -74,31 +59,27 @@
 
       html {
         scroll-behavior: smooth;
+        scroll-padding-top: 80px;
       }
 
       body {
-        font-family: "DM Sans", sans-serif;
-
+        font-family: "Poppins", "DM Sans", sans-serif;
         color: var(--gray-700);
-
         background: var(--white);
-
         line-height: 1.7;
-
         overflow-x: hidden;
       }
 
       img,
       video {
         width: 100%;
-
         display: block;
       }
 
       a {
         text-decoration: none;
-
         color: inherit;
+        transition: var(--transition);
       }
 
       button {
@@ -116,80 +97,88 @@
         ===================================================== */
 
       .navbar {
-        position: absolute;
+        position: fixed;
         top: 0;
         left: 0;
         width: 100%;
         z-index: 1000;
-        background: transparent;
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(10px);
+        box-shadow: var(--shadow);
+        transition: var(--transition);
       }
 
       .navbar.scrolled {
         background: rgba(255, 255, 255, 0.97);
-
         box-shadow: var(--shadow);
       }
 
       .nav-container {
         min-height: 82px;
-
         display: flex;
-
         align-items: center;
-
         justify-content: space-between;
       }
 
-      /* REAL LOGO */
-
       .logo img {
         width: 150px;
-
         height: auto;
-
         object-fit: contain;
       }
 
       .nav-links {
         list-style: none;
-
         display: flex;
-
         align-items: center;
-
         gap: 27px;
       }
 
       .nav-links a {
-        color: var(--white);
-
+        color: var(--gray-700);
         font-size: 0.9rem;
-
         font-weight: 700;
+        transition: var(--transition);
+        position: relative;
+      }
 
+      .nav-links a::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -8px;
+        width: 0;
+        height: 2px;
+        background: var(--primary);
         transition: var(--transition);
       }
 
-      .navbar.scrolled .nav-links a {
-        color: var(--gray-900);
+      .nav-links a:hover,
+      .nav-links a.active {
+        color: var(--primary);
       }
 
-      .nav-links a:hover {
-        color: var(--accent);
+      .nav-links a:hover::after,
+      .nav-links a.active::after {
+        width: 100%;
       }
 
-      .nav-donate {
-        padding: 10px 19px;
-
-        border-radius: 30px;
-
+      .nav-donate,
+      .nav-cta {
+        padding: 0.6rem 1.5rem !important;
+        border-radius: 50px;
         background: var(--primary);
-
         color: var(--white) !important;
       }
 
-      .nav-donate:hover {
+      .nav-donate::after,
+      .nav-cta::after {
+        display: none;
+      }
+
+      .nav-donate:hover,
+      .nav-cta:hover {
         background: var(--primary-dark);
+        transform: translateY(-2px);
       }
 
       .menu-toggle {
@@ -1507,13 +1496,19 @@
         <button class="menu-toggle" id="menuToggle">☰</button>
 
         <ul class="nav-links" id="navLinks">
-           <li><a href="index.html#homeSection">Home</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="currentproject.html">Current Projects</a></li>
-            <li><a href="education.html">Education</a></li>
-            <li><a href="sports.html">Sports</a></li>
-            <!-- <li><a href="#contactSection">Contact</a></li> -->
-            <li><a href="https://www.paypal.com/donate/?hosted_button_id=ALSHWSL23L42N" class="nav-cta">DONATE</a></li>
+          <li><a href="index.html#homeSection">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="currentproject.html">Current Projects</a></li>
+          <li><a href="education.html">Education</a></li>
+          <li><a href="sports.html">Sports</a></li>
+          <!-- <li><a href="#contactSection">Contact</a></li> -->
+          <li>
+            <a
+              href="https://www.paypal.com/donate/?hosted_button_id=ALSHWSL23L42N"
+              class="nav-cta"
+              >DONATE</a
+            >
+          </li>
         </ul>
       </div>
     </header>
@@ -1538,8 +1533,8 @@
           </h1>
 
           <p>
-                       New Hope for Orphans Africa is a Christian Ministry that loves Jesus. We teach our Children to love and Trust Jesus.
-
+            New Hope for Orphans Africa is a Christian Ministry that loves
+            Jesus. We teach our Children to love and Trust Jesus.
           </p>
 
           <div class="hero-buttons">
@@ -1809,9 +1804,6 @@
       </div>
     </section>
 
-    
-
-    
     <!-- =====================================================
          ACHIEVEMENTS
     ===================================================== -->
@@ -1821,7 +1813,10 @@
         <div class="achievement-grid">
           <div class="achievement-video reveal">
             <video controls poster="images/achievement-poster.jpg">
-              <source src="./video/54fdf333-e495-4977-81bf-655d5ee98321.mov" type="video/mp4" />
+              <source
+                src="./video/54fdf333-e495-4977-81bf-655d5ee98321.mov"
+                type="video/mp4"
+              />
             </video>
           </div>
 
